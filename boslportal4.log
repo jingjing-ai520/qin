@@ -1,0 +1,142 @@
+;;; 
+Import: Release 11.2.0.1.0 - Production on 星期四 6月 19 18:25:20 2025
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+;;; 
+连接到: Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+已成功加载/卸载了主表 "BOSLPORTAL4"."PORTAL_JOB_20250619_182520" 
+启动 "BOSLPORTAL4"."PORTAL_JOB_20250619_182520":  boslportal4/********@orcl dumpfile=boslportal4.dmp logfile=boslportal4.log directory=dir_dp job_name=portal_job_20250619_182520 
+处理对象类型 SCHEMA_EXPORT/USER
+ORA-39083: 对象类型 USER 创建失败, 出现错误:
+ORA-31625: 必须有方案 SYSTEM 才能导入此对象, 但此方案不可访问
+ORA-01031: 权限不足
+失败的 sql 为:
+ CREATE USER "BOSLPORTAL4" IDENTIFIED BY VALUES 'S:F7514CE57D2D7F9E6F5A2514460D7ECF34ADC4D97133D204C707C714A045;31BC190C1A24C030' DEFAULT TABLESPACE "BOSLPORTAL4" TEMPORARY TABLESPACE "TEMP"
+处理对象类型 SCHEMA_EXPORT/SYSTEM_GRANT
+ORA-39083: 对象类型 SYSTEM_GRANT 创建失败, 出现错误:
+ORA-31625: 必须有方案 SYSTEM 才能导入此对象, 但此方案不可访问
+ORA-01031: 权限不足
+失败的 sql 为:
+GRANT UNLIMITED TABLESPACE TO "BOSLPORTAL4"
+ORA-39083: 对象类型 SYSTEM_GRANT 创建失败, 出现错误:
+ORA-31625: 必须有方案 SYSTEM 才能导入此对象, 但此方案不可访问
+ORA-01031: 权限不足
+失败的 sql 为:
+GRANT RESTRICTED SESSION TO "BOSLPORTAL4"
+处理对象类型 SCHEMA_EXPORT/ROLE_GRANT
+ORA-39083: 对象类型 ROLE_GRANT 创建失败, 出现错误:
+ORA-31625: 必须有方案 SYSTEM 才能导入此对象, 但此方案不可访问
+ORA-01031: 权限不足
+失败的 sql 为:
+ GRANT "CONNECT" TO "BOSLPORTAL4"
+ORA-39083: 对象类型 ROLE_GRANT 创建失败, 出现错误:
+ORA-31625: 必须有方案 SYSTEM 才能导入此对象, 但此方案不可访问
+ORA-01031: 权限不足
+失败的 sql 为:
+ GRANT "RESOURCE" TO "BOSLPORTAL4"
+ORA-39083: 对象类型 ROLE_GRANT 创建失败, 出现错误:
+ORA-31625: 必须有方案 SYSTEM 才能导入此对象, 但此方案不可访问
+ORA-01031: 权限不足
+失败的 sql 为:
+ GRANT "DBA" TO "BOSLPORTAL4"
+处理对象类型 SCHEMA_EXPORT/DEFAULT_ROLE
+ORA-39083: 对象类型 DEFAULT_ROLE 创建失败, 出现错误:
+ORA-31625: 必须有方案 SYSTEM 才能导入此对象, 但此方案不可访问
+ORA-01031: 权限不足
+失败的 sql 为:
+ ALTER USER "BOSLPORTAL4" DEFAULT ROLE ALL
+处理对象类型 SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+处理对象类型 SCHEMA_EXPORT/TABLE/TABLE
+处理对象类型 SCHEMA_EXPORT/TABLE/TABLE_DATA
+. . 导入了 "BOSLPORTAL4"."PORTLETPREFERENCES"          56.43 KB     199 行
+. . 导入了 "BOSLPORTAL4"."BLOGSENTRY"                  12.97 KB       1 行
+. . 导入了 "BOSLPORTAL4"."CALEVENT"                    14.26 KB       5 行
+. . 导入了 "BOSLPORTAL4"."COMPANY"                     7.382 KB       1 行
+. . 导入了 "BOSLPORTAL4"."CONTACT_"                    65.78 KB     350 行
+. . 导入了 "BOSLPORTAL4"."DLFILEENTRY"                 11.03 KB       1 行
+. . 导入了 "BOSLPORTAL4"."IMAGE"                       25.57 KB       4 行
+. . 导入了 "BOSLPORTAL4"."JOURNALARTICLE"              24.62 KB       8 行
+. . 导入了 "BOSLPORTAL4"."LAYOUT"                      20.09 KB      24 行
+. . 导入了 "BOSLPORTAL4"."MBMESSAGE"                   27.10 KB       2 行
+. . 导入了 "BOSLPORTAL4"."PASSWORDTRACKER"             81.53 KB    1051 行
+. . 导入了 "BOSLPORTAL4"."USER_"                       78.67 KB     351 行
+. . 导入了 "BOSLPORTAL4"."ACCOUNT_"                    11.17 KB       1 行
+. . 导入了 "BOSLPORTAL4"."COUNTER"                     6.718 KB      25 行
+. . 导入了 "BOSLPORTAL4"."COUNTRY"                     15.30 KB     228 行
+. . 导入了 "BOSLPORTAL4"."DLFILERANK"                  6.765 KB       2 行
+. . 导入了 "BOSLPORTAL4"."DLFOLDER"                    9.359 KB       3 行
+. . 导入了 "BOSLPORTAL4"."GROUPS_PERMISSIONS"          8.617 KB     253 行
+. . 导入了 "BOSLPORTAL4"."GROUPS_USERGROUPS"           5.445 KB       1 行
+. . 导入了 "BOSLPORTAL4"."GROUP_"                      35.78 KB     355 行
+. . 导入了 "BOSLPORTAL4"."JOURNALCONTENTSEARCH"        7.609 KB      10 行
+. . 导入了 "BOSLPORTAL4"."LAYOUTSET"                   9.023 KB      14 行
+. . 导入了 "BOSLPORTAL4"."LISTTYPE"                    9.515 KB      63 行
+. . 导入了 "BOSLPORTAL4"."MBCATEGORY"                  9.679 KB       6 行
+. . 导入了 "BOSLPORTAL4"."MBMESSAGEFLAG"               6.304 KB       2 行
+. . 导入了 "BOSLPORTAL4"."MBSTATSUSER"                 6.382 KB       2 行
+. . 导入了 "BOSLPORTAL4"."MBTHREAD"                    8.453 KB       1 行
+. . 导入了 "BOSLPORTAL4"."PERMISSION_"                 21.62 KB     478 行
+. . 导入了 "BOSLPORTAL4"."RATINGSSTATS"                7.312 KB       1 行
+. . 导入了 "BOSLPORTAL4"."REGION"                      7.960 KB      52 行
+. . 导入了 "BOSLPORTAL4"."RELEASE_"                    6.757 KB       1 行
+. . 导入了 "BOSLPORTAL4"."RESOURCE_"                   28.57 KB     342 行
+. . 导入了 "BOSLPORTAL4"."ROLE_"                       7.140 KB       4 行
+. . 导入了 "BOSLPORTAL4"."USERGROUP"                   6.664 KB       1 行
+. . 导入了 "BOSLPORTAL4"."USERS_GROUPS"                5.585 KB       5 行
+. . 导入了 "BOSLPORTAL4"."USERS_PERMISSIONS"           13.44 KB     244 行
+. . 导入了 "BOSLPORTAL4"."USERS_ROLES"                 15.73 KB     353 行
+. . 导入了 "BOSLPORTAL4"."USERS_USERGROUPS"            14.57 KB     348 行
+. . 导入了 "BOSLPORTAL4"."WIKINODE"                    8.789 KB       1 行
+. . 导入了 "BOSLPORTAL4"."ADDRESS"                         0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."BLOGSCATEGORY"                   0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."BOOKMARKSENTRY"                  0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."BOOKMARKSFOLDER"                 0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."CYRUSUSER"                       0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."CYRUSVIRTUAL"                    0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."DATATRACKER"                     0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."DLFILESHORTCUT"                  0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."DLFILEVERSION"                   0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."EMAILADDRESS"                    0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."GROUPS_ORGS"                     0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."GROUPS_ROLES"                    0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."IGFOLDER"                        0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."IGIMAGE"                         0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."JOURNALSTRUCTURE"                0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."JOURNALTEMPLATE"                 0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."MBDISCUSSION"                    0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."ORGANIZATION_"                   0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."ORGGROUPPERMISSION"              0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."ORGGROUPROLE"                    0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."ORGLABOR"                        0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."PHONE"                           0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."POLLSCHOICE"                     0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."POLLSQUESTION"                   0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."POLLSVOTE"                       0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."PORTLET"                         0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."RATINGSENTRY"                    0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."ROLES_PERMISSIONS"               0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."SHOPPINGCART"                    0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."SHOPPINGCATEGORY"                0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."SHOPPINGCOUPON"                  0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."SHOPPINGITEM"                    0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."SHOPPINGITEMFIELD"               0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."SHOPPINGITEMPRICE"               0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."SHOPPINGORDER"                   0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."SHOPPINGORDERITEM"               0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."SUBSCRIPTION"                    0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."USERIDMAPPER"                    0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."USERS_ORGS"                      0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."USERTRACKER"                     0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."USERTRACKERPATH"                 0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."WEBSITE"                         0 KB       0 行
+. . 导入了 "BOSLPORTAL4"."WIKIPAGE"                        0 KB       0 行
+处理对象类型 SCHEMA_EXPORT/TABLE/INDEX/INDEX
+处理对象类型 SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+处理对象类型 SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+处理对象类型 SCHEMA_EXPORT/PROCEDURE/PROCEDURE
+处理对象类型 SCHEMA_EXPORT/PROCEDURE/ALTER_PROCEDURE
+ORA-39082: 对象类型 ALTER_PROCEDURE:"BOSLPORTAL4"."AD_TABLE_DEFAULT_IDNEXCOLUMNS" 已创建, 但带有编译警告
+处理对象类型 SCHEMA_EXPORT/TABLE/TRIGGER
+处理对象类型 SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+作业 "BOSLPORTAL4"."PORTAL_JOB_20250619_182520" 已经完成, 但是有 8 个错误 (于 18:25:25 完成)

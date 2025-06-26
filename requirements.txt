@@ -1,0 +1,11 @@
+# 数据库连接库 - 二选一
+oracledb>=1.4.0           # 新版本，无需Oracle客户端（推荐）
+# cx_Oracle>=8.3.0        # 旧版本，需要Oracle客户端
+
+# 数据处理和可视化
+pandas>=1.5.0
+numpy>=1.21.0
+matplotlib>=3.5.0
+seaborn>=0.11.0
+openpyxl>=3.0.0
+pathlib2>=2.3.0 

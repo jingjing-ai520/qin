@@ -1,0 +1,104 @@
+{
+  "module": "logs",
+  "table_count": 2,
+  "tables": {
+    "datatracker": {
+      "schema": "boslportal4",
+      "name": "datatracker",
+      "columns": [
+        {
+          "name": "datatrackerid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "datatrackerid     VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "companyid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "companyid         VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "createdon",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdon         TIMESTAMP"
+        },
+        {
+          "name": "createdbyuserid",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "createdbyuserid   VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "createdbyusername",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "createdbyusername VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "updatedon",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "updatedon         TIMESTAMP"
+        },
+        {
+          "name": "updatedby",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "updatedby         VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "classname",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "classname         VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "classpk",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "classpk           VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "active_",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "active_           NUMBER(1)"
+        }
+      ],
+      "column_count": 10
+    },
+    "passwordtracker": {
+      "schema": "boslportal4",
+      "name": "passwordtracker",
+      "columns": [
+        {
+          "name": "passwordtrackerid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "passwordtrackerid VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "userid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "userid            VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "createdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdate        TIMESTAMP"
+        },
+        {
+          "name": "password_",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "password_         VARCHAR2(75 BYTE)"
+        }
+      ],
+      "column_count": 4
+    }
+  }
+}

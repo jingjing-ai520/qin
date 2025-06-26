@@ -1,0 +1,4065 @@
+-- 生成者Oracle SQL Developer Data Modeler 24.3.1.347.1153
+--   时间:        2025-06-20 00:49:39 CST
+--   站点:      Oracle Database 11g
+--   类型:      Oracle Database 11g
+
+
+
+CREATE TABLESPACE boslportal4 
+--  WARNING: Tablespace has no data files defined 
+ LOGGING ONLINE
+    EXTENT MANAGEMENT LOCAL AUTOALLOCATE
+FLASHBACK ON;
+
+CREATE USER boslportal4 IDENTIFIED BY account
+
+unlock;
+
+-- predefined type, no DDL - MDSYS.SDO_GEOMETRY
+
+-- predefined type, no DDL - XMLTYPE
+
+CREATE TABLE boslportal4.account_ (
+    accountid       VARCHAR2(75 BYTE) NOT NULL,
+    companyid       VARCHAR2(75 BYTE) NOT NULL,
+    userid          VARCHAR2(75 BYTE) NOT NULL,
+    username        VARCHAR2(75 BYTE),
+    createdate      TIMESTAMP,
+    modifieddate    TIMESTAMP,
+    parentaccountid VARCHAR2(75 BYTE),
+    name            VARCHAR2(75 BYTE),
+    legalname       VARCHAR2(75 BYTE),
+    legalid         VARCHAR2(75 BYTE),
+    legaltype       VARCHAR2(75 BYTE),
+    siccode         VARCHAR2(75 BYTE),
+    tickersymbol    VARCHAR2(75 BYTE),
+    industry        VARCHAR2(75 BYTE),
+    type_           VARCHAR2(75 BYTE),
+    size_           VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+ALTER TABLE boslportal4.account_
+    ADD CONSTRAINT account__pk
+        PRIMARY KEY ( accountid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.address (
+    addressid    VARCHAR2(75 BYTE) NOT NULL,
+    companyid    VARCHAR2(75 BYTE) NOT NULL,
+    userid       VARCHAR2(75 BYTE) NOT NULL,
+    username     VARCHAR2(75 BYTE),
+    createdate   TIMESTAMP,
+    modifieddate TIMESTAMP,
+    classname    VARCHAR2(75 BYTE),
+    classpk      VARCHAR2(75 BYTE),
+    street1      VARCHAR2(75 BYTE),
+    street2      VARCHAR2(75 BYTE),
+    street3      VARCHAR2(75 BYTE),
+    city         VARCHAR2(75 BYTE),
+    zip          VARCHAR2(75 BYTE),
+    regionid     VARCHAR2(75 BYTE),
+    countryid    VARCHAR2(75 BYTE),
+    typeid       VARCHAR2(75 BYTE),
+    mailing      NUMBER(1),
+    primary_     NUMBER(1)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_4f4bdd05 ON
+    boslportal4.address (
+        companyid
+    ASC,
+        classname
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_5bc8b0d4 ON
+    boslportal4.address (
+        userid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_845fac7d ON
+    boslportal4.address (
+        companyid
+    ASC,
+        classname
+    ASC,
+        classpk
+    ASC,
+        mailing
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_93d5ad4e ON
+    boslportal4.address (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_db84cc7e ON
+    boslportal4.address (
+        companyid
+    ASC,
+        classname
+    ASC,
+        classpk
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_e47e614f ON
+    boslportal4.address (
+        companyid
+    ASC,
+        classname
+    ASC,
+        classpk
+    ASC,
+        primary_
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.address
+    ADD CONSTRAINT address_pk
+        PRIMARY KEY ( addressid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.blogscategory (
+    categoryid       VARCHAR2(75 BYTE) NOT NULL,
+    companyid        VARCHAR2(75 BYTE) NOT NULL,
+    userid           VARCHAR2(75 BYTE) NOT NULL,
+    username         VARCHAR2(75 BYTE),
+    createdate       TIMESTAMP,
+    modifieddate     TIMESTAMP,
+    parentcategoryid VARCHAR2(75 BYTE),
+    name             VARCHAR2(75 BYTE),
+    description      VARCHAR2(4000 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_c49dd10c ON
+    boslportal4.blogscategory (
+        parentcategoryid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.blogscategory
+    ADD CONSTRAINT blogscategory_pk
+        PRIMARY KEY ( categoryid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.blogsentry (
+    entryid      VARCHAR2(75 BYTE) NOT NULL,
+    groupid      VARCHAR2(75 BYTE) NOT NULL,
+    companyid    VARCHAR2(75 BYTE) NOT NULL,
+    userid       VARCHAR2(75 BYTE) NOT NULL,
+    username     VARCHAR2(75 BYTE),
+    createdate   TIMESTAMP,
+    modifieddate TIMESTAMP,
+    categoryid   VARCHAR2(75 BYTE),
+    title        VARCHAR2(75 BYTE),
+    content      CLOB,
+    displaydate  TIMESTAMP
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    )
+    LOB ( content ) STORE AS (
+        TABLESPACE boslportal4
+        STORAGE ( PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS UNLIMITED FREELISTS 1 BUFFER_POOL DEFAULT )
+        CHUNK 8192
+        RETENTION
+        ENABLE STORAGE IN ROW
+        NOCACHE LOGGING
+    );
+
+CREATE INDEX boslportal4.ix_72ef6041 ON
+    boslportal4.blogsentry (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_81a50303 ON
+    boslportal4.blogsentry (
+        groupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_b0608df4 ON
+    boslportal4.blogsentry (
+        categoryid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.blogsentry
+    ADD CONSTRAINT blogsentry_pk
+        PRIMARY KEY ( entryid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.bookmarksentry (
+    entryid      VARCHAR2(75 BYTE) NOT NULL,
+    companyid    VARCHAR2(75 BYTE) NOT NULL,
+    userid       VARCHAR2(75 BYTE) NOT NULL,
+    createdate   TIMESTAMP,
+    modifieddate TIMESTAMP,
+    folderid     VARCHAR2(75 BYTE),
+    name         VARCHAR2(75 BYTE),
+    url          VARCHAR2(4000 BYTE),
+    comments     VARCHAR2(4000 BYTE),
+    visits       NUMBER(30)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_443bdc38 ON
+    boslportal4.bookmarksentry (
+        folderid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.bookmarksentry
+    ADD CONSTRAINT bookmarksentry_pk
+        PRIMARY KEY ( entryid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.bookmarksfolder (
+    folderid       VARCHAR2(75 BYTE) NOT NULL,
+    groupid        VARCHAR2(75 BYTE) NOT NULL,
+    companyid      VARCHAR2(75 BYTE) NOT NULL,
+    userid         VARCHAR2(75 BYTE) NOT NULL,
+    createdate     TIMESTAMP,
+    modifieddate   TIMESTAMP,
+    parentfolderid VARCHAR2(75 BYTE),
+    name           VARCHAR2(75 BYTE),
+    description    VARCHAR2(4000 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_7f703619 ON
+    boslportal4.bookmarksfolder (
+        groupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_967799c0 ON
+    boslportal4.bookmarksfolder (
+        groupid
+    ASC,
+        parentfolderid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.bookmarksfolder
+    ADD CONSTRAINT bookmarksfolder_pk
+        PRIMARY KEY ( folderid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.calevent (
+    eventid           VARCHAR2(75 BYTE) NOT NULL,
+    groupid           VARCHAR2(75 BYTE) NOT NULL,
+    companyid         VARCHAR2(75 BYTE) NOT NULL,
+    userid            VARCHAR2(75 BYTE) NOT NULL,
+    username          VARCHAR2(75 BYTE),
+    createdate        TIMESTAMP,
+    modifieddate      TIMESTAMP,
+    title             VARCHAR2(75 BYTE),
+    description       VARCHAR2(4000 BYTE),
+    startdate         TIMESTAMP,
+    enddate           TIMESTAMP,
+    durationhour      NUMBER(30),
+    durationminute    NUMBER(30),
+    allday            NUMBER(1),
+    timezonesensitive NUMBER(1),
+    type_             VARCHAR2(75 BYTE),
+    repeating         NUMBER(1),
+    recurrence        CLOB,
+    remindby          VARCHAR2(75 BYTE),
+    firstreminder     NUMBER(30),
+    secondreminder    NUMBER(30)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    )
+    LOB ( recurrence ) STORE AS (
+        TABLESPACE boslportal4
+        STORAGE ( PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS UNLIMITED FREELISTS 1 BUFFER_POOL DEFAULT )
+        CHUNK 8192
+        RETENTION
+        ENABLE STORAGE IN ROW
+        NOCACHE LOGGING
+    );
+
+CREATE INDEX boslportal4.ix_12ee4898 ON
+    boslportal4.calevent (
+        groupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_4fddd2bf ON
+    boslportal4.calevent (
+        groupid
+    ASC,
+        repeating
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_fcd7c63d ON
+    boslportal4.calevent (
+        groupid
+    ASC,
+        type_
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.calevent
+    ADD CONSTRAINT calevent_pk
+        PRIMARY KEY ( eventid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.company (
+    companyid VARCHAR2(75 BYTE) NOT NULL,
+    key_      CLOB,
+    portalurl VARCHAR2(75 BYTE),
+    homeurl   VARCHAR2(75 BYTE),
+    mx        VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    )
+    LOB ( key_ ) STORE AS (
+        TABLESPACE boslportal4
+        STORAGE ( PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS UNLIMITED FREELISTS 1 BUFFER_POOL DEFAULT )
+        CHUNK 8192
+        RETENTION
+        ENABLE STORAGE IN ROW
+        NOCACHE LOGGING
+    );
+
+ALTER TABLE boslportal4.company
+    ADD CONSTRAINT company_pk
+        PRIMARY KEY ( companyid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.contact_ (
+    contactid        VARCHAR2(75 BYTE) NOT NULL,
+    companyid        VARCHAR2(75 BYTE) NOT NULL,
+    userid           VARCHAR2(75 BYTE) NOT NULL,
+    username         VARCHAR2(75 BYTE),
+    createdate       TIMESTAMP,
+    modifieddate     TIMESTAMP,
+    accountid        VARCHAR2(75 BYTE),
+    parentcontactid  VARCHAR2(75 BYTE),
+    firstname        VARCHAR2(75 BYTE),
+    middlename       VARCHAR2(75 BYTE),
+    lastname         VARCHAR2(75 BYTE),
+    nickname         VARCHAR2(75 BYTE),
+    prefixid         VARCHAR2(75 BYTE),
+    suffixid         VARCHAR2(75 BYTE),
+    male             NUMBER(1),
+    birthday         TIMESTAMP,
+    smssn            VARCHAR2(75 BYTE),
+    aimsn            VARCHAR2(75 BYTE),
+    icqsn            VARCHAR2(75 BYTE),
+    jabbersn         VARCHAR2(75 BYTE),
+    msnsn            VARCHAR2(75 BYTE),
+    skypesn          VARCHAR2(75 BYTE),
+    ymsn             VARCHAR2(75 BYTE),
+    employeestatusid VARCHAR2(75 BYTE),
+    employeenumber   VARCHAR2(75 BYTE),
+    jobtitle         VARCHAR2(75 BYTE),
+    jobclass         VARCHAR2(75 BYTE),
+    hoursofoperation VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_66d496a3 ON
+    boslportal4.contact_ (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.contact_
+    ADD CONSTRAINT contact__pk
+        PRIMARY KEY ( contactid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.counter (
+    name      VARCHAR2(75 BYTE) NOT NULL,
+    currentid NUMBER(30)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+ALTER TABLE boslportal4.counter
+    ADD CONSTRAINT counter_pk
+        PRIMARY KEY ( name )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.country (
+    countryid VARCHAR2(75 BYTE) NOT NULL,
+    name      VARCHAR2(75 BYTE),
+    a2        VARCHAR2(75 BYTE),
+    a3        VARCHAR2(75 BYTE),
+    number_   VARCHAR2(75 BYTE),
+    idd_      VARCHAR2(75 BYTE),
+    active_   NUMBER(1)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_25d734cd ON
+    boslportal4.country (
+        active_
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.country
+    ADD CONSTRAINT country_pk
+        PRIMARY KEY ( countryid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.cyrususer (
+    userid    VARCHAR2(75 BYTE) NOT NULL,
+    password_ VARCHAR2(75 BYTE) NOT NULL
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+ALTER TABLE boslportal4.cyrususer
+    ADD CONSTRAINT cyrususer_pk
+        PRIMARY KEY ( userid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.cyrusvirtual (
+    emailaddress VARCHAR2(75 BYTE) NOT NULL,
+    userid       VARCHAR2(75 BYTE) NOT NULL
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+ALTER TABLE boslportal4.cyrusvirtual
+    ADD CONSTRAINT cyrusvirtual_pk
+        PRIMARY KEY ( emailaddress )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.datatracker (
+    datatrackerid     VARCHAR2(75 BYTE) NOT NULL,
+    companyid         VARCHAR2(75 BYTE) NOT NULL,
+    createdon         TIMESTAMP,
+    createdbyuserid   VARCHAR2(75 BYTE),
+    createdbyusername VARCHAR2(75 BYTE),
+    updatedon         TIMESTAMP,
+    updatedby         VARCHAR2(75 BYTE),
+    classname         VARCHAR2(75 BYTE),
+    classpk           VARCHAR2(75 BYTE),
+    active_           NUMBER(1)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+ALTER TABLE boslportal4.datatracker
+    ADD CONSTRAINT datatracker_pk
+        PRIMARY KEY ( datatrackerid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.dlfileentry (
+    folderid        VARCHAR2(75 BYTE) NOT NULL,
+    name            VARCHAR2(100 BYTE) NOT NULL,
+    companyid       VARCHAR2(75 BYTE) NOT NULL,
+    userid          VARCHAR2(75 BYTE) NOT NULL,
+    username        VARCHAR2(75 BYTE),
+    versionuserid   VARCHAR2(75 BYTE),
+    versionusername VARCHAR2(75 BYTE),
+    createdate      TIMESTAMP,
+    modifieddate    TIMESTAMP,
+    title           VARCHAR2(100 BYTE),
+    description     VARCHAR2(4000 BYTE),
+    version         NUMBER(30, 20),
+    size_           NUMBER(30),
+    readcount       NUMBER(30),
+    extrasettings   CLOB
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    )
+    LOB ( extrasettings ) STORE AS (
+        TABLESPACE boslportal4
+        STORAGE ( PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS UNLIMITED FREELISTS 1 BUFFER_POOL DEFAULT )
+        CHUNK 8192
+        RETENTION
+        ENABLE STORAGE IN ROW
+        NOCACHE LOGGING
+    );
+
+CREATE INDEX boslportal4.ix_24a846d1 ON
+    boslportal4.dlfileentry (
+        folderid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.dlfileentry
+    ADD CONSTRAINT dlfileentry_pk
+        PRIMARY KEY ( folderid,
+                      name )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.dlfilerank (
+    companyid  VARCHAR2(75 BYTE) NOT NULL,
+    userid     VARCHAR2(75 BYTE) NOT NULL,
+    folderid   VARCHAR2(75 BYTE) NOT NULL,
+    name       VARCHAR2(100 BYTE) NOT NULL,
+    createdate TIMESTAMP
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_40b56512 ON
+    boslportal4.dlfilerank (
+        folderid
+    ASC,
+        name
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_eed06670 ON
+    boslportal4.dlfilerank (
+        userid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.dlfilerank
+    ADD CONSTRAINT dlfilerank_pk
+        PRIMARY KEY ( companyid,
+                      userid,
+                      folderid,
+                      name )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.dlfileshortcut (
+    fileshortcutid NUMBER(30) NOT NULL,
+    companyid      VARCHAR2(75 BYTE) NOT NULL,
+    userid         VARCHAR2(75 BYTE) NOT NULL,
+    username       VARCHAR2(75 BYTE),
+    createdate     TIMESTAMP,
+    modifieddate   TIMESTAMP,
+    folderid       VARCHAR2(75 BYTE),
+    tofolderid     VARCHAR2(75 BYTE),
+    toname         VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_ca2708a2 ON
+    boslportal4.dlfileshortcut (
+        tofolderid
+    ASC,
+        toname
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_e56ec6ad ON
+    boslportal4.dlfileshortcut (
+        folderid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.dlfileshortcut
+    ADD CONSTRAINT dlfileshortcut_pk
+        PRIMARY KEY ( fileshortcutid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.dlfileversion (
+    folderid   VARCHAR2(75 BYTE) NOT NULL,
+    name       VARCHAR2(100 BYTE) NOT NULL,
+    version    NUMBER(30, 20) NOT NULL,
+    companyid  VARCHAR2(75 BYTE) NOT NULL,
+    userid     VARCHAR2(75 BYTE) NOT NULL,
+    username   VARCHAR2(75 BYTE),
+    createdate TIMESTAMP,
+    size_      NUMBER(30)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_9cd91db6 ON
+    boslportal4.dlfileversion (
+        folderid
+    ASC,
+        name
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.dlfileversion
+    ADD CONSTRAINT dlfileversion_pk
+        PRIMARY KEY ( folderid,
+                      name,
+                      version )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.dlfolder (
+    folderid       VARCHAR2(75 BYTE) NOT NULL,
+    groupid        VARCHAR2(75 BYTE) NOT NULL,
+    companyid      VARCHAR2(75 BYTE) NOT NULL,
+    userid         VARCHAR2(75 BYTE) NOT NULL,
+    username       VARCHAR2(75 BYTE),
+    createdate     TIMESTAMP,
+    modifieddate   TIMESTAMP,
+    parentfolderid VARCHAR2(75 BYTE),
+    name           VARCHAR2(100 BYTE),
+    description    VARCHAR2(4000 BYTE),
+    lastpostdate   TIMESTAMP
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_49c37475 ON
+    boslportal4.dlfolder (
+        groupid
+    ASC,
+        parentfolderid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_51556082 ON
+    boslportal4.dlfolder (
+        parentfolderid
+    ASC,
+        name
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_a74db14c ON
+    boslportal4.dlfolder (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_f2ea1ace ON
+    boslportal4.dlfolder (
+        groupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.dlfolder
+    ADD CONSTRAINT dlfolder_pk
+        PRIMARY KEY ( folderid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.emailaddress (
+    emailaddressid VARCHAR2(75 BYTE) NOT NULL,
+    companyid      VARCHAR2(75 BYTE) NOT NULL,
+    userid         VARCHAR2(75 BYTE) NOT NULL,
+    username       VARCHAR2(75 BYTE),
+    createdate     TIMESTAMP,
+    modifieddate   TIMESTAMP,
+    classname      VARCHAR2(75 BYTE),
+    classpk        VARCHAR2(75 BYTE),
+    address        VARCHAR2(75 BYTE),
+    typeid         VARCHAR2(75 BYTE),
+    primary_       NUMBER(1)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_1bb072ca ON
+    boslportal4.emailaddress (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_7b43cd8 ON
+    boslportal4.emailaddress (
+        userid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_a9801209 ON
+    boslportal4.emailaddress (
+        companyid
+    ASC,
+        classname
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_c161fbfa ON
+    boslportal4.emailaddress (
+        companyid
+    ASC,
+        classname
+    ASC,
+        classpk
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_f5b365cb ON
+    boslportal4.emailaddress (
+        companyid
+    ASC,
+        classname
+    ASC,
+        classpk
+    ASC,
+        primary_
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.emailaddress
+    ADD CONSTRAINT emailaddress_pk
+        PRIMARY KEY ( emailaddressid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.group_ (
+    groupid       VARCHAR2(75 BYTE) NOT NULL,
+    companyid     VARCHAR2(75 BYTE) NOT NULL,
+    classname     VARCHAR2(75 BYTE),
+    classpk       VARCHAR2(75 BYTE),
+    parentgroupid VARCHAR2(75 BYTE),
+    name          VARCHAR2(75 BYTE),
+    description   VARCHAR2(4000 BYTE),
+    type_         VARCHAR2(75 BYTE),
+    friendlyurl   VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_5849abf2 ON
+    boslportal4.group_ (
+        companyid
+    ASC,
+        classname
+    ASC,
+        classpk
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            131072 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_5aa68501 ON
+    boslportal4.group_ (
+        companyid
+    ASC,
+        name
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_5bddb872 ON
+    boslportal4.group_ (
+        companyid
+    ASC,
+        friendlyurl
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.group_
+    ADD CONSTRAINT group__pk
+        PRIMARY KEY ( groupid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.groups_orgs (
+    groupid        VARCHAR2(75 BYTE) NOT NULL,
+    organizationid VARCHAR2(75 BYTE) NOT NULL
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+ALTER TABLE boslportal4.groups_orgs
+    ADD CONSTRAINT groups_orgs_pk
+        PRIMARY KEY ( groupid,
+                      organizationid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.groups_permissions (
+    groupid      VARCHAR2(75 BYTE) NOT NULL,
+    permissionid VARCHAR2(75 BYTE) NOT NULL
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.liferay_001 ON
+    boslportal4.groups_permissions (
+        permissionid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.groups_permissions
+    ADD CONSTRAINT groups_permissions_pk
+        PRIMARY KEY ( groupid,
+                      permissionid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.groups_roles (
+    groupid VARCHAR2(75 BYTE) NOT NULL,
+    roleid  VARCHAR2(75 BYTE) NOT NULL
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+ALTER TABLE boslportal4.groups_roles
+    ADD CONSTRAINT groups_roles_pk
+        PRIMARY KEY ( groupid,
+                      roleid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.groups_usergroups (
+    groupid     VARCHAR2(75 BYTE) NOT NULL,
+    usergroupid VARCHAR2(75 BYTE) NOT NULL
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+ALTER TABLE boslportal4.groups_usergroups
+    ADD CONSTRAINT groups_usergroups_pk
+        PRIMARY KEY ( groupid,
+                      usergroupid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.igfolder (
+    folderid       VARCHAR2(75 BYTE) NOT NULL,
+    groupid        VARCHAR2(75 BYTE) NOT NULL,
+    companyid      VARCHAR2(75 BYTE) NOT NULL,
+    userid         VARCHAR2(75 BYTE) NOT NULL,
+    createdate     TIMESTAMP,
+    modifieddate   TIMESTAMP,
+    parentfolderid VARCHAR2(75 BYTE),
+    name           VARCHAR2(75 BYTE),
+    description    VARCHAR2(4000 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_1a605e9f ON
+    boslportal4.igfolder (
+        groupid
+    ASC,
+        parentfolderid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_206498f8 ON
+    boslportal4.igfolder (
+        groupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.igfolder
+    ADD CONSTRAINT igfolder_pk
+        PRIMARY KEY ( folderid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.igimage (
+    companyid    VARCHAR2(75 BYTE) NOT NULL,
+    imageid      VARCHAR2(75 BYTE) NOT NULL,
+    userid       VARCHAR2(75 BYTE) NOT NULL,
+    createdate   TIMESTAMP,
+    modifieddate TIMESTAMP,
+    folderid     VARCHAR2(75 BYTE),
+    description  VARCHAR2(4000 BYTE),
+    height       NUMBER(30),
+    width        NUMBER(30),
+    size_        NUMBER(30)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_4438ca80 ON
+    boslportal4.igimage (
+        folderid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.igimage
+    ADD CONSTRAINT igimage_pk
+        PRIMARY KEY ( companyid,
+                      imageid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.image (
+    imageid      VARCHAR2(200 BYTE) NOT NULL,
+    modifieddate TIMESTAMP,
+    text_        CLOB,
+    type_        VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    )
+    LOB ( text_ ) STORE AS (
+        TABLESPACE boslportal4
+        STORAGE ( PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS UNLIMITED FREELISTS 1 BUFFER_POOL DEFAULT )
+        CHUNK 8192
+        RETENTION
+        ENABLE STORAGE IN ROW
+        NOCACHE LOGGING
+    );
+
+ALTER TABLE boslportal4.image
+    ADD CONSTRAINT image_pk
+        PRIMARY KEY ( imageid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.journalarticle (
+    companyid          VARCHAR2(75 BYTE) NOT NULL,
+    groupid            VARCHAR2(75 BYTE) NOT NULL,
+    articleid          VARCHAR2(75 BYTE) NOT NULL,
+    version            NUMBER(30, 20) NOT NULL,
+    userid             VARCHAR2(75 BYTE) NOT NULL,
+    username           VARCHAR2(75 BYTE),
+    createdate         TIMESTAMP,
+    modifieddate       TIMESTAMP,
+    title              VARCHAR2(75 BYTE),
+    description        VARCHAR2(4000 BYTE),
+    content            CLOB,
+    type_              VARCHAR2(75 BYTE),
+    structureid        VARCHAR2(75 BYTE),
+    templateid         VARCHAR2(75 BYTE),
+    displaydate        TIMESTAMP,
+    approved           NUMBER(1),
+    approvedbyuserid   VARCHAR2(75 BYTE),
+    approvedbyusername VARCHAR2(75 BYTE),
+    approveddate       TIMESTAMP,
+    expired            NUMBER(1),
+    expirationdate     TIMESTAMP,
+    reviewdate         TIMESTAMP
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    )
+    LOB ( content ) STORE AS (
+        TABLESPACE boslportal4
+        STORAGE ( PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS UNLIMITED FREELISTS 1 BUFFER_POOL DEFAULT )
+        CHUNK 8192
+        RETENTION
+        ENABLE STORAGE IN ROW
+        NOCACHE LOGGING
+    );
+
+CREATE INDEX boslportal4.ix_29bd22da ON
+    boslportal4.journalarticle (
+        companyid
+    ASC,
+        groupid
+    ASC,
+        articleid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_9356f865 ON
+    boslportal4.journalarticle (
+        groupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_a0c28b17 ON
+    boslportal4.journalarticle (
+        companyid
+    ASC,
+        groupid
+    ASC,
+        structureid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_a1d78a45 ON
+    boslportal4.journalarticle (
+        companyid
+    ASC,
+        groupid
+    ASC,
+        articleid
+    ASC,
+        approved
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_dff98523 ON
+    boslportal4.journalarticle (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_ec743cd0 ON
+    boslportal4.journalarticle (
+        companyid
+    ASC,
+        groupid
+    ASC,
+        templateid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.journalarticle
+    ADD CONSTRAINT journalarticle_pk
+        PRIMARY KEY ( companyid,
+                      groupid,
+                      articleid,
+                      version )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.journalcontentsearch (
+    portletid VARCHAR2(75 BYTE) NOT NULL,
+    layoutid  VARCHAR2(75 BYTE) NOT NULL,
+    ownerid   VARCHAR2(75 BYTE) NOT NULL,
+    articleid VARCHAR2(75 BYTE) NOT NULL,
+    companyid VARCHAR2(75 BYTE) NOT NULL,
+    groupid   VARCHAR2(75 BYTE) NOT NULL
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_4a642025 ON
+    boslportal4.journalcontentsearch (
+        ownerid
+    ASC,
+        groupid
+    ASC,
+        articleid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_4d73e06f ON
+    boslportal4.journalcontentsearch (
+        companyid
+    ASC,
+        groupid
+    ASC,
+        articleid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_abeea675 ON
+    boslportal4.journalcontentsearch (
+        layoutid
+    ASC,
+        ownerid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_f09dd5ee ON
+    boslportal4.journalcontentsearch (
+        ownerid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.journalcontentsearch
+    ADD CONSTRAINT journalcontentsearch_pk
+        PRIMARY KEY ( portletid,
+                      layoutid,
+                      ownerid,
+                      articleid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.journalstructure (
+    companyid    VARCHAR2(75 BYTE) NOT NULL,
+    groupid      VARCHAR2(75 BYTE) NOT NULL,
+    structureid  VARCHAR2(75 BYTE) NOT NULL,
+    userid       VARCHAR2(75 BYTE) NOT NULL,
+    username     VARCHAR2(75 BYTE),
+    createdate   TIMESTAMP,
+    modifieddate TIMESTAMP,
+    name         VARCHAR2(75 BYTE),
+    description  VARCHAR2(4000 BYTE),
+    xsd          CLOB
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    )
+    LOB ( xsd ) STORE AS (
+        TABLESPACE boslportal4
+        STORAGE ( PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS UNLIMITED FREELISTS 1 BUFFER_POOL DEFAULT )
+        CHUNK 8192
+        RETENTION
+        ENABLE STORAGE IN ROW
+        NOCACHE LOGGING
+    );
+
+CREATE INDEX boslportal4.ix_47ef5658 ON
+    boslportal4.journalstructure (
+        companyid
+    ASC,
+        structureid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_b97f5608 ON
+    boslportal4.journalstructure (
+        groupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.journalstructure
+    ADD CONSTRAINT journalstructure_pk
+        PRIMARY KEY ( companyid,
+                      groupid,
+                      structureid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.journaltemplate (
+    companyid     VARCHAR2(75 BYTE) NOT NULL,
+    groupid       VARCHAR2(75 BYTE) NOT NULL,
+    templateid    VARCHAR2(75 BYTE) NOT NULL,
+    userid        VARCHAR2(75 BYTE) NOT NULL,
+    username      VARCHAR2(75 BYTE),
+    createdate    TIMESTAMP,
+    modifieddate  TIMESTAMP,
+    structureid   VARCHAR2(75 BYTE),
+    name          VARCHAR2(75 BYTE),
+    description   VARCHAR2(4000 BYTE),
+    xsl           CLOB,
+    langtype      VARCHAR2(75 BYTE),
+    smallimage    NUMBER(1),
+    smallimageurl VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    )
+    LOB ( xsl ) STORE AS (
+        TABLESPACE boslportal4
+        STORAGE ( PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS UNLIMITED FREELISTS 1 BUFFER_POOL DEFAULT )
+        CHUNK 8192
+        RETENTION
+        ENABLE STORAGE IN ROW
+        NOCACHE LOGGING
+    );
+
+CREATE INDEX boslportal4.ix_77923653 ON
+    boslportal4.journaltemplate (
+        groupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_ab3e5f05 ON
+    boslportal4.journaltemplate (
+        companyid
+    ASC,
+        groupid
+    ASC,
+        structureid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_d7a3867a ON
+    boslportal4.journaltemplate (
+        companyid
+    ASC,
+        templateid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.journaltemplate
+    ADD CONSTRAINT journaltemplate_pk
+        PRIMARY KEY ( companyid,
+                      groupid,
+                      templateid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.layout (
+    layoutid       VARCHAR2(75 BYTE) NOT NULL,
+    ownerid        VARCHAR2(75 BYTE) NOT NULL,
+    companyid      VARCHAR2(75 BYTE) NOT NULL,
+    parentlayoutid VARCHAR2(75 BYTE),
+    name           VARCHAR2(4000 BYTE),
+    title          VARCHAR2(4000 BYTE),
+    type_          VARCHAR2(75 BYTE),
+    typesettings   CLOB,
+    hidden_        NUMBER(1),
+    friendlyurl    VARCHAR2(75 BYTE),
+    themeid        VARCHAR2(75 BYTE),
+    colorschemeid  VARCHAR2(75 BYTE),
+    priority       NUMBER(30)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    )
+    LOB ( typesettings ) STORE AS (
+        TABLESPACE boslportal4
+        STORAGE ( PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS UNLIMITED FREELISTS 1 BUFFER_POOL DEFAULT )
+        CHUNK 8192
+        RETENTION
+        ENABLE STORAGE IN ROW
+        NOCACHE LOGGING
+    );
+
+CREATE INDEX boslportal4.ix_1a0b984e ON
+    boslportal4.layout (
+        ownerid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_9af212b1 ON
+    boslportal4.layout (
+        ownerid
+    ASC,
+        parentlayoutid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_e230d266 ON
+    boslportal4.layout (
+        ownerid
+    ASC,
+        friendlyurl
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.layout
+    ADD CONSTRAINT layout_pk
+        PRIMARY KEY ( layoutid,
+                      ownerid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.layoutset (
+    ownerid       VARCHAR2(75 BYTE) NOT NULL,
+    companyid     VARCHAR2(75 BYTE) NOT NULL,
+    groupid       VARCHAR2(75 BYTE) NOT NULL,
+    userid        VARCHAR2(75 BYTE) NOT NULL,
+    privatelayout NUMBER(1),
+    themeid       VARCHAR2(75 BYTE),
+    colorschemeid VARCHAR2(75 BYTE),
+    pagecount     NUMBER(30),
+    virtualhost   VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_a34fbc19 ON
+    boslportal4.layoutset (
+        companyid
+    ASC,
+        virtualhost
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.layoutset
+    ADD CONSTRAINT layoutset_pk
+        PRIMARY KEY ( ownerid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.listtype (
+    listtypeid VARCHAR2(75 BYTE) NOT NULL,
+    name       VARCHAR2(75 BYTE),
+    type_      VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_2932dd37 ON
+    boslportal4.listtype (
+        type_
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.listtype
+    ADD CONSTRAINT listtype_pk
+        PRIMARY KEY ( listtypeid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.mbcategory (
+    categoryid       VARCHAR2(75 BYTE) NOT NULL,
+    groupid          VARCHAR2(75 BYTE) NOT NULL,
+    companyid        VARCHAR2(75 BYTE) NOT NULL,
+    userid           VARCHAR2(75 BYTE) NOT NULL,
+    username         VARCHAR2(75 BYTE),
+    createdate       TIMESTAMP,
+    modifieddate     TIMESTAMP,
+    parentcategoryid VARCHAR2(75 BYTE),
+    name             VARCHAR2(75 BYTE),
+    description      VARCHAR2(4000 BYTE),
+    lastpostdate     TIMESTAMP
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_bb870c11 ON
+    boslportal4.mbcategory (
+        groupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_bc735dcf ON
+    boslportal4.mbcategory (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_ed292508 ON
+    boslportal4.mbcategory (
+        groupid
+    ASC,
+        parentcategoryid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.mbcategory
+    ADD CONSTRAINT mbcategory_pk
+        PRIMARY KEY ( categoryid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.mbdiscussion (
+    discussionid VARCHAR2(75 BYTE) NOT NULL,
+    classname    VARCHAR2(75 BYTE),
+    classpk      VARCHAR2(75 BYTE),
+    threadid     VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_b628dad3 ON
+    boslportal4.mbdiscussion (
+        classname
+    ASC,
+        classpk
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.mbdiscussion
+    ADD CONSTRAINT mbdiscussion_pk
+        PRIMARY KEY ( discussionid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.mbmessage (
+    topicid         VARCHAR2(75 BYTE) NOT NULL,
+    messageid       VARCHAR2(75 BYTE) NOT NULL,
+    companyid       VARCHAR2(75 BYTE) NOT NULL,
+    userid          VARCHAR2(75 BYTE) NOT NULL,
+    username        VARCHAR2(75 BYTE),
+    createdate      TIMESTAMP,
+    modifieddate    TIMESTAMP,
+    categoryid      VARCHAR2(75 BYTE),
+    threadid        VARCHAR2(75 BYTE),
+    parentmessageid VARCHAR2(75 BYTE),
+    subject         VARCHAR2(75 BYTE),
+    body            CLOB,
+    attachments     NUMBER(1),
+    anonymous       NUMBER(1)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    )
+    LOB ( body ) STORE AS (
+        TABLESPACE boslportal4
+        STORAGE ( PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS UNLIMITED FREELISTS 1 BUFFER_POOL DEFAULT )
+        CHUNK 8192
+        RETENTION
+        ENABLE STORAGE IN ROW
+        NOCACHE LOGGING
+    );
+
+CREATE INDEX boslportal4.ix_138c7f1e ON
+    boslportal4.mbmessage (
+        categoryid
+    ASC,
+        threadid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_3c865ee5 ON
+    boslportal4.mbmessage (
+        categoryid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_75b95071 ON
+    boslportal4.mbmessage (
+        threadid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_a7038cd7 ON
+    boslportal4.mbmessage (
+        threadid
+    ASC,
+        parentmessageid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.mbmessage
+    ADD CONSTRAINT mbmessage_pk
+        PRIMARY KEY ( topicid,
+                      messageid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.mbmessageflag (
+    topicid   VARCHAR2(75 BYTE) NOT NULL,
+    messageid VARCHAR2(75 BYTE) NOT NULL,
+    userid    VARCHAR2(75 BYTE) NOT NULL,
+    flag      VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_7b2917be ON
+    boslportal4.mbmessageflag (
+        userid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_93bf5c9c ON
+    boslportal4.mbmessageflag (
+        topicid
+    ASC,
+        messageid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_e1f34690 ON
+    boslportal4.mbmessageflag (
+        topicid
+    ASC,
+        userid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_ee1ca456 ON
+    boslportal4.mbmessageflag (
+        topicid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.mbmessageflag
+    ADD CONSTRAINT mbmessageflag_pk
+        PRIMARY KEY ( topicid,
+                      messageid,
+                      userid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.mbstatsuser (
+    groupid      VARCHAR2(75 BYTE) NOT NULL,
+    userid       VARCHAR2(75 BYTE) NOT NULL,
+    messagecount NUMBER(30),
+    lastpostdate TIMESTAMP
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_847f92b5 ON
+    boslportal4.mbstatsuser (
+        userid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_a00a898f ON
+    boslportal4.mbstatsuser (
+        groupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_fab5a88b ON
+    boslportal4.mbstatsuser (
+        groupid
+    ASC,
+        messagecount
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.mbstatsuser
+    ADD CONSTRAINT mbstatsuser_pk
+        PRIMARY KEY ( groupid,
+                      userid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.mbthread (
+    threadid         VARCHAR2(75 BYTE) NOT NULL,
+    categoryid       VARCHAR2(75 BYTE),
+    topicid          VARCHAR2(75 BYTE),
+    rootmessageid    VARCHAR2(75 BYTE),
+    messagecount     NUMBER(30),
+    viewcount        NUMBER(30),
+    lastpostbyuserid VARCHAR2(75 BYTE),
+    lastpostdate     TIMESTAMP,
+    priority         NUMBER(30, 20)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_cb854772 ON
+    boslportal4.mbthread (
+        categoryid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.mbthread
+    ADD CONSTRAINT mbthread_pk
+        PRIMARY KEY ( threadid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.organization_ (
+    organizationid       VARCHAR2(75 BYTE) NOT NULL,
+    companyid            VARCHAR2(75 BYTE) NOT NULL,
+    parentorganizationid VARCHAR2(75 BYTE),
+    name                 VARCHAR2(75 BYTE),
+    recursable           NUMBER(1),
+    regionid             VARCHAR2(75 BYTE),
+    countryid            VARCHAR2(75 BYTE),
+    statusid             VARCHAR2(75 BYTE),
+    comments             VARCHAR2(4000 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_418e4522 ON
+    boslportal4.organization_ (
+        companyid
+    ASC,
+        parentorganizationid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_834bceb6 ON
+    boslportal4.organization_ (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_e301bdf5 ON
+    boslportal4.organization_ (
+        companyid
+    ASC,
+        name
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.organization_
+    ADD CONSTRAINT organization__pk
+        PRIMARY KEY ( organizationid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.orggrouppermission (
+    organizationid VARCHAR2(75 BYTE) NOT NULL,
+    groupid        VARCHAR2(75 BYTE) NOT NULL,
+    permissionid   VARCHAR2(75 BYTE) NOT NULL
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_6c53da4e ON
+    boslportal4.orggrouppermission (
+        permissionid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.orggrouppermission
+    ADD CONSTRAINT orggrouppermission_pk
+        PRIMARY KEY ( organizationid,
+                      groupid,
+                      permissionid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.orggrouprole (
+    organizationid VARCHAR2(75 BYTE) NOT NULL,
+    groupid        VARCHAR2(75 BYTE) NOT NULL,
+    roleid         VARCHAR2(75 BYTE) NOT NULL
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_ab044d1c ON
+    boslportal4.orggrouprole (
+        roleid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.orggrouprole
+    ADD CONSTRAINT orggrouprole_pk
+        PRIMARY KEY ( organizationid,
+                      groupid,
+                      roleid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.orglabor (
+    orglaborid     VARCHAR2(75 BYTE) NOT NULL,
+    organizationid VARCHAR2(75 BYTE),
+    typeid         VARCHAR2(75 BYTE),
+    sunopen        NUMBER(30),
+    sunclose       NUMBER(30),
+    monopen        NUMBER(30),
+    monclose       NUMBER(30),
+    tueopen        NUMBER(30),
+    tueclose       NUMBER(30),
+    wedopen        NUMBER(30),
+    wedclose       NUMBER(30),
+    thuopen        NUMBER(30),
+    thuclose       NUMBER(30),
+    friopen        NUMBER(30),
+    friclose       NUMBER(30),
+    satopen        NUMBER(30),
+    satclose       NUMBER(30)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_6af0d434 ON
+    boslportal4.orglabor (
+        organizationid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.orglabor
+    ADD CONSTRAINT orglabor_pk
+        PRIMARY KEY ( orglaborid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.passwordtracker (
+    passwordtrackerid VARCHAR2(75 BYTE) NOT NULL,
+    userid            VARCHAR2(75 BYTE) NOT NULL,
+    createdate        TIMESTAMP,
+    password_         VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_326f75bd ON
+    boslportal4.passwordtracker (
+        userid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.passwordtracker
+    ADD CONSTRAINT passwordtracker_pk
+        PRIMARY KEY ( passwordtrackerid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.permission_ (
+    permissionid VARCHAR2(75 BYTE) NOT NULL,
+    companyid    VARCHAR2(75 BYTE) NOT NULL,
+    actionid     VARCHAR2(75 BYTE),
+    resourceid   VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_4d19c2b8 ON
+    boslportal4.permission_ (
+        actionid
+    ASC,
+        resourceid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_f090c113 ON
+    boslportal4.permission_ (
+        resourceid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.permission_
+    ADD CONSTRAINT permission__pk
+        PRIMARY KEY ( permissionid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.phone (
+    phoneid      VARCHAR2(75 BYTE) NOT NULL,
+    companyid    VARCHAR2(75 BYTE) NOT NULL,
+    userid       VARCHAR2(75 BYTE) NOT NULL,
+    username     VARCHAR2(75 BYTE),
+    createdate   TIMESTAMP,
+    modifieddate TIMESTAMP,
+    classname    VARCHAR2(75 BYTE),
+    classpk      VARCHAR2(75 BYTE),
+    number_      VARCHAR2(75 BYTE),
+    extension    VARCHAR2(75 BYTE),
+    typeid       VARCHAR2(75 BYTE),
+    primary_     NUMBER(1)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_139da87f ON
+    boslportal4.phone (
+        companyid
+    ASC,
+        classname
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_2caadf95 ON
+    boslportal4.phone (
+        companyid
+    ASC,
+        classname
+    ASC,
+        classpk
+    ASC,
+        primary_
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_9f704a14 ON
+    boslportal4.phone (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_a074a44 ON
+    boslportal4.phone (
+        companyid
+    ASC,
+        classname
+    ASC,
+        classpk
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_f202b9ce ON
+    boslportal4.phone (
+        userid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.phone
+    ADD CONSTRAINT phone_pk
+        PRIMARY KEY ( phoneid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.pollschoice (
+    questionid  VARCHAR2(75 BYTE) NOT NULL,
+    choiceid    VARCHAR2(75 BYTE) NOT NULL,
+    description VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_ec370f10 ON
+    boslportal4.pollschoice (
+        questionid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.pollschoice
+    ADD CONSTRAINT pollschoice_pk
+        PRIMARY KEY ( questionid,
+                      choiceid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.pollsquestion (
+    questionid     VARCHAR2(75 BYTE) NOT NULL,
+    groupid        VARCHAR2(75 BYTE) NOT NULL,
+    companyid      VARCHAR2(75 BYTE) NOT NULL,
+    userid         VARCHAR2(75 BYTE) NOT NULL,
+    username       VARCHAR2(75 BYTE),
+    createdate     TIMESTAMP,
+    modifieddate   TIMESTAMP,
+    title          VARCHAR2(75 BYTE),
+    description    VARCHAR2(4000 BYTE),
+    expirationdate TIMESTAMP,
+    lastvotedate   TIMESTAMP
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_9ff342ea ON
+    boslportal4.pollsquestion (
+        groupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.pollsquestion
+    ADD CONSTRAINT pollsquestion_pk
+        PRIMARY KEY ( questionid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.pollsvote (
+    questionid VARCHAR2(75 BYTE) NOT NULL,
+    userid     VARCHAR2(75 BYTE) NOT NULL,
+    choiceid   VARCHAR2(75 BYTE),
+    votedate   TIMESTAMP
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_12112599 ON
+    boslportal4.pollsvote (
+        questionid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_fe3220e9 ON
+    boslportal4.pollsvote (
+        questionid
+    ASC,
+        choiceid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.pollsvote
+    ADD CONSTRAINT pollsvote_pk
+        PRIMARY KEY ( questionid,
+                      userid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.portlet (
+    portletid VARCHAR2(75 BYTE) NOT NULL,
+    companyid VARCHAR2(75 BYTE) NOT NULL,
+    roles     VARCHAR2(75 BYTE),
+    active_   NUMBER(1)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_80cc9508 ON
+    boslportal4.portlet (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.portlet
+    ADD CONSTRAINT portlet_pk
+        PRIMARY KEY ( portletid,
+                      companyid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.portletpreferences (
+    portletid   VARCHAR2(75 BYTE) NOT NULL,
+    layoutid    VARCHAR2(75 BYTE) NOT NULL,
+    ownerid     VARCHAR2(75 BYTE) NOT NULL,
+    preferences CLOB
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    )
+    LOB ( preferences ) STORE AS (
+        TABLESPACE boslportal4
+        STORAGE ( PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS UNLIMITED FREELISTS 1 BUFFER_POOL DEFAULT )
+        CHUNK 8192
+        RETENTION
+        ENABLE STORAGE IN ROW
+        NOCACHE LOGGING
+    );
+
+CREATE INDEX boslportal4.ix_3eab5a5a ON
+    boslportal4.portletpreferences (
+        ownerid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_4a6293e1 ON
+    boslportal4.portletpreferences (
+        layoutid
+    ASC,
+        ownerid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_8b1e639d ON
+    boslportal4.portletpreferences (
+        layoutid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_8e6da3a1 ON
+    boslportal4.portletpreferences (
+        portletid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.portletpreferences
+    ADD CONSTRAINT portletpreferences_pk
+        PRIMARY KEY ( portletid,
+                      layoutid,
+                      ownerid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.ratingsentry (
+    entryid      NUMBER(30) NOT NULL,
+    companyid    VARCHAR2(75 BYTE) NOT NULL,
+    userid       VARCHAR2(75 BYTE) NOT NULL,
+    username     VARCHAR2(75 BYTE),
+    createdate   TIMESTAMP,
+    modifieddate TIMESTAMP,
+    classname    VARCHAR2(75 BYTE),
+    classpk      VARCHAR2(75 BYTE),
+    score        NUMBER(30, 20)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_9941daec ON
+    boslportal4.ratingsentry (
+        userid
+    ASC,
+        classname
+    ASC,
+        classpk
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_ea9b85b2 ON
+    boslportal4.ratingsentry (
+        classname
+    ASC,
+        classpk
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.ratingsentry
+    ADD CONSTRAINT ratingsentry_pk
+        PRIMARY KEY ( entryid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.ratingsstats (
+    statsid      NUMBER(30) NOT NULL,
+    classname    VARCHAR2(75 BYTE),
+    classpk      VARCHAR2(75 BYTE),
+    totalentries NUMBER(30),
+    totalscore   NUMBER(30, 20),
+    averagescore NUMBER(30, 20)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_8366321f ON
+    boslportal4.ratingsstats (
+        classname
+    ASC,
+        classpk
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.ratingsstats
+    ADD CONSTRAINT ratingsstats_pk
+        PRIMARY KEY ( statsid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.region (
+    regionid   VARCHAR2(75 BYTE) NOT NULL,
+    countryid  VARCHAR2(75 BYTE),
+    regioncode VARCHAR2(75 BYTE),
+    name       VARCHAR2(75 BYTE),
+    active_    NUMBER(1)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_11fb3e42 ON
+    boslportal4.region (
+        countryid
+    ASC,
+        active_
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_16d87ca7 ON
+    boslportal4.region (
+        countryid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_2d9a426f ON
+    boslportal4.region (
+        active_
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.region
+    ADD CONSTRAINT region_pk
+        PRIMARY KEY ( regionid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.release_ (
+    releaseid    VARCHAR2(75 BYTE) NOT NULL,
+    createdate   TIMESTAMP,
+    modifieddate TIMESTAMP,
+    buildnumber  NUMBER(30),
+    builddate    TIMESTAMP
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+ALTER TABLE boslportal4.release_
+    ADD CONSTRAINT release__pk
+        PRIMARY KEY ( releaseid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.resource_ (
+    resourceid VARCHAR2(25 BYTE) NOT NULL,
+    companyid  VARCHAR2(25 BYTE) NOT NULL,
+    name       VARCHAR2(75 BYTE),
+    typeid     VARCHAR2(15 BYTE),
+    scope      VARCHAR2(15 BYTE),
+    primkey    VARCHAR2(200 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_722b1a51 ON
+    boslportal4.resource_ (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_8cdc43f6 ON
+    boslportal4.resource_ (
+        name
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_982dfebe ON
+    boslportal4.resource_ (
+        companyid
+    ASC,
+        name
+    ASC,
+        typeid
+    ASC,
+        scope
+    ASC,
+        primkey
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            131072 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_9f23bcbf ON
+    boslportal4.resource_ (
+        companyid
+    ASC,
+        typeid
+    ASC,
+        scope
+    ASC,
+        primkey
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_ff2d206b ON
+    boslportal4.resource_ (
+        companyid
+    ASC,
+        name
+    ASC,
+        typeid
+    ASC,
+        scope
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.resource_
+    ADD CONSTRAINT resource__pk
+        PRIMARY KEY ( resourceid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.role_ (
+    roleid      VARCHAR2(75 BYTE) NOT NULL,
+    companyid   VARCHAR2(75 BYTE) NOT NULL,
+    classname   VARCHAR2(75 BYTE),
+    classpk     VARCHAR2(75 BYTE),
+    name        VARCHAR2(75 BYTE),
+    description VARCHAR2(4000 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_449a10b9 ON
+    boslportal4.role_ (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_ebc931b8 ON
+    boslportal4.role_ (
+        companyid
+    ASC,
+        name
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_ed284c69 ON
+    boslportal4.role_ (
+        companyid
+    ASC,
+        classname
+    ASC,
+        classpk
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.role_
+    ADD CONSTRAINT role__pk
+        PRIMARY KEY ( roleid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.roles_permissions (
+    roleid       VARCHAR2(75 BYTE) NOT NULL,
+    permissionid VARCHAR2(75 BYTE) NOT NULL
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.liferay_002 ON
+    boslportal4.roles_permissions (
+        permissionid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.roles_permissions
+    ADD CONSTRAINT roles_permissions_pk
+        PRIMARY KEY ( roleid,
+                      permissionid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.shoppingcart (
+    cartid       VARCHAR2(75 BYTE) NOT NULL,
+    groupid      VARCHAR2(75 BYTE) NOT NULL,
+    companyid    VARCHAR2(75 BYTE) NOT NULL,
+    userid       VARCHAR2(75 BYTE) NOT NULL,
+    username     VARCHAR2(75 BYTE),
+    createdate   TIMESTAMP,
+    modifieddate TIMESTAMP,
+    itemids      VARCHAR2(4000 BYTE),
+    couponids    VARCHAR2(4000 BYTE),
+    altshipping  NUMBER(30),
+    insure       NUMBER(1)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_54101cc8 ON
+    boslportal4.shoppingcart (
+        userid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_c28b41dc ON
+    boslportal4.shoppingcart (
+        groupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.shoppingcart
+    ADD CONSTRAINT shoppingcart_pk
+        PRIMARY KEY ( cartid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.shoppingcategory (
+    categoryid       VARCHAR2(75 BYTE) NOT NULL,
+    groupid          VARCHAR2(75 BYTE) NOT NULL,
+    companyid        VARCHAR2(75 BYTE) NOT NULL,
+    userid           VARCHAR2(75 BYTE) NOT NULL,
+    username         VARCHAR2(75 BYTE),
+    createdate       TIMESTAMP,
+    modifieddate     TIMESTAMP,
+    parentcategoryid VARCHAR2(75 BYTE),
+    name             VARCHAR2(75 BYTE),
+    description      VARCHAR2(4000 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_1e6464f5 ON
+    boslportal4.shoppingcategory (
+        groupid
+    ASC,
+        parentcategoryid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_5f615d3e ON
+    boslportal4.shoppingcategory (
+        groupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.shoppingcategory
+    ADD CONSTRAINT shoppingcategory_pk
+        PRIMARY KEY ( categoryid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.shoppingcoupon (
+    couponid        VARCHAR2(75 BYTE) NOT NULL,
+    groupid         VARCHAR2(75 BYTE) NOT NULL,
+    companyid       VARCHAR2(75 BYTE) NOT NULL,
+    userid          VARCHAR2(75 BYTE) NOT NULL,
+    username        VARCHAR2(75 BYTE),
+    createdate      TIMESTAMP,
+    modifieddate    TIMESTAMP,
+    name            VARCHAR2(75 BYTE),
+    description     VARCHAR2(4000 BYTE),
+    startdate       TIMESTAMP,
+    enddate         TIMESTAMP,
+    active_         NUMBER(1),
+    limitcategories VARCHAR2(4000 BYTE),
+    limitskus       VARCHAR2(4000 BYTE),
+    minorder        NUMBER(30, 20),
+    discount        NUMBER(30, 20),
+    discounttype    VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_3251af16 ON
+    boslportal4.shoppingcoupon (
+        groupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.shoppingcoupon
+    ADD CONSTRAINT shoppingcoupon_pk
+        PRIMARY KEY ( couponid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.shoppingitem (
+    itemid             VARCHAR2(75 BYTE) NOT NULL,
+    companyid          VARCHAR2(75 BYTE) NOT NULL,
+    userid             VARCHAR2(75 BYTE) NOT NULL,
+    username           VARCHAR2(75 BYTE),
+    createdate         TIMESTAMP,
+    modifieddate       TIMESTAMP,
+    categoryid         VARCHAR2(75 BYTE),
+    sku                VARCHAR2(75 BYTE),
+    name               VARCHAR2(200 BYTE),
+    description        VARCHAR2(4000 BYTE),
+    properties         VARCHAR2(4000 BYTE),
+    fields_            NUMBER(1),
+    fieldsquantities   VARCHAR2(4000 BYTE),
+    minquantity        NUMBER(30),
+    maxquantity        NUMBER(30),
+    price              NUMBER(30, 20),
+    discount           NUMBER(30, 20),
+    taxable            NUMBER(1),
+    shipping           NUMBER(30, 20),
+    useshippingformula NUMBER(1),
+    requiresshipping   NUMBER(1),
+    stockquantity      NUMBER(30),
+    featured_          NUMBER(1),
+    sale_              NUMBER(1),
+    smallimage         NUMBER(1),
+    smallimageurl      VARCHAR2(75 BYTE),
+    mediumimage        NUMBER(1),
+    mediumimageurl     VARCHAR2(75 BYTE),
+    largeimage         NUMBER(1),
+    largeimageurl      VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_1c717ca6 ON
+    boslportal4.shoppingitem (
+        companyid
+    ASC,
+        sku
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_c8eacf2e ON
+    boslportal4.shoppingitem (
+        categoryid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.shoppingitem
+    ADD CONSTRAINT shoppingitem_pk
+        PRIMARY KEY ( itemid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.shoppingitemfield (
+    itemfieldid VARCHAR2(75 BYTE) NOT NULL,
+    itemid      VARCHAR2(75 BYTE),
+    name        VARCHAR2(75 BYTE),
+    values_     VARCHAR2(4000 BYTE),
+    description VARCHAR2(4000 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_6d5f9b87 ON
+    boslportal4.shoppingitemfield (
+        itemid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.shoppingitemfield
+    ADD CONSTRAINT shoppingitemfield_pk
+        PRIMARY KEY ( itemfieldid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.shoppingitemprice (
+    itempriceid        VARCHAR2(75 BYTE) NOT NULL,
+    itemid             VARCHAR2(75 BYTE),
+    minquantity        NUMBER(30),
+    maxquantity        NUMBER(30),
+    price              NUMBER(30, 20),
+    discount           NUMBER(30, 20),
+    taxable            NUMBER(1),
+    shipping           NUMBER(30, 20),
+    useshippingformula NUMBER(1),
+    status             NUMBER(30)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_ea6fd516 ON
+    boslportal4.shoppingitemprice (
+        itemid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.shoppingitemprice
+    ADD CONSTRAINT shoppingitemprice_pk
+        PRIMARY KEY ( itempriceid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.shoppingorder (
+    orderid              VARCHAR2(75 BYTE) NOT NULL,
+    groupid              VARCHAR2(75 BYTE) NOT NULL,
+    companyid            VARCHAR2(75 BYTE) NOT NULL,
+    userid               VARCHAR2(75 BYTE) NOT NULL,
+    username             VARCHAR2(75 BYTE),
+    createdate           TIMESTAMP,
+    modifieddate         TIMESTAMP,
+    tax                  NUMBER(30, 20),
+    shipping             NUMBER(30, 20),
+    altshipping          VARCHAR2(75 BYTE),
+    requiresshipping     NUMBER(1),
+    insure               NUMBER(1),
+    insurance            NUMBER(30, 20),
+    couponids            VARCHAR2(75 BYTE),
+    coupondiscount       NUMBER(30, 20),
+    billingfirstname     VARCHAR2(75 BYTE),
+    billinglastname      VARCHAR2(75 BYTE),
+    billingemailaddress  VARCHAR2(75 BYTE),
+    billingcompany       VARCHAR2(75 BYTE),
+    billingstreet        VARCHAR2(75 BYTE),
+    billingcity          VARCHAR2(75 BYTE),
+    billingstate         VARCHAR2(75 BYTE),
+    billingzip           VARCHAR2(75 BYTE),
+    billingcountry       VARCHAR2(75 BYTE),
+    billingphone         VARCHAR2(75 BYTE),
+    shiptobilling        NUMBER(1),
+    shippingfirstname    VARCHAR2(75 BYTE),
+    shippinglastname     VARCHAR2(75 BYTE),
+    shippingemailaddress VARCHAR2(75 BYTE),
+    shippingcompany      VARCHAR2(75 BYTE),
+    shippingstreet       VARCHAR2(75 BYTE),
+    shippingcity         VARCHAR2(75 BYTE),
+    shippingstate        VARCHAR2(75 BYTE),
+    shippingzip          VARCHAR2(75 BYTE),
+    shippingcountry      VARCHAR2(75 BYTE),
+    shippingphone        VARCHAR2(75 BYTE),
+    ccname               VARCHAR2(75 BYTE),
+    cctype               VARCHAR2(75 BYTE),
+    ccnumber             VARCHAR2(75 BYTE),
+    ccexpmonth           NUMBER(30),
+    ccexpyear            NUMBER(30),
+    ccvernumber          VARCHAR2(75 BYTE),
+    comments             VARCHAR2(4000 BYTE),
+    pptxnid              VARCHAR2(75 BYTE),
+    pppaymentstatus      VARCHAR2(75 BYTE),
+    pppaymentgross       NUMBER(30, 20),
+    ppreceiveremail      VARCHAR2(75 BYTE),
+    pppayeremail         VARCHAR2(75 BYTE),
+    sendorderemail       NUMBER(1),
+    sendshippingemail    NUMBER(1)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_119b5630 ON
+    boslportal4.shoppingorder (
+        groupid
+    ASC,
+        userid
+    ASC,
+        pppaymentstatus
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.shoppingorder
+    ADD CONSTRAINT shoppingorder_pk
+        PRIMARY KEY ( orderid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.shoppingorderitem (
+    orderid     VARCHAR2(75 BYTE) NOT NULL,
+    itemid      VARCHAR2(75 BYTE) NOT NULL,
+    sku         VARCHAR2(75 BYTE),
+    name        VARCHAR2(200 BYTE),
+    description VARCHAR2(4000 BYTE),
+    properties  VARCHAR2(4000 BYTE),
+    price       NUMBER(30, 20),
+    quantity    NUMBER(30),
+    shippeddate TIMESTAMP
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_b5f82c7a ON
+    boslportal4.shoppingorderitem (
+        orderid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.shoppingorderitem
+    ADD CONSTRAINT shoppingorderitem_pk
+        PRIMARY KEY ( orderid,
+                      itemid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.subscription (
+    subscriptionid VARCHAR2(75 BYTE) NOT NULL,
+    companyid      VARCHAR2(75 BYTE) NOT NULL,
+    userid         VARCHAR2(75 BYTE) NOT NULL,
+    username       VARCHAR2(75 BYTE),
+    createdate     TIMESTAMP,
+    modifieddate   TIMESTAMP,
+    classname      VARCHAR2(75 BYTE),
+    classpk        VARCHAR2(75 BYTE),
+    frequency      VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_54243afd ON
+    boslportal4.subscription (
+        userid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_e00de435 ON
+    boslportal4.subscription (
+        companyid
+    ASC,
+        classname
+    ASC,
+        classpk
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_fc7b066f ON
+    boslportal4.subscription (
+        companyid
+    ASC,
+        userid
+    ASC,
+        classname
+    ASC,
+        classpk
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.subscription
+    ADD CONSTRAINT subscription_pk
+        PRIMARY KEY ( subscriptionid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.user_ (
+    userid                 VARCHAR2(75 BYTE) NOT NULL,
+    companyid              VARCHAR2(75 BYTE) NOT NULL,
+    createdate             TIMESTAMP,
+    modifieddate           TIMESTAMP,
+    contactid              VARCHAR2(75 BYTE),
+    password_              VARCHAR2(75 BYTE),
+    passwordencrypted      NUMBER(1),
+    passwordexpirationdate TIMESTAMP,
+    passwordreset          NUMBER(1),
+    emailaddress           VARCHAR2(75 BYTE),
+    languageid             VARCHAR2(75 BYTE),
+    timezoneid             VARCHAR2(75 BYTE),
+    greeting               VARCHAR2(75 BYTE),
+    resolution             VARCHAR2(75 BYTE),
+    comments               VARCHAR2(4000 BYTE),
+    logindate              TIMESTAMP,
+    loginip                VARCHAR2(75 BYTE),
+    lastlogindate          TIMESTAMP,
+    lastloginip            VARCHAR2(75 BYTE),
+    failedloginattempts    NUMBER(30),
+    agreedtotermsofuse     NUMBER(1),
+    active_                NUMBER(1)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_3a1e834e ON
+    boslportal4.user_ (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_615e9f7a ON
+    boslportal4.user_ (
+        companyid
+    ASC,
+        emailaddress
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_765a87c6 ON
+    boslportal4.user_ (
+        companyid
+    ASC,
+        password_
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_9782ad88 ON
+    boslportal4.user_ (
+        companyid
+    ASC,
+        userid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.user_
+    ADD CONSTRAINT user__pk
+        PRIMARY KEY ( userid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.usergroup (
+    usergroupid       VARCHAR2(75 BYTE) NOT NULL,
+    companyid         VARCHAR2(75 BYTE) NOT NULL,
+    parentusergroupid VARCHAR2(75 BYTE),
+    name              VARCHAR2(75 BYTE),
+    description       VARCHAR2(4000 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_23ead0d ON
+    boslportal4.usergroup (
+        companyid
+    ASC,
+        name
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_524fefce ON
+    boslportal4.usergroup (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_69771487 ON
+    boslportal4.usergroup (
+        companyid
+    ASC,
+        parentusergroupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.usergroup
+    ADD CONSTRAINT usergroup_pk
+        PRIMARY KEY ( usergroupid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.useridmapper (
+    userid         VARCHAR2(75 BYTE) NOT NULL,
+    type_          VARCHAR2(75 BYTE) NOT NULL,
+    description    VARCHAR2(75 BYTE),
+    externaluserid VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_e60ea987 ON
+    boslportal4.useridmapper (
+        userid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.useridmapper
+    ADD CONSTRAINT useridmapper_pk
+        PRIMARY KEY ( userid,
+                      type_ )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.users_groups (
+    userid  VARCHAR2(75 BYTE) NOT NULL,
+    groupid VARCHAR2(75 BYTE) NOT NULL
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+ALTER TABLE boslportal4.users_groups
+    ADD CONSTRAINT users_groups_pk
+        PRIMARY KEY ( userid,
+                      groupid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.users_orgs (
+    userid         VARCHAR2(75 BYTE) NOT NULL,
+    organizationid VARCHAR2(75 BYTE) NOT NULL
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+ALTER TABLE boslportal4.users_orgs
+    ADD CONSTRAINT users_orgs_pk
+        PRIMARY KEY ( userid,
+                      organizationid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.users_permissions (
+    userid       VARCHAR2(75 BYTE) NOT NULL,
+    permissionid VARCHAR2(75 BYTE) NOT NULL
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.liferay_003 ON
+    boslportal4.users_permissions (
+        permissionid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.users_permissions
+    ADD CONSTRAINT users_permissions_pk
+        PRIMARY KEY ( userid,
+                      permissionid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.users_roles (
+    userid VARCHAR2(75 BYTE) NOT NULL,
+    roleid VARCHAR2(75 BYTE) NOT NULL
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+ALTER TABLE boslportal4.users_roles
+    ADD CONSTRAINT users_roles_pk
+        PRIMARY KEY ( userid,
+                      roleid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.users_usergroups (
+    userid      VARCHAR2(75 BYTE) NOT NULL,
+    usergroupid VARCHAR2(75 BYTE) NOT NULL
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+ALTER TABLE boslportal4.users_usergroups
+    ADD CONSTRAINT users_usergroups_pk
+        PRIMARY KEY ( userid,
+                      usergroupid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.usertracker (
+    usertrackerid VARCHAR2(75 BYTE) NOT NULL,
+    companyid     VARCHAR2(75 BYTE) NOT NULL,
+    userid        VARCHAR2(75 BYTE) NOT NULL,
+    modifieddate  TIMESTAMP,
+    remoteaddr    VARCHAR2(75 BYTE),
+    remotehost    VARCHAR2(75 BYTE),
+    useragent     VARCHAR2(75 BYTE)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_29ba1cf5 ON
+    boslportal4.usertracker (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_e4efba8d ON
+    boslportal4.usertracker (
+        userid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.usertracker
+    ADD CONSTRAINT usertracker_pk
+        PRIMARY KEY ( usertrackerid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.usertrackerpath (
+    usertrackerpathid VARCHAR2(75 BYTE) NOT NULL,
+    usertrackerid     VARCHAR2(75 BYTE),
+    path              VARCHAR2(4000 BYTE),
+    pathdate          TIMESTAMP
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_14d8bcc0 ON
+    boslportal4.usertrackerpath (
+        usertrackerid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.usertrackerpath
+    ADD CONSTRAINT usertrackerpath_pk
+        PRIMARY KEY ( usertrackerpathid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.website (
+    websiteid    VARCHAR2(75 BYTE) NOT NULL,
+    companyid    VARCHAR2(75 BYTE) NOT NULL,
+    userid       VARCHAR2(75 BYTE) NOT NULL,
+    username     VARCHAR2(75 BYTE),
+    createdate   TIMESTAMP,
+    modifieddate TIMESTAMP,
+    classname    VARCHAR2(75 BYTE),
+    classpk      VARCHAR2(75 BYTE),
+    url          VARCHAR2(75 BYTE),
+    typeid       VARCHAR2(75 BYTE),
+    primary_     NUMBER(1)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_5233f8b7 ON
+    boslportal4.website (
+        companyid
+    ASC,
+        classname
+    ASC,
+        classpk
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_66a45cac ON
+    boslportal4.website (
+        companyid
+    ASC,
+        classname
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_82125a48 ON
+    boslportal4.website (
+        companyid
+    ASC,
+        classname
+    ASC,
+        classpk
+    ASC,
+        primary_
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_96f07007 ON
+    boslportal4.website (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_f75690bb ON
+    boslportal4.website (
+        userid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.website
+    ADD CONSTRAINT website_pk
+        PRIMARY KEY ( websiteid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.wikinode (
+    nodeid       VARCHAR2(75 BYTE) NOT NULL,
+    groupid      VARCHAR2(75 BYTE) NOT NULL,
+    companyid    VARCHAR2(75 BYTE) NOT NULL,
+    userid       VARCHAR2(75 BYTE) NOT NULL,
+    username     VARCHAR2(75 BYTE),
+    createdate   TIMESTAMP,
+    modifieddate TIMESTAMP,
+    name         VARCHAR2(75 BYTE),
+    description  VARCHAR2(4000 BYTE),
+    lastpostdate TIMESTAMP
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE INDEX boslportal4.ix_5d6fe3f0 ON
+    boslportal4.wikinode (
+        companyid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_b480a672 ON
+    boslportal4.wikinode (
+        groupid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.wikinode
+    ADD CONSTRAINT wikinode_pk
+        PRIMARY KEY ( nodeid )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE TABLE boslportal4.wikipage (
+    nodeid     VARCHAR2(75 BYTE) NOT NULL,
+    title      VARCHAR2(75 BYTE) NOT NULL,
+    version    NUMBER(30, 20) NOT NULL,
+    companyid  VARCHAR2(75 BYTE) NOT NULL,
+    userid     VARCHAR2(75 BYTE) NOT NULL,
+    username   VARCHAR2(75 BYTE),
+    createdate TIMESTAMP,
+    content    CLOB,
+    format     VARCHAR2(75 BYTE),
+    head       NUMBER(1)
+)
+PCTFREE 10
+PCTUSED 40
+TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    )
+    LOB ( content ) STORE AS (
+        TABLESPACE boslportal4
+        STORAGE ( PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS UNLIMITED FREELISTS 1 BUFFER_POOL DEFAULT )
+        CHUNK 8192
+        RETENTION
+        ENABLE STORAGE IN ROW
+        NOCACHE LOGGING
+    );
+
+CREATE INDEX boslportal4.ix_997eedd2 ON
+    boslportal4.wikipage (
+        nodeid
+    ASC,
+        title
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_c8a9c476 ON
+    boslportal4.wikipage (
+        nodeid
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_e745ea26 ON
+    boslportal4.wikipage (
+        nodeid
+    ASC,
+        title
+    ASC,
+        head
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+CREATE INDEX boslportal4.ix_e7f635ca ON
+    boslportal4.wikipage (
+        nodeid
+    ASC,
+        head
+    ASC )
+        TABLESPACE boslportal4 PCTFREE 10
+            STORAGE (
+                INITIAL
+            65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT )
+        LOGGING;
+
+ALTER TABLE boslportal4.wikipage
+    ADD CONSTRAINT wikipage_pk
+        PRIMARY KEY ( nodeid,
+                      title,
+                      version )
+            USING INDEX PCTFREE 10 INITRANS 2 TABLESPACE boslportal4
+LOGGING
+    STORAGE ( INITIAL 65536 NEXT 1048576 PCTINCREASE 0 MINEXTENTS 1 MAXEXTENTS 2147483645 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT
+    );
+
+CREATE OR REPLACE TRIGGER BOSLPORTAL4.TUUSERS 
+    BEFORE UPDATE ON BOSLPORTAL4.USER_ 
+    FOR EACH ROW 
+declare
+  /*判断comm@next99.cn是否修改了密码*/
+
+  begin
+  if (:old.userid='test2@next99.cn@demo' or :old.userid='guest@next99.cn@demo') and :new.password_ <> :old.password_ then
+      rollback;
+    end if;
+
+ end; 
+/
+
+
+
+-- Oracle SQL Developer Data Modeler 概要报告: 
+-- 
+-- CREATE TABLE                            82
+-- CREATE INDEX                           151
+-- ALTER TABLE                             82
+-- CREATE VIEW                              0
+-- ALTER VIEW                               0
+-- CREATE PACKAGE                           0
+-- CREATE PACKAGE BODY                      0
+-- CREATE PROCEDURE                         0
+-- CREATE FUNCTION                          0
+-- CREATE TRIGGER                           1
+-- ALTER TRIGGER                            0
+-- CREATE COLLECTION TYPE                   0
+-- CREATE STRUCTURED TYPE                   0
+-- CREATE STRUCTURED TYPE BODY              0
+-- CREATE CLUSTER                           0
+-- CREATE CONTEXT                           0
+-- CREATE DATABASE                          0
+-- CREATE DIMENSION                         0
+-- CREATE DIRECTORY                         0
+-- CREATE DISK GROUP                        0
+-- CREATE ROLE                              0
+-- CREATE ROLLBACK SEGMENT                  0
+-- CREATE SEQUENCE                          0
+-- CREATE MATERIALIZED VIEW                 0
+-- CREATE MATERIALIZED VIEW LOG             0
+-- CREATE SYNONYM                           0
+-- CREATE TABLESPACE                        1
+-- CREATE USER                              1
+-- 
+-- DROP TABLESPACE                          0
+-- DROP DATABASE                            0
+-- 
+-- REDACTION POLICY                         0
+-- 
+-- ORDS DROP SCHEMA                         0
+-- ORDS ENABLE SCHEMA                       0
+-- ORDS ENABLE OBJECT                       0
+-- 
+-- ERRORS                                   0
+-- WARNINGS                                 1

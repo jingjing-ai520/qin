@@ -1,0 +1,62 @@
+{
+  "module": "system_admin",
+  "table_count": 2,
+  "tables": {
+    "counter": {
+      "schema": "boslportal4",
+      "name": "counter",
+      "columns": [
+        {
+          "name": "name",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "name      VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "currentid",
+          "type": "NUMBER(30)",
+          "nullable": true,
+          "definition": "currentid NUMBER(30)"
+        }
+      ],
+      "column_count": 2
+    },
+    "release_": {
+      "schema": "boslportal4",
+      "name": "release_",
+      "columns": [
+        {
+          "name": "releaseid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "releaseid    VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "createdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdate   TIMESTAMP"
+        },
+        {
+          "name": "modifieddate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "modifieddate TIMESTAMP"
+        },
+        {
+          "name": "buildnumber",
+          "type": "NUMBER(30)",
+          "nullable": true,
+          "definition": "buildnumber  NUMBER(30)"
+        },
+        {
+          "name": "builddate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "builddate    TIMESTAMP"
+        }
+      ],
+      "column_count": 5
+    }
+  }
+}

@@ -1,0 +1,6 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+* 这个文件夹下是项目数据库的结构和端口信息。

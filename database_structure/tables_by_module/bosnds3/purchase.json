@@ -1,0 +1,6173 @@
+{
+  "module": "purchase",
+  "table_count": 29,
+  "tables": {
+    "c_purchasetype": {
+      "schema": "bosnds3",
+      "name": "c_purchasetype",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(180",
+          "nullable": false,
+          "definition": "name         VARCHAR2(180 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description  VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 10
+    },
+    "c_supplier": {
+      "schema": "bosnds3",
+      "name": "c_supplier",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id        NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id           NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid          NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate        DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate        DATE"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid             NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive            CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "name                VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description         VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "address",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "address             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "postal",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "postal              VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "phone",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "phone               VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "contacter",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "contacter           VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "account",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "account             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "email",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "email               VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "isstop",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isstop              CHAR(1 BYTE) DEFAULT 'N' NOT NULL"
+        },
+        {
+          "name": "taxno",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "taxno               VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "feeremain",
+          "type": "NUMBER(16",
+          "nullable": true,
+          "definition": "feeremain           NUMBER(16"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "mobil",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "mobil               VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "c_suppliertype_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_suppliertype_id   NUMBER(10)"
+        },
+        {
+          "name": "cvenlperson",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "cvenlperson         VARCHAR2(10 BYTE)"
+        },
+        {
+          "name": "dmodifydate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "dmodifydate         DATE"
+        },
+        {
+          "name": "dvendevdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "dvendevdate         DATE"
+        },
+        {
+          "name": "cvenfax",
+          "type": "VARCHAR2(20",
+          "nullable": true,
+          "definition": "cvenfax             VARCHAR2(20 BYTE)"
+        },
+        {
+          "name": "cvenbank",
+          "type": "VARCHAR2(100",
+          "nullable": true,
+          "definition": "cvenbank            VARCHAR2(100 BYTE)"
+        },
+        {
+          "name": "code",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "code                VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "m_dim1_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_dim1_id           NUMBER(10)"
+        },
+        {
+          "name": "legal",
+          "type": "VARCHAR2(50",
+          "nullable": true,
+          "definition": "legal               VARCHAR2(50 BYTE)"
+        },
+        {
+          "name": "relationship",
+          "type": "VARCHAR2(50",
+          "nullable": true,
+          "definition": "relationship        VARCHAR2(50 BYTE)"
+        },
+        {
+          "name": "city",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "city                VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "legalperson",
+          "type": "VARCHAR2(50",
+          "nullable": true,
+          "definition": "legalperson         VARCHAR2(50 BYTE)"
+        },
+        {
+          "name": "c_supcon_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supcon_id         NUMBER(10)"
+        },
+        {
+          "name": "c_city_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_city_id           NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib20_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib20_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib19_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib19_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib18_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib18_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib17_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib17_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib16_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib16_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib15_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib15_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib1_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib1_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib14_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib14_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib13_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib13_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib12_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib12_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib11_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib11_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib10_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib10_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib9_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib9_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib8_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib8_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib7_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib7_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib6_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib6_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib5_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib5_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib4_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib4_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib3_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib3_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib2_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib2_id     NUMBER(10)"
+        },
+        {
+          "name": "bankname1",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "bankname1           VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "account1",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "account1            VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "bankname2",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "bankname2           VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "account2",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "account2            VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "bankname3",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "bankname3           VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "registername",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "registername        VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "registeraddr",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "registeraddr        VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "companyname",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "companyname         VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "account3",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "account3            VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "fax",
+          "type": "VARCHAR2(100",
+          "nullable": true,
+          "definition": "fax                 VARCHAR2(100 BYTE)"
+        },
+        {
+          "name": "tax_rate",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tax_rate            NUMBER(18"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0"
+        },
+        {
+          "name": "gl_company",
+          "type": "VARCHAR2(100",
+          "nullable": true,
+          "definition": "gl_company          VARCHAR2(100 BYTE)"
+        },
+        {
+          "name": "suptype",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "suptype             VARCHAR2(255 BYTE) DEFAULT 'CLOSUPPLIER'"
+        },
+        {
+          "name": "is_self",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_self             CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "is_fab",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_fab              CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "is_acc",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_acc              CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "use_status",
+          "type": "VARCHAR2(5",
+          "nullable": true,
+          "definition": "use_status          VARCHAR2(5 BYTE)"
+        },
+        {
+          "name": "is_working",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_working          CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "is_towms",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_towms            CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "is_mtl",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_mtl              CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "b_supcode_format_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "b_supcode_format_id NUMBER(10)"
+        },
+        {
+          "name": "old_code",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "old_code            VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "c_bigarea_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_bigarea_id        NUMBER(10)"
+        },
+        {
+          "name": "deposit_bank",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "deposit_bank        VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "nc_code",
+          "type": "VARCHAR2(100",
+          "nullable": true,
+          "definition": "nc_code             VARCHAR2(100 BYTE)"
+        },
+        {
+          "name": "nc_name",
+          "type": "VARCHAR2(200",
+          "nullable": true,
+          "definition": "nc_name             VARCHAR2(200 BYTE)"
+        },
+        {
+          "name": "nc_supplier_type_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "nc_supplier_type_id NUMBER(10)"
+        },
+        {
+          "name": "nc_account_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "nc_account_id       NUMBER(10)"
+        },
+        {
+          "name": "depositremain",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "depositremain       NUMBER(18"
+        }
+      ],
+      "column_count": 85
+    },
+    "c_supplierapply": {
+      "schema": "bosnds3",
+      "name": "c_supplierapply",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id        NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id           NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid          NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate        DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate        DATE"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid             NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive            CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "name                VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description         VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "address",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "address             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "postal",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "postal              VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "phone",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "phone               VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "contacter",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "contacter           VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "account",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "account             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "email",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "email               VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "isstop",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isstop              CHAR(1 BYTE) DEFAULT 'N' NOT NULL"
+        },
+        {
+          "name": "taxno",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "taxno               VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "feeremain",
+          "type": "NUMBER(16",
+          "nullable": true,
+          "definition": "feeremain           NUMBER(16"
+        },
+        {
+          "name": "mobil",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "mobil               VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "c_suppliertype_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_suppliertype_id   NUMBER(10)"
+        },
+        {
+          "name": "cvenlperson",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "cvenlperson         VARCHAR2(10 BYTE)"
+        },
+        {
+          "name": "dmodifydate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "dmodifydate         DATE"
+        },
+        {
+          "name": "dvendevdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "dvendevdate         DATE"
+        },
+        {
+          "name": "cvenfax",
+          "type": "VARCHAR2(20",
+          "nullable": true,
+          "definition": "cvenfax             VARCHAR2(20 BYTE)"
+        },
+        {
+          "name": "cvenbank",
+          "type": "VARCHAR2(100",
+          "nullable": true,
+          "definition": "cvenbank            VARCHAR2(100 BYTE)"
+        },
+        {
+          "name": "code",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "code                VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "m_dim1_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_dim1_id           NUMBER(10)"
+        },
+        {
+          "name": "legal",
+          "type": "VARCHAR2(50",
+          "nullable": true,
+          "definition": "legal               VARCHAR2(50 BYTE)"
+        },
+        {
+          "name": "relationship",
+          "type": "VARCHAR2(50",
+          "nullable": true,
+          "definition": "relationship        VARCHAR2(50 BYTE)"
+        },
+        {
+          "name": "city",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "city                VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "legalperson",
+          "type": "VARCHAR2(50",
+          "nullable": true,
+          "definition": "legalperson         VARCHAR2(50 BYTE)"
+        },
+        {
+          "name": "c_supcon_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supcon_id         NUMBER(10)"
+        },
+        {
+          "name": "c_city_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_city_id           NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib20_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib20_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib19_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib19_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib18_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib18_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib17_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib17_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib16_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib16_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib15_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib15_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib1_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib1_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib14_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib14_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib13_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib13_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib12_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib12_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib11_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib11_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib10_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib10_id    NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib9_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib9_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib8_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib8_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib7_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib7_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib6_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib6_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib5_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib5_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib4_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib4_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib3_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib3_id     NUMBER(10)"
+        },
+        {
+          "name": "c_supattrib2_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supattrib2_id     NUMBER(10)"
+        },
+        {
+          "name": "bankname1",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "bankname1           VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "account1",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "account1            VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "bankname2",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "bankname2           VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "account2",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "account2            VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "bankname3",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "bankname3           VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "registername",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "registername        VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "registeraddr",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "registeraddr        VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "companyname",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "companyname         VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "account3",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "account3            VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "fax",
+          "type": "VARCHAR2(100",
+          "nullable": true,
+          "definition": "fax                 VARCHAR2(100 BYTE)"
+        },
+        {
+          "name": "tax_rate",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tax_rate            NUMBER(18"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0"
+        },
+        {
+          "name": "gl_company",
+          "type": "VARCHAR2(100",
+          "nullable": true,
+          "definition": "gl_company          VARCHAR2(100 BYTE)"
+        },
+        {
+          "name": "is_self",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_self             CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "is_fab",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_fab              CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "is_acc",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_acc              CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "suptype",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "suptype             VARCHAR2(255 BYTE) DEFAULT 'CLOSUPPLIER'"
+        },
+        {
+          "name": "is_working",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_working          CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "au_pi_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "au_pi_id            NUMBER(10)"
+        },
+        {
+          "name": "au_state",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "au_state            CHAR(1 BYTE)"
+        },
+        {
+          "name": "status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "status              NUMBER(1)"
+        },
+        {
+          "name": "statuserid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "statuserid          NUMBER(10)"
+        },
+        {
+          "name": "statustime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "statustime          DATE"
+        },
+        {
+          "name": "is_mtl",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_mtl              CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "applytype",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "applytype           CHAR(1 BYTE)"
+        },
+        {
+          "name": "b_supcode_format_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "b_supcode_format_id NUMBER(10)"
+        },
+        {
+          "name": "use_status",
+          "type": "VARCHAR2(5",
+          "nullable": true,
+          "definition": "use_status          VARCHAR2(5 BYTE)"
+        },
+        {
+          "name": "old_code",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "old_code            VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "deposit_bank",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "deposit_bank        VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "c_bigarea_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_bigarea_id        NUMBER(10)"
+        }
+      ],
+      "column_count": 84
+    },
+    "c_supplierscore": {
+      "schema": "bosnds3",
+      "name": "c_supplierscore",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id               NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id     NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id        NUMBER(10)"
+        },
+        {
+          "name": "c_supplier_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supplier_id    NUMBER(10)"
+        },
+        {
+          "name": "m_product_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_product_id     NUMBER(10)"
+        },
+        {
+          "name": "avg_pur_cost",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "avg_pur_cost     NUMBER(24"
+        },
+        {
+          "name": "ri_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ri_qty           NUMBER(10)"
+        },
+        {
+          "name": "billdate",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "billdate         NUMBER(8)"
+        },
+        {
+          "name": "nri_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "nri_qty          NUMBER(10)"
+        },
+        {
+          "name": "re_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "re_qty           NUMBER(10)"
+        },
+        {
+          "name": "su_cycle",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "su_cycle         VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "excellentrate",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "excellentrate    CHAR(3 BYTE)"
+        },
+        {
+          "name": "qualitysure",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "qualitysure      CHAR(3 BYTE) DEFAULT 'EXC'"
+        },
+        {
+          "name": "productdesign",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "productdesign    CHAR(3 BYTE) DEFAULT 'EXC'"
+        },
+        {
+          "name": "responseability",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "responseability  CHAR(3 BYTE) DEFAULT 'EXC'"
+        },
+        {
+          "name": "suptimeliness",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "suptimeliness    CHAR(3 BYTE) DEFAULT 'EXC'"
+        },
+        {
+          "name": "supplyelastility",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "supplyelastility CHAR(3 BYTE) DEFAULT 'EXC'"
+        },
+        {
+          "name": "samtimeliness",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "samtimeliness    CHAR(3 BYTE) DEFAULT 'EXC'"
+        },
+        {
+          "name": "batchesability",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "batchesability   CHAR(3 BYTE) DEFAULT 'EXC'"
+        },
+        {
+          "name": "tecadvanced",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "tecadvanced      CHAR(3 BYTE) DEFAULT 'EXC'"
+        },
+        {
+          "name": "developedability",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "developedability CHAR(3 BYTE) DEFAULT 'EXC'"
+        },
+        {
+          "name": "ordersguaranty",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "ordersguaranty   CHAR(3 BYTE) DEFAULT 'EXC'"
+        },
+        {
+          "name": "serviceability",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "serviceability   CHAR(3 BYTE) DEFAULT 'EXC'"
+        },
+        {
+          "name": "serviceattitude",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "serviceattitude  CHAR(3 BYTE) DEFAULT 'EXC'"
+        },
+        {
+          "name": "concessionality",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "concessionality  CHAR(3 BYTE) DEFAULT 'EXC'"
+        },
+        {
+          "name": "increaseprice",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "increaseprice    CHAR(3 BYTE) DEFAULT 'EXC'"
+        },
+        {
+          "name": "reductionspace",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "reductionspace   CHAR(3 BYTE) DEFAULT 'EXC'"
+        },
+        {
+          "name": "description2",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "description2     VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "description1",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "description1     VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid          NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid       NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate     DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate     DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive         CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 34
+    },
+    "c_suppliertype": {
+      "schema": "bosnds3",
+      "name": "c_suppliertype",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(180",
+          "nullable": false,
+          "definition": "name         VARCHAR2(180 BYTE) NOT NULL"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description  VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "suptype",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "suptype      VARCHAR2(255 BYTE) DEFAULT 'CLOSUPPLIER'"
+        }
+      ],
+      "column_count": 11
+    },
+    "fip_supplier": {
+      "schema": "bosnds3",
+      "name": "fip_supplier",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 8
+    },
+    "m_purchase": {
+      "schema": "bosnds3",
+      "name": "m_purchase",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id        NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id           NUMBER(10)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid             NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid          NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate        DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate        DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive            CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "docno",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "docno               VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "doctype",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "doctype             CHAR(3 BYTE)"
+        },
+        {
+          "name": "billdate",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "billdate            NUMBER(8)"
+        },
+        {
+          "name": "salesrep_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "salesrep_id         NUMBER(10)"
+        },
+        {
+          "name": "c_store_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_store_id          NUMBER(10)"
+        },
+        {
+          "name": "c_supplier_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supplier_id       NUMBER(10)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "description         VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "in_status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "in_status           NUMBER(1) DEFAULT 1"
+        },
+        {
+          "name": "status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "status              NUMBER(1) DEFAULT 1"
+        },
+        {
+          "name": "au_state",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "au_state            CHAR(1 BYTE)"
+        },
+        {
+          "name": "au_pi_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "au_pi_id            NUMBER(10)"
+        },
+        {
+          "name": "avg_discount",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "avg_discount        NUMBER(10"
+        },
+        {
+          "name": "tot_lines",
+          "type": "NUMBER(18)",
+          "nullable": true,
+          "definition": "tot_lines           NUMBER(18)"
+        },
+        {
+          "name": "tot_qty",
+          "type": "NUMBER(18)",
+          "nullable": true,
+          "definition": "tot_qty             NUMBER(18)"
+        },
+        {
+          "name": "tot_amt_list",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amt_list        NUMBER(18"
+        },
+        {
+          "name": "tot_amt_actual",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amt_actual      NUMBER(18"
+        },
+        {
+          "name": "tot_qtyin",
+          "type": "NUMBER(18)",
+          "nullable": true,
+          "definition": "tot_qtyin           NUMBER(18)"
+        },
+        {
+          "name": "tot_amtin_list",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amtin_list      NUMBER(18"
+        },
+        {
+          "name": "tot_amtin_actual",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_amtin_actual    NUMBER(24"
+        },
+        {
+          "name": "c_period_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_period_id         NUMBER(10)"
+        },
+        {
+          "name": "b_po_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "b_po_id             NUMBER(10)"
+        },
+        {
+          "name": "dateout",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "dateout             NUMBER(8)"
+        },
+        {
+          "name": "datein",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "datein              NUMBER(8)"
+        },
+        {
+          "name": "statuserid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "statuserid          NUMBER(10)"
+        },
+        {
+          "name": "statustime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "statustime          DATE"
+        },
+        {
+          "name": "inerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "inerid              NUMBER(10)"
+        },
+        {
+          "name": "intime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "intime              DATE"
+        },
+        {
+          "name": "pcheckid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "pcheckid            NUMBER(10)"
+        },
+        {
+          "name": "pchecktime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "pchecktime          DATE"
+        },
+        {
+          "name": "c_purchasetype_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_purchasetype_id   NUMBER(10)"
+        },
+        {
+          "name": "pck_status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "pck_status          NUMBER(1) DEFAULT 1"
+        },
+        {
+          "name": "tot_amtin_pcheck",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_amtin_pcheck    NUMBER(24"
+        },
+        {
+          "name": "diffreason",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "diffreason          VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "c_customer_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_customer_id       NUMBER(10)"
+        },
+        {
+          "name": "amt_deduction",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "amt_deduction       NUMBER(24"
+        },
+        {
+          "name": "retover",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "retover             NUMBER(1) DEFAULT 0"
+        },
+        {
+          "name": "operatoerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "operatoerid         NUMBER(10)"
+        },
+        {
+          "name": "oper_status",
+          "type": "VARCHAR2(20",
+          "nullable": true,
+          "definition": "oper_status         VARCHAR2(20 BYTE)"
+        },
+        {
+          "name": "c_department_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_department_id     NUMBER(10)"
+        },
+        {
+          "name": "groupno",
+          "type": "VARCHAR2(50",
+          "nullable": true,
+          "definition": "groupno             VARCHAR2(50 BYTE)"
+        },
+        {
+          "name": "contract",
+          "type": "VARCHAR2(50",
+          "nullable": true,
+          "definition": "contract            VARCHAR2(50 BYTE)"
+        },
+        {
+          "name": "contractno",
+          "type": "VARCHAR2(50",
+          "nullable": true,
+          "definition": "contractno          VARCHAR2(50 BYTE)"
+        },
+        {
+          "name": "isuf",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isuf                CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "tot_amt_precost",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_amt_precost     NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "tot_amtin_precost",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amtin_precost   NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "predatein",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "predatein           NUMBER(8)"
+        },
+        {
+          "name": "tot_amt_fee",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_amt_fee         NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "exchangerate",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "exchangerate        NUMBER(18"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 1"
+        },
+        {
+          "name": "c_cargotype_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_cargotype_id      NUMBER(10)"
+        },
+        {
+          "name": "isbo2st",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isbo2st             CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "bo2st_remark",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "bo2st_remark        VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "refno",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "refno               VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "c_store_location_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_store_location_id NUMBER(10)"
+        },
+        {
+          "name": "printtimes",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "printtimes          NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "printintimes",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "printintimes        NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "c_cargointype_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_cargointype_id    NUMBER(10)"
+        },
+        {
+          "name": "unite_status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "unite_status        NUMBER(1) DEFAULT 1"
+        },
+        {
+          "name": "m_purgroupno_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_purgroupno_id     NUMBER(10)"
+        },
+        {
+          "name": "exceedpoqty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "exceedpoqty         NUMBER(10)"
+        },
+        {
+          "name": "pricemodify",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "pricemodify         NUMBER(24"
+        },
+        {
+          "name": "tot_amtin_pchecktax",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_amtin_pchecktax NUMBER(24"
+        },
+        {
+          "name": "c_currency",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "c_currency          VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "realdate",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "realdate            NUMBER(8)"
+        },
+        {
+          "name": "c_currency_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_currency_id       NUMBER(10)"
+        },
+        {
+          "name": "pursource",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "pursource           CHAR(3 BYTE) DEFAULT 'NOR'"
+        },
+        {
+          "name": "tax_dis",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "tax_dis             NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0"
+        },
+        {
+          "name": "tot_qty_inved",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_qty_inved       NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "c_tranway_jz_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_tranway_jz_id     NUMBER(10)"
+        },
+        {
+          "name": "if_goodsarr",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "if_goodsarr         CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "isadj",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isadj               CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "tot_amt_tax",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amt_tax         NUMBER(18"
+        },
+        {
+          "name": "in_au_state",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "in_au_state         CHAR(1 BYTE)"
+        },
+        {
+          "name": "in_au_pi_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "in_au_pi_id         NUMBER(10)"
+        },
+        {
+          "name": "check_status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "check_status        NUMBER(1) DEFAULT 1"
+        },
+        {
+          "name": "checkerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "checkerid           NUMBER(10)"
+        },
+        {
+          "name": "checktime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "checktime           DATE"
+        },
+        {
+          "name": "datewh",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "datewh              NUMBER(8)"
+        },
+        {
+          "name": "isagt",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isagt               CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "tot_qtyinved",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_qtyinved        NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "tot_amtinved",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_amtinved        NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "isback",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isback              CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "y_tot_amt_actual",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "y_tot_amt_actual    NUMBER(24"
+        },
+        {
+          "name": "y_price_actual",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "y_price_actual      NUMBER(24"
+        },
+        {
+          "name": "y_complete_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_complete_id       NUMBER(10)"
+        },
+        {
+          "name": "y_inform_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_inform_id         NUMBER(10)"
+        },
+        {
+          "name": "tot_good_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_good_qty        NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "tot_defect_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_defect_qty      NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "tot_fgood_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_fgood_qty       NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "b_bwpuraccount_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "b_bwpuraccount_id   NUMBER(10)"
+        },
+        {
+          "name": "tot_tax_amt",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_tax_amt         NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "tot_notax_amt",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_notax_amt       NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "is_towmsin",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_towmsin          CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "deliverytime",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "deliverytime        VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "vehicle",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "vehicle             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "is_dir",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_dir              CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "is_manual",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_manual           CHAR(1 BYTE)"
+        },
+        {
+          "name": "rejectreason",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "rejectreason        VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "is_bas",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_bas              CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "unpack_status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "unpack_status       NUMBER(1) DEFAULT 1"
+        },
+        {
+          "name": "m_teus_v_box_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_teus_v_box_id     NUMBER(10)"
+        },
+        {
+          "name": "qty_box",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qty_box             NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "boxin_status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "boxin_status        NUMBER(1) DEFAULT 1"
+        },
+        {
+          "name": "m_v_box_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_v_box_id          NUMBER(10)"
+        },
+        {
+          "name": "qty_v_box",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qty_v_box           NUMBER(10)"
+        },
+        {
+          "name": "pricechange",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "pricechange         CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "is_basin",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_basin            CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "m_orgpurchase_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_orgpurchase_id    NUMBER(10)"
+        },
+        {
+          "name": "rcopy_status",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "rcopy_status        CHAR(1 BYTE) DEFAULT '1'"
+        },
+        {
+          "name": "rcopyerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "rcopyerid           NUMBER(10)"
+        },
+        {
+          "name": "is_rcopy",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_rcopy            CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "rcopytime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "rcopytime           DATE"
+        },
+        {
+          "name": "nc_account_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "nc_account_id       NUMBER(10)"
+        },
+        {
+          "name": "nc_status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "nc_status           NUMBER(1) DEFAULT 1"
+        },
+        {
+          "name": "nc_statuserid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "nc_statuserid       NUMBER(10)"
+        },
+        {
+          "name": "nc_statustime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "nc_statustime       DATE"
+        },
+        {
+          "name": "batchpur_docno",
+          "type": "VARCHAR2(100",
+          "nullable": true,
+          "definition": "batchpur_docno      VARCHAR2(100 BYTE)"
+        },
+        {
+          "name": "c_area_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_area_id           NUMBER(10)"
+        },
+        {
+          "name": "doctype1",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "doctype1            CHAR(3 BYTE)"
+        },
+        {
+          "name": "discount",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "discount            NUMBER(10"
+        }
+      ],
+      "column_count": 135
+    },
+    "m_purchase_batchimp": {
+      "schema": "bosnds3",
+      "name": "m_purchase_batchimp",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id          NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "code",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "code        VARCHAR2(80 BYTE) DEFAULT '001'"
+        },
+        {
+          "name": "docno",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "docno       VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "billdate",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "billdate    NUMBER(8)"
+        },
+        {
+          "name": "no",
+          "type": "VARCHAR2(20",
+          "nullable": true,
+          "definition": "no          VARCHAR2(20 BYTE)"
+        },
+        {
+          "name": "qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qty         NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "imped",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "imped       CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "status",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "status      NUMBER(10) DEFAULT 1"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description VARCHAR2(255 BYTE)"
+        }
+      ],
+      "column_count": 9
+    },
+    "m_purchase_forfeit": {
+      "schema": "bosnds3",
+      "name": "m_purchase_forfeit",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id        NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id           NUMBER(10)"
+        },
+        {
+          "name": "docno",
+          "type": "VARCHAR2(80",
+          "nullable": false,
+          "definition": "docno               VARCHAR2(80 BYTE) NOT NULL"
+        },
+        {
+          "name": "billdate",
+          "type": "NUMBER(8)",
+          "nullable": false,
+          "definition": "billdate            NUMBER(8) NOT NULL"
+        },
+        {
+          "name": "m_purchase_quick_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "m_purchase_quick_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "m_purchase_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "m_purchase_id       NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "tot_amt_forfeit",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amt_forfeit     NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": false,
+          "definition": "4) DEFAULT 0 NOT NULL"
+        },
+        {
+          "name": "datein",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "datein              NUMBER(8)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "description         VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "status",
+          "type": "NUMBER(1)",
+          "nullable": false,
+          "definition": "status              NUMBER(1) DEFAULT 1 NOT NULL"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid             NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid          NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate        DATE"
+        },
+        {
+          "name": "statuserid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "statuserid          NUMBER(10)"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate        DATE"
+        },
+        {
+          "name": "statustime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "statustime          DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive            CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "description2",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "description2        VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "adj_amt_forfeit",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "adj_amt_forfeit     NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        }
+      ],
+      "column_count": 22
+    },
+    "m_purchase_forfeititem": {
+      "schema": "bosnds3",
+      "name": "m_purchase_forfeititem",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                    NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id          NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id             NUMBER(10)"
+        },
+        {
+          "name": "m_purchase_forfeit_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_purchase_forfeit_id NUMBER(10)"
+        },
+        {
+          "name": "lateday",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "lateday               NUMBER(10)"
+        },
+        {
+          "name": "b_po_boxno_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "b_po_boxno_id         NUMBER(10)"
+        },
+        {
+          "name": "m_product_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_product_id          NUMBER(10)"
+        },
+        {
+          "name": "qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qty                   NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "priceactual",
+          "type": "NUMBER(14",
+          "nullable": true,
+          "definition": "priceactual           NUMBER(14"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "tot_amt_forfeit",
+          "type": "NUMBER(14",
+          "nullable": true,
+          "definition": "tot_amt_forfeit       NUMBER(14"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(200",
+          "nullable": true,
+          "definition": "description           VARCHAR2(200 BYTE)"
+        },
+        {
+          "name": "reason",
+          "type": "VARCHAR2(200",
+          "nullable": true,
+          "definition": "reason                VARCHAR2(200 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid               NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid            NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate          DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate          DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive              CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "datein",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "datein                NUMBER(8)"
+        },
+        {
+          "name": "adj_amt_forfeit",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "adj_amt_forfeit       NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        }
+      ],
+      "column_count": 21
+    },
+    "m_purchase_moreitem": {
+      "schema": "bosnds3",
+      "name": "m_purchase_moreitem",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                        NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id              NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id                 NUMBER(10)"
+        },
+        {
+          "name": "m_purchase_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "m_purchase_id             NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "m_productalias_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_productalias_id         NUMBER(10)"
+        },
+        {
+          "name": "m_product_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_product_id              NUMBER(10)"
+        },
+        {
+          "name": "qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qty                       NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "qtymore",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qtymore                   NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "m_attributesetinstance_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_attributesetinstance_id NUMBER(10)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid                   NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid                NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate              DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate              DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive                  CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 14
+    },
+    "m_purchase_quick": {
+      "schema": "bosnds3",
+      "name": "m_purchase_quick",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id  NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id     NUMBER(10)"
+        },
+        {
+          "name": "docno",
+          "type": "VARCHAR2(80",
+          "nullable": false,
+          "definition": "docno         VARCHAR2(80 BYTE) NOT NULL"
+        },
+        {
+          "name": "billdate",
+          "type": "NUMBER(8)",
+          "nullable": false,
+          "definition": "billdate      NUMBER(8) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "description   VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "status",
+          "type": "NUMBER(1)",
+          "nullable": false,
+          "definition": "status        NUMBER(1) DEFAULT 1 NOT NULL"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid       NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate  DATE"
+        },
+        {
+          "name": "statuserid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "statuserid    NUMBER(10)"
+        },
+        {
+          "name": "statustime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "statustime    DATE"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid    NUMBER(10)"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate  DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive      CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "tot_lines",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_lines     NUMBER(10)"
+        },
+        {
+          "name": "tot_boxqty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_boxqty    NUMBER(10)"
+        },
+        {
+          "name": "au_pi_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "au_pi_id      NUMBER(10)"
+        },
+        {
+          "name": "au_state",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "au_state      CHAR(1 BYTE)"
+        },
+        {
+          "name": "c_store_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_store_id    NUMBER(10)"
+        },
+        {
+          "name": "datein",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "datein        NUMBER(8)"
+        },
+        {
+          "name": "c_supplier_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supplier_id NUMBER(10)"
+        }
+      ],
+      "column_count": 21
+    },
+    "m_purchase_quickitem": {
+      "schema": "bosnds3",
+      "name": "m_purchase_quickitem",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id        NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id           NUMBER(10)"
+        },
+        {
+          "name": "m_purchase_quick_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "m_purchase_quick_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "b_po_boxno_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "b_po_boxno_id       NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "b_po_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "b_po_id             NUMBER(10)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid             NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid          NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate        DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate        DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive            CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "status              NUMBER(1) DEFAULT 1"
+        }
+      ],
+      "column_count": 12
+    },
+    "m_purchasedelitem": {
+      "schema": "bosnds3",
+      "name": "m_purchasedelitem",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                        NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id              NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id                 NUMBER(10)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid                   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate              DATE"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid                NUMBER(10)"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate              DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive                  CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "m_purchase_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_purchase_id             NUMBER(10)"
+        },
+        {
+          "name": "m_product_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_product_id              NUMBER(10)"
+        },
+        {
+          "name": "m_attributesetinstance_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_attributesetinstance_id NUMBER(10)"
+        },
+        {
+          "name": "m_productalias_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_productalias_id         NUMBER(10)"
+        },
+        {
+          "name": "qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qty                       NUMBER(10)"
+        },
+        {
+          "name": "pricelist",
+          "type": "NUMBER(14",
+          "nullable": true,
+          "definition": "pricelist                 NUMBER(14"
+        },
+        {
+          "name": "priceactual",
+          "type": "NUMBER(14",
+          "nullable": true,
+          "definition": "priceactual               NUMBER(14"
+        },
+        {
+          "name": "discount",
+          "type": "NUMBER(14",
+          "nullable": true,
+          "definition": "discount                  NUMBER(14"
+        },
+        {
+          "name": "tot_amt_list",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amt_list              NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "tot_amt_actual",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amt_actual            NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description               VARCHAR2(255 BYTE)"
+        }
+      ],
+      "column_count": 21
+    },
+    "m_purchaseitem": {
+      "schema": "bosnds3",
+      "name": "m_purchaseitem",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                        NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id              NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id                 NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive                  CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate              DATE"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid                   NUMBER(10)"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate              DATE"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid                NUMBER(10)"
+        },
+        {
+          "name": "m_purchase_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_purchase_id             NUMBER(10)"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno                   NUMBER(10)"
+        },
+        {
+          "name": "m_product_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_product_id              NUMBER(10)"
+        },
+        {
+          "name": "m_attributesetinstance_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_attributesetinstance_id NUMBER(10)"
+        },
+        {
+          "name": "qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qty                       NUMBER(10)"
+        },
+        {
+          "name": "qtyin",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qtyin                     NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "pricelist",
+          "type": "NUMBER(14",
+          "nullable": true,
+          "definition": "pricelist                 NUMBER(14"
+        },
+        {
+          "name": "priceactual",
+          "type": "NUMBER(16",
+          "nullable": true,
+          "definition": "priceactual               NUMBER(16"
+        },
+        {
+          "name": "pricedeclare",
+          "type": "NUMBER(14",
+          "nullable": true,
+          "definition": "pricedeclare              NUMBER(14"
+        },
+        {
+          "name": "tariff",
+          "type": "NUMBER(14",
+          "nullable": true,
+          "definition": "tariff                    NUMBER(14"
+        },
+        {
+          "name": "tariffdiscount",
+          "type": "NUMBER(14",
+          "nullable": true,
+          "definition": "tariffdiscount            NUMBER(14"
+        },
+        {
+          "name": "tax",
+          "type": "NUMBER(14",
+          "nullable": true,
+          "definition": "tax                       NUMBER(14"
+        },
+        {
+          "name": "taxdiscount",
+          "type": "NUMBER(14",
+          "nullable": true,
+          "definition": "taxdiscount               NUMBER(14"
+        },
+        {
+          "name": "discount",
+          "type": "NUMBER(14",
+          "nullable": true,
+          "definition": "discount                  NUMBER(14"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "description               VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "tot_amt_list",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_amt_list              NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "tot_amt_actual",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_amt_actual            NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "tot_amt_declare",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amt_declare           NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "tot_amt_tariff",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amt_tariff            NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "tot_amt_tax",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amt_tax               NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "tot_amt_pay",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amt_pay               NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "tot_amtin_list",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amtin_list            NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "tot_amtin_actual",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_amtin_actual          NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "tot_amtin_tariff",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amtin_tariff          NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "tot_amtin_declare",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amtin_declare         NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "tot_amtin_tax",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amtin_tax             NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "tot_amtin_pay",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amtin_pay             NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "status                    NUMBER(1) DEFAULT 1"
+        },
+        {
+          "name": "in_status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "in_status                 NUMBER(1) DEFAULT 1"
+        },
+        {
+          "name": "qtydiff",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qtydiff                   NUMBER(10)"
+        },
+        {
+          "name": "pricecheck",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "pricecheck                NUMBER(24"
+        },
+        {
+          "name": "tot_amtin_pcheck",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_amtin_pcheck          NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "qtyconsign",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qtyconsign                NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "qtyrem",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qtyrem                    NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "qtyoccu",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qtyoccu                   NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "addsdesc",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "addsdesc                  VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "precost",
+          "type": "NUMBER(14",
+          "nullable": true,
+          "definition": "precost                   NUMBER(14"
+        },
+        {
+          "name": "tot_amt_precost",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_amt_precost           NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "tot_amtin_precost",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amtin_precost         NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "m_productalias_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_productalias_id         NUMBER(10)"
+        },
+        {
+          "name": "dateguarantee",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "dateguarantee             NUMBER(8)"
+        },
+        {
+          "name": "pricemodify",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "pricemodify               NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "amt_deduction",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "amt_deduction             NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "amt_fee",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "amt_fee                   NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "tot_amtin_pchecktax",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_amtin_pchecktax       NUMBER(24"
+        },
+        {
+          "name": "c_cur_amt",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "c_cur_amt                 NUMBER(18"
+        },
+        {
+          "name": "tax_amt",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tax_amt                   NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "tax_amtcount",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tax_amtcount              NUMBER(18"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0"
+        },
+        {
+          "name": "tot_amt_curactual",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amt_curactual         NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "tot_amt_cur",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amt_cur               NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "tot_amt_other",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amt_other             NUMBER(18"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "tax_dis",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "tax_dis                   NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT NULL"
+        },
+        {
+          "name": "qty_inved",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qty_inved                 NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "orgid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orgid                     NUMBER(10)"
+        },
+        {
+          "name": "good_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "good_qty                  NUMBER(10)"
+        },
+        {
+          "name": "defect_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "defect_qty                NUMBER(10)"
+        },
+        {
+          "name": "notax_amt",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "notax_amt                 NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "qtyinved",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qtyinved                  NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "amtinved",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "amtinved                  NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "isacc",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isacc                     CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "isinv",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isinv                     CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "y_price_actual",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "y_price_actual            NUMBER(24"
+        },
+        {
+          "name": "y_tot_amt_actual",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "y_tot_amt_actual          NUMBER(24"
+        },
+        {
+          "name": "send_count",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "send_count                NUMBER(10)"
+        },
+        {
+          "name": "fgood_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "fgood_qty                 NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "defectremark",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "defectremark              VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "deladvice",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "deladvice                 VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "check_description",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "check_description         VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "inceil_count",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "inceil_count              NUMBER(10)"
+        },
+        {
+          "name": "notax_price",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "notax_price               NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "qtyremex",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qtyremex                  NUMBER(10)"
+        },
+        {
+          "name": "nc_status",
+          "type": "NUMBER(1)",
+          "nullable": false,
+          "definition": "nc_status                 NUMBER(1) DEFAULT 1 NOT NULL"
+        },
+        {
+          "name": "nc_statuserid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "nc_statuserid             NUMBER(10)"
+        },
+        {
+          "name": "nc_statustime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "nc_statustime             DATE"
+        },
+        {
+          "name": "popriceactual",
+          "type": "NUMBER(16",
+          "nullable": true,
+          "definition": "popriceactual             NUMBER(16"
+        },
+        {
+          "name": "nc_producttype_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "nc_producttype_id         NUMBER(10)"
+        }
+      ],
+      "column_count": 111
+    },
+    "m_purchasestoryitem": {
+      "schema": "bosnds3",
+      "name": "m_purchasestoryitem",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                        NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id              NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id                 NUMBER(10)"
+        },
+        {
+          "name": "m_purchase_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_purchase_id             NUMBER(10)"
+        },
+        {
+          "name": "m_product_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_product_id              NUMBER(10)"
+        },
+        {
+          "name": "m_attributesetinstance_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_attributesetinstance_id NUMBER(10)"
+        },
+        {
+          "name": "c_store_location_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_store_location_id       NUMBER(10)"
+        },
+        {
+          "name": "qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qty                       NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid                   NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid                NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate              DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate              DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive                  CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "m_productalias_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_productalias_id         NUMBER(10)"
+        }
+      ],
+      "column_count": 14
+    },
+    "nc_supplier_type": {
+      "schema": "bosnds3",
+      "name": "nc_supplier_type",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "code",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "code         VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "name         VARCHAR2(80 BYTE)"
+        }
+      ],
+      "column_count": 10
+    },
+    "nc_suppliertypeitem": {
+      "schema": "bosnds3",
+      "name": "nc_suppliertypeitem",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                 NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id       NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id          NUMBER(10)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid            NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate       DATE"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid         NUMBER(10)"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate       DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive           CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "nc_suppliertype_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "nc_suppliertype_id NUMBER(10)"
+        },
+        {
+          "name": "nc_accsubj_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "nc_accsubj_id      NUMBER(10)"
+        },
+        {
+          "name": "nc_account_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "nc_account_id      NUMBER(10)"
+        },
+        {
+          "name": "nc_accdoc_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "nc_accdoc_id       NUMBER(10)"
+        }
+      ],
+      "column_count": 12
+    },
+    "s_purchase": {
+      "schema": "bosnds3",
+      "name": "s_purchase",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id      NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id         NUMBER(10)"
+        },
+        {
+          "name": "docno",
+          "type": "VARCHAR2(80",
+          "nullable": false,
+          "definition": "docno             VARCHAR2(80 BYTE) NOT NULL"
+        },
+        {
+          "name": "billdate",
+          "type": "NUMBER(8)",
+          "nullable": false,
+          "definition": "billdate          NUMBER(8) NOT NULL"
+        },
+        {
+          "name": "c_supplier_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supplier_id     NUMBER(10)"
+        },
+        {
+          "name": "s_plan_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "s_plan_id         NUMBER(10)"
+        },
+        {
+          "name": "c_supplier2_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_supplier2_id    NUMBER(10)"
+        },
+        {
+          "name": "remark",
+          "type": "VARCHAR2(1000",
+          "nullable": true,
+          "definition": "remark            VARCHAR2(1000 BYTE)"
+        },
+        {
+          "name": "tot_qtyin",
+          "type": "NUMBER(18)",
+          "nullable": true,
+          "definition": "tot_qtyin         NUMBER(18)"
+        },
+        {
+          "name": "tot_qtyout",
+          "type": "NUMBER(18)",
+          "nullable": true,
+          "definition": "tot_qtyout        NUMBER(18)"
+        },
+        {
+          "name": "tot_amtout_actual",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amtout_actual NUMBER(18"
+        },
+        {
+          "name": "tot_amtin_actual",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amtin_actual  NUMBER(18"
+        },
+        {
+          "name": "status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "status            NUMBER(1)"
+        },
+        {
+          "name": "close_status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "close_status      NUMBER(1)"
+        },
+        {
+          "name": "finished",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "finished          NUMBER(1)"
+        },
+        {
+          "name": "statuserid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "statuserid        NUMBER(10)"
+        },
+        {
+          "name": "statustime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "statustime        DATE"
+        },
+        {
+          "name": "closerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "closerid          NUMBER(10)"
+        },
+        {
+          "name": "closetime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "closetime         DATE"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid           NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid        NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate      DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate      DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive          CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "purchasetype",
+          "type": "CHAR(3",
+          "nullable": true,
+          "definition": "purchasetype      CHAR(3 BYTE)"
+        },
+        {
+          "name": "s_purchasetype_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "s_purchasetype_id NUMBER(10)"
+        },
+        {
+          "name": "deliverydate",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "deliverydate      NUMBER(8)"
+        },
+        {
+          "name": "receiptdate",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "receiptdate       NUMBER(8)"
+        }
+      ],
+      "column_count": 29
+    },
+    "s_purchaseitem": {
+      "schema": "bosnds3",
+      "name": "s_purchaseitem",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id      NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id         NUMBER(10)"
+        },
+        {
+          "name": "s_purchase_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "s_purchase_id     NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "s_material_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "s_material_id     NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "qtyout",
+          "type": "NUMBER(12",
+          "nullable": true,
+          "definition": "qtyout            NUMBER(12"
+        },
+        {
+          "name": "qtyin",
+          "type": "NUMBER(12",
+          "nullable": true,
+          "definition": "qtyin             NUMBER(12"
+        },
+        {
+          "name": "priceactual",
+          "type": "NUMBER(16",
+          "nullable": true,
+          "definition": "priceactual       NUMBER(16"
+        },
+        {
+          "name": "tot_amtin_actual",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amtin_actual  NUMBER(18"
+        },
+        {
+          "name": "tot_amtout_actual",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_amtout_actual NUMBER(18"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno           NUMBER(10)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid           NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid        NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate      DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate      DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive          CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "billdate",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "billdate          NUMBER(8)"
+        },
+        {
+          "name": "qty",
+          "type": "NUMBER(12",
+          "nullable": true,
+          "definition": "qty               NUMBER(12"
+        }
+      ],
+      "column_count": 18
+    },
+    "wms_supplier": {
+      "schema": "bosnds3",
+      "name": "wms_supplier",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "code",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "code         VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "name         VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description  VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "companyname",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "companyname  VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "city",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "city         VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "contacter",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "contacter    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "address",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "address      VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "postal",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "postal       VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "phone",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "phone        VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "mobil",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "mobil        VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "email",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "email        VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "fax",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "fax          VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "dim1_name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "dim1_name    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "dim2_name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "dim2_name    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "dim3_name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "dim3_name    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "dim4_name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "dim4_name    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "dim5_name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "dim5_name    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "dim6_name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "dim6_name    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "dim7_name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "dim7_name    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "dim8_name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "dim8_name    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "dim9_name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "dim9_name    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "dim10_name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "dim10_name   VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "recivedate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "recivedate   DATE"
+        },
+        {
+          "name": "recivestatus",
+          "type": "NUMBER(2)",
+          "nullable": false,
+          "definition": "recivestatus NUMBER(2) DEFAULT '80' NOT NULL"
+        },
+        {
+          "name": "errmsg",
+          "type": "VARCHAR2(1000",
+          "nullable": true,
+          "definition": "errmsg       VARCHAR2(1000 BYTE)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 31
+    },
+    "y_applypurchase_item": {
+      "schema": "bosnds3",
+      "name": "y_applypurchase_item",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                 NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id       NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id          NUMBER(10)"
+        },
+        {
+          "name": "y_applypurchase_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "y_applypurchase_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "m_product_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "m_product_id       NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "m_color_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_color_id         NUMBER(10)"
+        },
+        {
+          "name": "m_size_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_size_id          NUMBER(10)"
+        },
+        {
+          "name": "y_material_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_material_id      NUMBER(10)"
+        },
+        {
+          "name": "y_color_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_color_id         NUMBER(10)"
+        },
+        {
+          "name": "fabric_width",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "fabric_width       NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0.00"
+        },
+        {
+          "name": "fabric_weight",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "fabric_weight      NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0.00"
+        },
+        {
+          "name": "y_spec_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_spec_id          NUMBER(10)"
+        },
+        {
+          "name": "per_num",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "per_num            NUMBER(18"
+        },
+        {
+          "name": "8)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "8) DEFAULT 0.00"
+        },
+        {
+          "name": "qty_so",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qty_so             NUMBER(10)"
+        },
+        {
+          "name": "tot_num",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_num            NUMBER(18"
+        },
+        {
+          "name": "8)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "8) DEFAULT 0.00"
+        },
+        {
+          "name": "tot_backnum",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_backnum        NUMBER(18"
+        },
+        {
+          "name": "8)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "8) DEFAULT 0.00"
+        },
+        {
+          "name": "qty",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "qty                NUMBER(18"
+        },
+        {
+          "name": "purchase_unit_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "purchase_unit_id   NUMBER(10)"
+        },
+        {
+          "name": "fprice",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "fprice             NUMBER(10"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0.00"
+        },
+        {
+          "name": "famount",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "famount            NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0.00"
+        },
+        {
+          "name": "remark",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "remark             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid            NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid         NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate       DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate       DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive           CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "y_materialalias_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_materialalias_id NUMBER(10)"
+        }
+      ],
+      "column_count": 34
+    },
+    "y_purchase": {
+      "schema": "bosnds3",
+      "name": "y_purchase",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                      NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id            NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id               NUMBER(10)"
+        },
+        {
+          "name": "docno",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "docno                   VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "list_type",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "list_type               VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "billdate",
+          "type": "NUMBER(8)",
+          "nullable": false,
+          "definition": "billdate                NUMBER(8) NOT NULL"
+        },
+        {
+          "name": "datein",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "datein                  NUMBER(8)"
+        },
+        {
+          "name": "datasource",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "datasource              VARCHAR2(255 BYTE) DEFAULT 'CP' NOT NULL"
+        },
+        {
+          "name": "deliverydate",
+          "type": "NUMBER(8)",
+          "nullable": false,
+          "definition": "deliverydate            NUMBER(8) NOT NULL"
+        },
+        {
+          "name": "y_supplier_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "y_supplier_id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "y_warehouse_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "y_warehouse_id          NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "y_plan_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_plan_id               NUMBER(10)"
+        },
+        {
+          "name": "loss_rate",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "loss_rate               NUMBER(18"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0.00"
+        },
+        {
+          "name": "more_rate",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "more_rate               NUMBER(18"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0.00"
+        },
+        {
+          "name": "address",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "address                 VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "remark",
+          "type": "VARCHAR2(2000",
+          "nullable": true,
+          "definition": "remark                  VARCHAR2(2000 BYTE)"
+        },
+        {
+          "name": "tot_qty",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_qty                 NUMBER(18"
+        },
+        {
+          "name": "tot_qtyin",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_qtyin               NUMBER(18"
+        },
+        {
+          "name": "tot_famount",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_famount             NUMBER(18"
+        },
+        {
+          "name": "tot_famountin",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_famountin           NUMBER(18"
+        },
+        {
+          "name": "status",
+          "type": "NUMBER(1)",
+          "nullable": false,
+          "definition": "status                  NUMBER(1) DEFAULT 1 NOT NULL"
+        },
+        {
+          "name": "in_status",
+          "type": "NUMBER(1)",
+          "nullable": false,
+          "definition": "in_status               NUMBER(1) DEFAULT 1 NOT NULL"
+        },
+        {
+          "name": "au_state",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "au_state                CHAR(1 BYTE)"
+        },
+        {
+          "name": "au_pi_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "au_pi_id                NUMBER(10)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid                 NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate            DATE"
+        },
+        {
+          "name": "statuserid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "statuserid              NUMBER(10)"
+        },
+        {
+          "name": "statustime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "statustime              DATE"
+        },
+        {
+          "name": "inerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "inerid                  NUMBER(10)"
+        },
+        {
+          "name": "intime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "intime                  DATE"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid              NUMBER(10)"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate            DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive                CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "m_dim1_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_dim1_id               NUMBER(10)"
+        },
+        {
+          "name": "involveproduct",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "involveproduct          VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "oc_status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "oc_status               NUMBER(1) DEFAULT 1"
+        },
+        {
+          "name": "ocer",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ocer                    NUMBER(10)"
+        },
+        {
+          "name": "octime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "octime                  DATE"
+        },
+        {
+          "name": "tax_dis",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tax_dis                 NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0.17"
+        },
+        {
+          "name": "pricemodify",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "pricemodify             NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "tot_famountin_pcheck",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_famountin_pcheck    NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "tot_famountin_dec",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_famountin_dec       NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "tot_famountin_fee",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_famountin_fee       NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "tot_famountin_pchecktax",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_famountin_pchecktax NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "pck_status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "pck_status              NUMBER(1) DEFAULT 1"
+        },
+        {
+          "name": "pcheckid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "pcheckid                NUMBER(10)"
+        },
+        {
+          "name": "pchecktime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "pchecktime              DATE"
+        },
+        {
+          "name": "check_status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "check_status            NUMBER(1) DEFAULT 1"
+        },
+        {
+          "name": "checkerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "checkerid               NUMBER(10)"
+        },
+        {
+          "name": "checktime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "checktime               DATE"
+        },
+        {
+          "name": "datewh",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "datewh                  NUMBER(8)"
+        },
+        {
+          "name": "tot_qtyinved",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_qtyinved            NUMBER(18"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0"
+        },
+        {
+          "name": "tot_amtinved",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_amtinved            NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "isback",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isback                  CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "b_bwmtlpuraccount_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "b_bwmtlpuraccount_id    NUMBER(10)"
+        },
+        {
+          "name": "tot_fgood_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_fgood_qty           NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "tot_good_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_good_qty            NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "tot_defect_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_defect_qty          NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "tot_tax_amt",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_tax_amt             NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "tot_notax_amt",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tot_notax_amt           NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "is_towms",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_towms                CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "deliverytime",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "deliverytime            VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "vehicle",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "vehicle                 VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "is_dir",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_dir                  CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "is_manual",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_manual               CHAR(1 BYTE)"
+        }
+      ],
+      "column_count": 77
+    },
+    "y_purchase_acc_fee": {
+      "schema": "bosnds3",
+      "name": "y_purchase_acc_fee",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id      NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id         NUMBER(10)"
+        },
+        {
+          "name": "y_purchase_acc_id",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "y_purchase_acc_id NUMBER(8)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(400",
+          "nullable": true,
+          "definition": "name              VARCHAR2(400 BYTE)"
+        },
+        {
+          "name": "department",
+          "type": "VARCHAR2(400",
+          "nullable": true,
+          "definition": "department        VARCHAR2(400 BYTE)"
+        },
+        {
+          "name": "price",
+          "type": "NUMBER(16",
+          "nullable": true,
+          "definition": "price             NUMBER(16"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0"
+        },
+        {
+          "name": "qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "qty               NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid           NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid        NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate      DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate      DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive          CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 14
+    },
+    "y_purchase_allot_item": {
+      "schema": "bosnds3",
+      "name": "y_purchase_allot_item",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id        NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id           NUMBER(10)"
+        },
+        {
+          "name": "y_purchase_allot_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "y_purchase_allot_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "m_product_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_product_id        NUMBER(10)"
+        },
+        {
+          "name": "qty",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "qty                 NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": false,
+          "definition": "2) DEFAULT 0.00 NOT NULL"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid             NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid          NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate        DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate        DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive            CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 12
+    },
+    "y_purchase_imp_pl": {
+      "schema": "bosnds3",
+      "name": "y_purchase_imp_pl",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id  NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id     NUMBER(10)"
+        },
+        {
+          "name": "y_purchase_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "y_purchase_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "y_plan_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_plan_id     NUMBER(10)"
+        },
+        {
+          "name": "research",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "research      CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "plan_rate",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "plan_rate     NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": false,
+          "definition": "2) DEFAULT 1.00 NOT NULL"
+        },
+        {
+          "name": "autoqty",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "autoqty       NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": false,
+          "definition": "2) DEFAULT 1 NOT NULL"
+        },
+        {
+          "name": "tot_lines",
+          "type": "NUMBER(18)",
+          "nullable": true,
+          "definition": "tot_lines     NUMBER(18)"
+        },
+        {
+          "name": "tot_qty_pl",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "tot_qty_pl    NUMBER(10"
+        },
+        {
+          "name": "tot_qty_imped",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "tot_qty_imped NUMBER(10"
+        },
+        {
+          "name": "tot_qty_imp",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "tot_qty_imp   NUMBER(10"
+        },
+        {
+          "name": "status",
+          "type": "NUMBER(1)",
+          "nullable": false,
+          "definition": "status        NUMBER(1) DEFAULT 1 NOT NULL"
+        },
+        {
+          "name": "au_state",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "au_state      CHAR(1 BYTE)"
+        },
+        {
+          "name": "au_pi_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "au_pi_id      NUMBER(10)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid       NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate  DATE"
+        },
+        {
+          "name": "statuserid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "statuserid    NUMBER(10)"
+        },
+        {
+          "name": "statustime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "statustime    DATE"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid    NUMBER(10)"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate  DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive      CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "tot_famount",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "tot_famount   NUMBER(10"
+        },
+        {
+          "name": "y_supplier_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_supplier_id NUMBER(10)"
+        }
+      ],
+      "column_count": 26
+    },
+    "y_purchase_imp_pl_item": {
+      "schema": "bosnds3",
+      "name": "y_purchase_imp_pl_item",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                   NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id         NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id            NUMBER(10)"
+        },
+        {
+          "name": "y_purchase_imp_pl_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "y_purchase_imp_pl_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "y_material_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_material_id        NUMBER(10)"
+        },
+        {
+          "name": "y_color_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_color_id           NUMBER(10)"
+        },
+        {
+          "name": "fabric_width",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "fabric_width         NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0.00"
+        },
+        {
+          "name": "fabric_weight",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "fabric_weight        NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0.00"
+        },
+        {
+          "name": "y_spec_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_spec_id            NUMBER(10)"
+        },
+        {
+          "name": "qty_pl",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "qty_pl               NUMBER(10"
+        },
+        {
+          "name": "qty_imped",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "qty_imped            NUMBER(10"
+        },
+        {
+          "name": "qty_imp",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "qty_imp              NUMBER(10"
+        },
+        {
+          "name": "purchase_unit_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "purchase_unit_id     NUMBER(10)"
+        },
+        {
+          "name": "fprice",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "fprice               NUMBER(10"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT 0.00"
+        },
+        {
+          "name": "famount",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "famount              NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0.00"
+        },
+        {
+          "name": "m_product_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_product_id         NUMBER(10)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid              NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid           NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate         DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate         DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive             CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "y_materialalias_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_materialalias_id   NUMBER(10)"
+        }
+      ],
+      "column_count": 26
+    },
+    "y_purchase_item": {
+      "schema": "bosnds3",
+      "name": "y_purchase_item",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id        NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id           NUMBER(10)"
+        },
+        {
+          "name": "y_purchase_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "y_purchase_id       NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "y_material_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_material_id       NUMBER(10)"
+        },
+        {
+          "name": "y_color_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_color_id          NUMBER(10)"
+        },
+        {
+          "name": "fabric_width",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "fabric_width        NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0.00"
+        },
+        {
+          "name": "fabric_weight",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "fabric_weight       NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0.00"
+        },
+        {
+          "name": "y_spec_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_spec_id           NUMBER(10)"
+        },
+        {
+          "name": "qty",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "qty                 NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": false,
+          "definition": "2) DEFAULT 0.00 NOT NULL"
+        },
+        {
+          "name": "qtyin",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "qtyin               NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0.00"
+        },
+        {
+          "name": "purchase_unit_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "purchase_unit_id    NUMBER(10)"
+        },
+        {
+          "name": "purchase_rate",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "purchase_rate       NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": false,
+          "definition": "2) DEFAULT 0.00 NOT NULL"
+        },
+        {
+          "name": "use_unit_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "use_unit_id         NUMBER(10)"
+        },
+        {
+          "name": "fprice",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "fprice              NUMBER(10"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT NULL"
+        },
+        {
+          "name": "famount",
+          "type": "NUMBER(16",
+          "nullable": true,
+          "definition": "famount             NUMBER(16"
+        },
+        {
+          "name": "4)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "4) DEFAULT NULL"
+        },
+        {
+          "name": "famountin",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "famountin           NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0.00"
+        },
+        {
+          "name": "m_product_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_product_id        NUMBER(10)"
+        },
+        {
+          "name": "loss_rate",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "loss_rate           NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0.00"
+        },
+        {
+          "name": "more_rate",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "more_rate           NUMBER(10"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0.00"
+        },
+        {
+          "name": "status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "status              NUMBER(1) DEFAULT 1"
+        },
+        {
+          "name": "in_status",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "in_status           NUMBER(1) DEFAULT 1"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid             NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid          NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate        DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate        DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive            CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "tot_qty",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "tot_qty             NUMBER(18"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0.00"
+        },
+        {
+          "name": "amttoprice",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "amttoprice          CHAR(1 BYTE)"
+        },
+        {
+          "name": "pricecheck",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "pricecheck          NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "pricemodify",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "pricemodify         NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "famountin_pcheck",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "famountin_pcheck    NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "famountin_dec",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "famountin_dec       NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "famountin_fee",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "famountin_fee       NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "famountin_pchecktax",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "famountin_pchecktax NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "tax_dis",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tax_dis             NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "y_materialalias_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_materialalias_id  NUMBER(10)"
+        },
+        {
+          "name": "good_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "good_qty            NUMBER(10)"
+        },
+        {
+          "name": "defect_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "defect_qty          NUMBER(10)"
+        },
+        {
+          "name": "qtyinved",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "qtyinved            NUMBER(18"
+        },
+        {
+          "name": "2)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "2) DEFAULT 0"
+        },
+        {
+          "name": "amtinved",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "amtinved            NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "tax_amt",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "tax_amt             NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "notax_amt",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "notax_amt           NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "isacc",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isacc               CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "isinv",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isinv               CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "send_count",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "send_count          NUMBER(10"
+        },
+        {
+          "name": "fgood_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "fgood_qty           NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "defectremark",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "defectremark        VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "deladvice",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "deladvice           VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "check_description",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "check_description   VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "inceil_count",
+          "type": "NUMBER(10",
+          "nullable": true,
+          "definition": "inceil_count        NUMBER(10"
+        },
+        {
+          "name": "notax_price",
+          "type": "NUMBER(24",
+          "nullable": true,
+          "definition": "notax_price         NUMBER(24"
+        },
+        {
+          "name": "10)",
+          "type": "DEFAULT",
+          "nullable": true,
+          "definition": "10) DEFAULT 0"
+        },
+        {
+          "name": "nc_status",
+          "type": "NUMBER(1)",
+          "nullable": false,
+          "definition": "nc_status           NUMBER(1) DEFAULT 1 NOT NULL"
+        },
+        {
+          "name": "nc_statuserid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "nc_statuserid       NUMBER(10)"
+        },
+        {
+          "name": "nc_statustime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "nc_statustime       DATE"
+        }
+      ],
+      "column_count": 78
+    },
+    "y_purchasebid": {
+      "schema": "bosnds3",
+      "name": "y_purchasebid",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id  NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id     NUMBER(10)"
+        },
+        {
+          "name": "y_material_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "y_material_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "y_supplier_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "y_supplier_id NUMBER(10)"
+        },
+        {
+          "name": "pricedate",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "pricedate     NUMBER(8)"
+        },
+        {
+          "name": "price",
+          "type": "NUMBER(18",
+          "nullable": true,
+          "definition": "price         NUMBER(18"
+        },
+        {
+          "name": "cycledate",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "cycledate     VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "component",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "component     VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid       NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid    NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate  DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate  DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive      CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "material_type",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "material_type VARCHAR2(255 BYTE)"
+        }
+      ],
+      "column_count": 15
+    }
+  }
+}

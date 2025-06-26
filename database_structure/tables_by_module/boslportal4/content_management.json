@@ -1,0 +1,1053 @@
+{
+  "module": "content_management",
+  "table_count": 15,
+  "tables": {
+    "blogscategory": {
+      "schema": "boslportal4",
+      "name": "blogscategory",
+      "columns": [
+        {
+          "name": "categoryid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "categoryid       VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "companyid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "companyid        VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "userid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "userid           VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "username",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "username         VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "createdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdate       TIMESTAMP"
+        },
+        {
+          "name": "modifieddate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "modifieddate     TIMESTAMP"
+        },
+        {
+          "name": "parentcategoryid",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "parentcategoryid VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "name             VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "description      VARCHAR2(4000 BYTE)"
+        }
+      ],
+      "column_count": 9
+    },
+    "blogsentry": {
+      "schema": "boslportal4",
+      "name": "blogsentry",
+      "columns": [
+        {
+          "name": "entryid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "entryid      VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "groupid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "groupid      VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "companyid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "companyid    VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "userid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "userid       VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "username",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "username     VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "createdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdate   TIMESTAMP"
+        },
+        {
+          "name": "modifieddate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "modifieddate TIMESTAMP"
+        },
+        {
+          "name": "categoryid",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "categoryid   VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "title",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "title        VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "content",
+          "type": "CLOB",
+          "nullable": true,
+          "definition": "content      CLOB"
+        },
+        {
+          "name": "displaydate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "displaydate  TIMESTAMP"
+        }
+      ],
+      "column_count": 11
+    },
+    "dlfileentry": {
+      "schema": "boslportal4",
+      "name": "dlfileentry",
+      "columns": [
+        {
+          "name": "folderid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "folderid        VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(100",
+          "nullable": false,
+          "definition": "name            VARCHAR2(100 BYTE) NOT NULL"
+        },
+        {
+          "name": "companyid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "companyid       VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "userid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "userid          VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "username",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "username        VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "versionuserid",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "versionuserid   VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "versionusername",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "versionusername VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "createdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdate      TIMESTAMP"
+        },
+        {
+          "name": "modifieddate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "modifieddate    TIMESTAMP"
+        },
+        {
+          "name": "title",
+          "type": "VARCHAR2(100",
+          "nullable": true,
+          "definition": "title           VARCHAR2(100 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "description     VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "version",
+          "type": "NUMBER(30",
+          "nullable": true,
+          "definition": "version         NUMBER(30"
+        },
+        {
+          "name": "size_",
+          "type": "NUMBER(30)",
+          "nullable": true,
+          "definition": "size_           NUMBER(30)"
+        },
+        {
+          "name": "readcount",
+          "type": "NUMBER(30)",
+          "nullable": true,
+          "definition": "readcount       NUMBER(30)"
+        },
+        {
+          "name": "extrasettings",
+          "type": "CLOB",
+          "nullable": true,
+          "definition": "extrasettings   CLOB"
+        }
+      ],
+      "column_count": 15
+    },
+    "dlfilerank": {
+      "schema": "boslportal4",
+      "name": "dlfilerank",
+      "columns": [
+        {
+          "name": "companyid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "companyid  VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "userid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "userid     VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "folderid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "folderid   VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(100",
+          "nullable": false,
+          "definition": "name       VARCHAR2(100 BYTE) NOT NULL"
+        },
+        {
+          "name": "createdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdate TIMESTAMP"
+        }
+      ],
+      "column_count": 5
+    },
+    "dlfileshortcut": {
+      "schema": "boslportal4",
+      "name": "dlfileshortcut",
+      "columns": [
+        {
+          "name": "fileshortcutid",
+          "type": "NUMBER(30)",
+          "nullable": false,
+          "definition": "fileshortcutid NUMBER(30) NOT NULL"
+        },
+        {
+          "name": "companyid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "companyid      VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "userid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "userid         VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "username",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "username       VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "createdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdate     TIMESTAMP"
+        },
+        {
+          "name": "modifieddate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "modifieddate   TIMESTAMP"
+        },
+        {
+          "name": "folderid",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "folderid       VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "tofolderid",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "tofolderid     VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "toname",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "toname         VARCHAR2(75 BYTE)"
+        }
+      ],
+      "column_count": 9
+    },
+    "dlfileversion": {
+      "schema": "boslportal4",
+      "name": "dlfileversion",
+      "columns": [
+        {
+          "name": "folderid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "folderid   VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(100",
+          "nullable": false,
+          "definition": "name       VARCHAR2(100 BYTE) NOT NULL"
+        },
+        {
+          "name": "version",
+          "type": "NUMBER(30",
+          "nullable": true,
+          "definition": "version    NUMBER(30"
+        },
+        {
+          "name": "20)",
+          "type": "NOT",
+          "nullable": false,
+          "definition": "20) NOT NULL"
+        },
+        {
+          "name": "companyid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "companyid  VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "userid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "userid     VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "username",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "username   VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "createdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdate TIMESTAMP"
+        },
+        {
+          "name": "size_",
+          "type": "NUMBER(30)",
+          "nullable": true,
+          "definition": "size_      NUMBER(30)"
+        }
+      ],
+      "column_count": 9
+    },
+    "dlfolder": {
+      "schema": "boslportal4",
+      "name": "dlfolder",
+      "columns": [
+        {
+          "name": "folderid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "folderid       VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "groupid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "groupid        VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "companyid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "companyid      VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "userid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "userid         VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "username",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "username       VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "createdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdate     TIMESTAMP"
+        },
+        {
+          "name": "modifieddate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "modifieddate   TIMESTAMP"
+        },
+        {
+          "name": "parentfolderid",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "parentfolderid VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(100",
+          "nullable": true,
+          "definition": "name           VARCHAR2(100 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "description    VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "lastpostdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "lastpostdate   TIMESTAMP"
+        }
+      ],
+      "column_count": 11
+    },
+    "igimage": {
+      "schema": "boslportal4",
+      "name": "igimage",
+      "columns": [
+        {
+          "name": "companyid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "companyid    VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "imageid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "imageid      VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "userid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "userid       VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "createdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdate   TIMESTAMP"
+        },
+        {
+          "name": "modifieddate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "modifieddate TIMESTAMP"
+        },
+        {
+          "name": "folderid",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "folderid     VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "description  VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "height",
+          "type": "NUMBER(30)",
+          "nullable": true,
+          "definition": "height       NUMBER(30)"
+        },
+        {
+          "name": "width",
+          "type": "NUMBER(30)",
+          "nullable": true,
+          "definition": "width        NUMBER(30)"
+        },
+        {
+          "name": "size_",
+          "type": "NUMBER(30)",
+          "nullable": true,
+          "definition": "size_        NUMBER(30)"
+        }
+      ],
+      "column_count": 10
+    },
+    "image": {
+      "schema": "boslportal4",
+      "name": "image",
+      "columns": [
+        {
+          "name": "imageid",
+          "type": "VARCHAR2(200",
+          "nullable": false,
+          "definition": "imageid      VARCHAR2(200 BYTE) NOT NULL"
+        },
+        {
+          "name": "modifieddate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "modifieddate TIMESTAMP"
+        },
+        {
+          "name": "text_",
+          "type": "CLOB",
+          "nullable": true,
+          "definition": "text_        CLOB"
+        },
+        {
+          "name": "type_",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "type_        VARCHAR2(75 BYTE)"
+        }
+      ],
+      "column_count": 4
+    },
+    "journalarticle": {
+      "schema": "boslportal4",
+      "name": "journalarticle",
+      "columns": [
+        {
+          "name": "companyid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "companyid          VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "groupid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "groupid            VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "articleid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "articleid          VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "version",
+          "type": "NUMBER(30",
+          "nullable": true,
+          "definition": "version            NUMBER(30"
+        },
+        {
+          "name": "20)",
+          "type": "NOT",
+          "nullable": false,
+          "definition": "20) NOT NULL"
+        },
+        {
+          "name": "userid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "userid             VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "username",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "username           VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "createdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdate         TIMESTAMP"
+        },
+        {
+          "name": "modifieddate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "modifieddate       TIMESTAMP"
+        },
+        {
+          "name": "title",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "title              VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "description        VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "content",
+          "type": "CLOB",
+          "nullable": true,
+          "definition": "content            CLOB"
+        },
+        {
+          "name": "type_",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "type_              VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "structureid",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "structureid        VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "templateid",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "templateid         VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "displaydate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "displaydate        TIMESTAMP"
+        },
+        {
+          "name": "approved",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "approved           NUMBER(1)"
+        },
+        {
+          "name": "approvedbyuserid",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "approvedbyuserid   VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "approvedbyusername",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "approvedbyusername VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "approveddate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "approveddate       TIMESTAMP"
+        },
+        {
+          "name": "expired",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "expired            NUMBER(1)"
+        },
+        {
+          "name": "expirationdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "expirationdate     TIMESTAMP"
+        },
+        {
+          "name": "reviewdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "reviewdate         TIMESTAMP"
+        }
+      ],
+      "column_count": 23
+    },
+    "journalcontentsearch": {
+      "schema": "boslportal4",
+      "name": "journalcontentsearch",
+      "columns": [
+        {
+          "name": "portletid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "portletid VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "layoutid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "layoutid  VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "ownerid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "ownerid   VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "articleid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "articleid VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "companyid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "companyid VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "groupid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "groupid   VARCHAR2(75 BYTE) NOT NULL"
+        }
+      ],
+      "column_count": 6
+    },
+    "journalstructure": {
+      "schema": "boslportal4",
+      "name": "journalstructure",
+      "columns": [
+        {
+          "name": "companyid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "companyid    VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "groupid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "groupid      VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "structureid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "structureid  VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "userid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "userid       VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "username",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "username     VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "createdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdate   TIMESTAMP"
+        },
+        {
+          "name": "modifieddate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "modifieddate TIMESTAMP"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "name         VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "description  VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "xsd",
+          "type": "CLOB",
+          "nullable": true,
+          "definition": "xsd          CLOB"
+        }
+      ],
+      "column_count": 10
+    },
+    "journaltemplate": {
+      "schema": "boslportal4",
+      "name": "journaltemplate",
+      "columns": [
+        {
+          "name": "companyid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "companyid     VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "groupid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "groupid       VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "templateid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "templateid    VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "userid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "userid        VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "username",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "username      VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "createdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdate    TIMESTAMP"
+        },
+        {
+          "name": "modifieddate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "modifieddate  TIMESTAMP"
+        },
+        {
+          "name": "structureid",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "structureid   VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "name          VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "description   VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "xsl",
+          "type": "CLOB",
+          "nullable": true,
+          "definition": "xsl           CLOB"
+        },
+        {
+          "name": "langtype",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "langtype      VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "smallimage",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "smallimage    NUMBER(1)"
+        },
+        {
+          "name": "smallimageurl",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "smallimageurl VARCHAR2(75 BYTE)"
+        }
+      ],
+      "column_count": 14
+    },
+    "wikinode": {
+      "schema": "boslportal4",
+      "name": "wikinode",
+      "columns": [
+        {
+          "name": "nodeid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "nodeid       VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "groupid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "groupid      VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "companyid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "companyid    VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "userid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "userid       VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "username",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "username     VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "createdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdate   TIMESTAMP"
+        },
+        {
+          "name": "modifieddate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "modifieddate TIMESTAMP"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "name         VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "description  VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "lastpostdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "lastpostdate TIMESTAMP"
+        }
+      ],
+      "column_count": 10
+    },
+    "wikipage": {
+      "schema": "boslportal4",
+      "name": "wikipage",
+      "columns": [
+        {
+          "name": "nodeid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "nodeid     VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "title",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "title      VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "version",
+          "type": "NUMBER(30",
+          "nullable": true,
+          "definition": "version    NUMBER(30"
+        },
+        {
+          "name": "20)",
+          "type": "NOT",
+          "nullable": false,
+          "definition": "20) NOT NULL"
+        },
+        {
+          "name": "companyid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "companyid  VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "userid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "userid     VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "username",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "username   VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "createdate",
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "definition": "createdate TIMESTAMP"
+        },
+        {
+          "name": "content",
+          "type": "CLOB",
+          "nullable": true,
+          "definition": "content    CLOB"
+        },
+        {
+          "name": "format",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "format     VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "head",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "head       NUMBER(1)"
+        }
+      ],
+      "column_count": 11
+    }
+  }
+}

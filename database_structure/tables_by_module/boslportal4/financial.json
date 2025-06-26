@@ -1,0 +1,73 @@
+{
+  "module": "financial",
+  "table_count": 1,
+  "tables": {
+    "shoppingitemprice": {
+      "schema": "boslportal4",
+      "name": "shoppingitemprice",
+      "columns": [
+        {
+          "name": "itempriceid",
+          "type": "VARCHAR2(75",
+          "nullable": false,
+          "definition": "itempriceid        VARCHAR2(75 BYTE) NOT NULL"
+        },
+        {
+          "name": "itemid",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "itemid             VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "minquantity",
+          "type": "NUMBER(30)",
+          "nullable": true,
+          "definition": "minquantity        NUMBER(30)"
+        },
+        {
+          "name": "maxquantity",
+          "type": "NUMBER(30)",
+          "nullable": true,
+          "definition": "maxquantity        NUMBER(30)"
+        },
+        {
+          "name": "price",
+          "type": "NUMBER(30",
+          "nullable": true,
+          "definition": "price              NUMBER(30"
+        },
+        {
+          "name": "discount",
+          "type": "NUMBER(30",
+          "nullable": true,
+          "definition": "discount           NUMBER(30"
+        },
+        {
+          "name": "taxable",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "taxable            NUMBER(1)"
+        },
+        {
+          "name": "shipping",
+          "type": "NUMBER(30",
+          "nullable": true,
+          "definition": "shipping           NUMBER(30"
+        },
+        {
+          "name": "useshippingformula",
+          "type": "NUMBER(1)",
+          "nullable": true,
+          "definition": "useshippingformula NUMBER(1)"
+        },
+        {
+          "name": "status",
+          "type": "NUMBER(30)",
+          "nullable": true,
+          "definition": "status             NUMBER(30)"
+        }
+      ],
+      "column_count": 10
+    }
+  }
+}

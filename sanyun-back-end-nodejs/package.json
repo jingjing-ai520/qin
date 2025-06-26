@@ -1,0 +1,28 @@
+{
+  "name": "sanyun-back-end-nodejs",
+  "version": "1.0.0",
+  "description": "三云零售系统后端API - Node.js版本",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "oracledb": "^5.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "retail",
+    "api",
+    "oracle",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC"
+}

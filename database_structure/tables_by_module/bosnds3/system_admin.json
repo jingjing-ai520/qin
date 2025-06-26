@@ -1,0 +1,6750 @@
+{
+  "module": "system_admin",
+  "table_count": 66,
+  "tables": {
+    "ad_accordion": {
+      "schema": "bosnds3",
+      "name": "ad_accordion",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id        NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id           NUMBER(10)"
+        },
+        {
+          "name": "ad_tablecategory_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_tablecategory_id NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(50",
+          "nullable": true,
+          "definition": "name                VARCHAR2(50 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid             NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid          NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate        DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate        DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive            CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno             NUMBER(10)"
+        }
+      ],
+      "column_count": 11
+    },
+    "ad_action": {
+      "schema": "bosnds3",
+      "name": "ad_action",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "name                VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description         VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "displaytype",
+          "type": "VARCHAR2(20",
+          "nullable": false,
+          "definition": "displaytype         VARCHAR2(20 BYTE) NOT NULL"
+        },
+        {
+          "name": "iconurl",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "iconurl             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_table_id         NUMBER(10)"
+        },
+        {
+          "name": "ad_tablecategory_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_tablecategory_id NUMBER(10)"
+        },
+        {
+          "name": "priority",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "priority            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "actiontype",
+          "type": "VARCHAR2(20",
+          "nullable": false,
+          "definition": "actiontype          VARCHAR2(20 BYTE) NOT NULL"
+        },
+        {
+          "name": "content",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "content             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "urltarget",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "urltarget           VARCHAR2(10 BYTE)"
+        },
+        {
+          "name": "saveobj",
+          "type": "VARCHAR2(20",
+          "nullable": true,
+          "definition": "saveobj             VARCHAR2(20 BYTE)"
+        },
+        {
+          "name": "comments",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "comments            VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid             NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid          NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate        DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate        DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive            CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "ad_subsystem_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_subsystem_id     NUMBER(10)"
+        },
+        {
+          "name": "scripts",
+          "type": "CLOB",
+          "nullable": true,
+          "definition": "scripts             CLOB"
+        },
+        {
+          "name": "customizeno",
+          "type": "VARCHAR2(30",
+          "nullable": true,
+          "definition": "customizeno         VARCHAR2(30 BYTE) DEFAULT 'BURGEON'"
+        },
+        {
+          "name": "ad_accordion_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_accordion_id     NUMBER(10)"
+        },
+        {
+          "name": "filter",
+          "type": "CLOB",
+          "nullable": true,
+          "definition": "filter              CLOB"
+        }
+      ],
+      "column_count": 23
+    },
+    "ad_aliastable": {
+      "schema": "bosnds3",
+      "name": "ad_aliastable",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(40",
+          "nullable": false,
+          "definition": "name         VARCHAR2(40 BYTE) NOT NULL"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_table_id  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "condition",
+          "type": "VARCHAR2(400",
+          "nullable": false,
+          "definition": "condition    VARCHAR2(400 BYTE) NOT NULL"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno      NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE DEFAULT sysdate"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE DEFAULT sysdate"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "comments",
+          "type": "VARCHAR2(1000",
+          "nullable": true,
+          "definition": "comments     VARCHAR2(1000 BYTE)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "realtable_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "realtable_id NUMBER(10)"
+        }
+      ],
+      "column_count": 14
+    },
+    "ad_client": {
+      "schema": "bosnds3",
+      "name": "ad_client",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "domain",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "domain       VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(240",
+          "nullable": true,
+          "definition": "name         VARCHAR2(240 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(510",
+          "nullable": true,
+          "definition": "description  VARCHAR2(510 BYTE)"
+        },
+        {
+          "name": "reversion",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "reversion    VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "logourl",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "logourl      VARCHAR2(255 BYTE)"
+        }
+      ],
+      "column_count": 13
+    },
+    "ad_column": {
+      "schema": "bosnds3",
+      "name": "ad_column",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                     NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id           NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive               CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "name                   VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "description            VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "comments",
+          "type": "VARCHAR2(1000",
+          "nullable": true,
+          "definition": "comments               VARCHAR2(1000 BYTE)"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno                NUMBER(10)"
+        },
+        {
+          "name": "summethod",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "summethod              VARCHAR2(10 BYTE)"
+        },
+        {
+          "name": "coltype",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "coltype                VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "collength",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "collength              NUMBER(10)"
+        },
+        {
+          "name": "colprecision",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "colprecision           NUMBER(10)"
+        },
+        {
+          "name": "nullable",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "nullable               CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "mask",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "mask                   VARCHAR2(10 BYTE)"
+        },
+        {
+          "name": "ref_table_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ref_table_id           NUMBER(10)"
+        },
+        {
+          "name": "ref_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ref_column_id          NUMBER(10)"
+        },
+        {
+          "name": "obtainmanner",
+          "type": "VARCHAR2(20",
+          "nullable": true,
+          "definition": "obtainmanner           VARCHAR2(20 BYTE)"
+        },
+        {
+          "name": "ad_limitvalue_group_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_limitvalue_group_id NUMBER(10)"
+        },
+        {
+          "name": "defaultvalue",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "defaultvalue           VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "modifiable",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "modifiable             CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "regexpression",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "regexpression          VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "errmsg",
+          "type": "VARCHAR2(1000",
+          "nullable": true,
+          "definition": "errmsg                 VARCHAR2(1000 BYTE)"
+        },
+        {
+          "name": "interpreter",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "interpreter            VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "filter",
+          "type": "VARCHAR2(750",
+          "nullable": true,
+          "definition": "filter                 VARCHAR2(750 BYTE)"
+        },
+        {
+          "name": "displaytype",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "displaytype            VARCHAR2(255 BYTE) DEFAULT 'text'"
+        },
+        {
+          "name": "displayrows",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "displayrows            NUMBER(10) DEFAULT 1"
+        },
+        {
+          "name": "displaycols",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "displaycols            NUMBER(10) DEFAULT 1"
+        },
+        {
+          "name": "displaywidth",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "displaywidth           NUMBER(10) DEFAULT 20"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate           DATE DEFAULT sysdate"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate           DATE DEFAULT sysdate"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid                NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid             NUMBER(10)"
+        },
+        {
+          "name": "issystem",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "issystem               CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_table_id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id              NUMBER(10)"
+        },
+        {
+          "name": "u_clob_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "u_clob_id              NUMBER(10)"
+        },
+        {
+          "name": "dbname",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "dbname                 VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "isak",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isak                   CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "ad_sequence_id_bad",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_sequence_id_bad     NUMBER(10)"
+        },
+        {
+          "name": "isdk",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isdk                   CHAR(1 BYTE)"
+        },
+        {
+          "name": "statsize",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "statsize               NUMBER(10)"
+        },
+        {
+          "name": "sequencename",
+          "type": "VARCHAR2(60",
+          "nullable": true,
+          "definition": "sequencename           VARCHAR2(60 BYTE)"
+        },
+        {
+          "name": "isuppercase",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isuppercase            CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "isindexed",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isindexed              CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "ondelete",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "ondelete               VARCHAR2(10 BYTE)"
+        },
+        {
+          "name": "props",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "props                  VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "customizeno",
+          "type": "VARCHAR2(30",
+          "nullable": true,
+          "definition": "customizeno            VARCHAR2(30 BYTE) DEFAULT 'BURGEON'"
+        },
+        {
+          "name": "show_comments",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "show_comments          CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "show_title",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "show_title             CHAR(1 BYTE) DEFAULT 'Y'"
+        }
+      ],
+      "column_count": 48
+    },
+    "ad_column_trl": {
+      "schema": "bosnds3",
+      "name": "ad_column_trl",
+      "columns": [
+        {
+          "name": "dbname",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "dbname      VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "description VARCHAR2(80 BYTE)"
+        }
+      ],
+      "column_count": 2
+    },
+    "ad_columnsgrade": {
+      "schema": "bosnds3",
+      "name": "ad_columnsgrade",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_table_id  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_column_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_column_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "sgrade",
+          "type": "NUMBER(3)",
+          "nullable": false,
+          "definition": "sgrade       NUMBER(3) DEFAULT 0 NOT NULL"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 11
+    },
+    "ad_cube": {
+      "schema": "bosnds3",
+      "name": "ad_cube",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(80",
+          "nullable": false,
+          "definition": "name         VARCHAR2(80 BYTE) NOT NULL"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_table_id  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description  VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "schema",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "schema       VARCHAR2(255 BYTE)"
+        }
+      ],
+      "column_count": 12
+    },
+    "ad_cxtab": {
+      "schema": "bosnds3",
+      "name": "ad_cxtab",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                     NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id           NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id              NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "name                   VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "description            VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_table_id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "filter",
+          "type": "VARCHAR2(400",
+          "nullable": true,
+          "definition": "filter                 VARCHAR2(400 BYTE)"
+        },
+        {
+          "name": "ad_process_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_process_id          NUMBER(10)"
+        },
+        {
+          "name": "ad_column_cxtabinst_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_column_cxtabinst_id NUMBER(10)"
+        },
+        {
+          "name": "sampleurl",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "sampleurl              VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "attr1",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "attr1                  VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "attr2",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "attr2                  VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "attr3",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "attr3                  VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid                NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid             NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate           DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate           DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive               CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "isbackground",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isbackground           CHAR(1 BYTE)"
+        },
+        {
+          "name": "ad_processqueue_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_processqueue_id     NUMBER(10)"
+        },
+        {
+          "name": "ad_cxtab_category_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_cxtab_category_id   NUMBER(10)"
+        },
+        {
+          "name": "reporttype",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "reporttype             CHAR(1 BYTE) DEFAULT 'S'"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(4)",
+          "nullable": true,
+          "definition": "orderno                NUMBER(4)"
+        },
+        {
+          "name": "pre_procedure",
+          "type": "VARCHAR2(40",
+          "nullable": true,
+          "definition": "pre_procedure          VARCHAR2(40 BYTE)"
+        },
+        {
+          "name": "ad_pi_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_pi_column_id        NUMBER(10)"
+        },
+        {
+          "name": "ispublic",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "ispublic               CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "maxrows",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "maxrows                NUMBER(10)"
+        },
+        {
+          "name": "parent_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "parent_id              NUMBER(10)"
+        },
+        {
+          "name": "customizeno",
+          "type": "VARCHAR2(30",
+          "nullable": true,
+          "definition": "customizeno            VARCHAR2(30 BYTE) DEFAULT 'BURGEON'"
+        },
+        {
+          "name": "ownerid_assign",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid_assign         NUMBER(10)"
+        },
+        {
+          "name": "user_dims",
+          "type": "NUMBER(3)",
+          "nullable": true,
+          "definition": "user_dims              NUMBER(3) DEFAULT 0"
+        },
+        {
+          "name": "helpurl",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "helpurl                VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "is_phone",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_phone               CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "report_url",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "report_url             VARCHAR2(300 BYTE)"
+        },
+        {
+          "name": "report_img",
+          "type": "VARCHAR2(300",
+          "nullable": true,
+          "definition": "report_img             VARCHAR2(300 BYTE)"
+        }
+      ],
+      "column_count": 35
+    },
+    "ad_cxtab_category": {
+      "schema": "bosnds3",
+      "name": "ad_cxtab_category",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "isdefault",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isdefault    CHAR(1 BYTE)"
+        },
+        {
+          "name": "issummary",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "issummary    CHAR(1 BYTE)"
+        },
+        {
+          "name": "parent_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "parent_id    NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "name         VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description  VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno      NUMBER(10)"
+        }
+      ],
+      "column_count": 14
+    },
+    "ad_cxtab_dimension": {
+      "schema": "bosnds3",
+      "name": "ad_cxtab_dimension",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id  NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id     NUMBER(10)"
+        },
+        {
+          "name": "ad_cxtab_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_cxtab_id   NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "columnlink",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "columnlink    VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "description   VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "position_",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "position_     CHAR(1 BYTE) NOT NULL"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno       NUMBER(10)"
+        },
+        {
+          "name": "measure_order",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "measure_order CHAR(1 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid       NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid    NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate  DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate  DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive      CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "hidehtml",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "hidehtml      CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "customizeno",
+          "type": "VARCHAR2(30",
+          "nullable": true,
+          "definition": "customizeno   VARCHAR2(30 BYTE) DEFAULT 'BURGEON'"
+        }
+      ],
+      "column_count": 16
+    },
+    "ad_cxtab_exp": {
+      "schema": "bosnds3",
+      "name": "ad_cxtab_exp",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id          NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(100",
+          "nullable": true,
+          "definition": "name        VARCHAR2(100 BYTE)"
+        },
+        {
+          "name": "ad_cxtab_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_cxtab_id NUMBER(10)"
+        },
+        {
+          "name": "e_sql",
+          "type": "CLOB",
+          "nullable": true,
+          "definition": "e_sql       CLOB"
+        }
+      ],
+      "column_count": 4
+    },
+    "ad_cxtab_fact": {
+      "schema": "bosnds3",
+      "name": "ad_cxtab_fact",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "ad_cxtab_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_cxtab_id  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(80",
+          "nullable": false,
+          "definition": "description  VARCHAR2(80 BYTE) NOT NULL"
+        },
+        {
+          "name": "ad_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_column_id NUMBER(10)"
+        },
+        {
+          "name": "function_",
+          "type": "VARCHAR2(20",
+          "nullable": true,
+          "definition": "function_    VARCHAR2(20 BYTE)"
+        },
+        {
+          "name": "userfact",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "userfact     VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "param1",
+          "type": "VARCHAR2(20",
+          "nullable": true,
+          "definition": "param1       VARCHAR2(20 BYTE)"
+        },
+        {
+          "name": "param2",
+          "type": "VARCHAR2(20",
+          "nullable": true,
+          "definition": "param2       VARCHAR2(20 BYTE)"
+        },
+        {
+          "name": "param3",
+          "type": "VARCHAR2(20",
+          "nullable": true,
+          "definition": "param3       VARCHAR2(20 BYTE)"
+        },
+        {
+          "name": "valueformat",
+          "type": "VARCHAR2(40",
+          "nullable": true,
+          "definition": "valueformat  VARCHAR2(40 BYTE)"
+        },
+        {
+          "name": "valuename",
+          "type": "VARCHAR2(20",
+          "nullable": true,
+          "definition": "valuename    VARCHAR2(20 BYTE)"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno      NUMBER(10)"
+        },
+        {
+          "name": "sgrade",
+          "type": "NUMBER(3)",
+          "nullable": true,
+          "definition": "sgrade       NUMBER(3) DEFAULT 0"
+        },
+        {
+          "name": "customizeno",
+          "type": "VARCHAR2(30",
+          "nullable": true,
+          "definition": "customizeno  VARCHAR2(30 BYTE) DEFAULT 'BURGEON'"
+        }
+      ],
+      "column_count": 21
+    },
+    "ad_cxtab_jpara": {
+      "schema": "bosnds3",
+      "name": "ad_cxtab_jpara",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id  NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id     NUMBER(10)"
+        },
+        {
+          "name": "ad_cxtab_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_cxtab_id   NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(80",
+          "nullable": false,
+          "definition": "name          VARCHAR2(80 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(80",
+          "nullable": false,
+          "definition": "description   VARCHAR2(80 BYTE) NOT NULL"
+        },
+        {
+          "name": "paratype",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "paratype      CHAR(1 BYTE) DEFAULT 'S' NOT NULL"
+        },
+        {
+          "name": "defaultvalue",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "defaultvalue  VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ad_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_column_id  NUMBER(10)"
+        },
+        {
+          "name": "selectiontype",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "selectiontype CHAR(1 BYTE) DEFAULT 'M'"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid       NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid    NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate  DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate  DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive      CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno       NUMBER(10)"
+        },
+        {
+          "name": "nullable",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "nullable      CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "customizeno",
+          "type": "VARCHAR2(30",
+          "nullable": true,
+          "definition": "customizeno   VARCHAR2(30 BYTE) DEFAULT 'BURGEON'"
+        }
+      ],
+      "column_count": 18
+    },
+    "ad_cxtab_reftable": {
+      "schema": "bosnds3",
+      "name": "ad_cxtab_reftable",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "ad_cxtab_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_cxtab_id  NUMBER(10)"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_table_id  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 10
+    },
+    "ad_cxtab_sql": {
+      "schema": "bosnds3",
+      "name": "ad_cxtab_sql",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "ad_cxtab_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_cxtab_id  NUMBER(10)"
+        },
+        {
+          "name": "insert_sql",
+          "type": "CLOB",
+          "nullable": false,
+          "definition": "insert_sql   CLOB NOT NULL"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 10
+    },
+    "ad_cxtab_stat": {
+      "schema": "bosnds3",
+      "name": "ad_cxtab_stat",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id  NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id     NUMBER(10)"
+        },
+        {
+          "name": "user_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "user_id       NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_cxtab_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_cxtab_id   NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "cnt",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "cnt           NUMBER(10)"
+        },
+        {
+          "name": "tot_time",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_time      NUMBER(10)"
+        },
+        {
+          "name": "tot_rows",
+          "type": "NUMBER(20)",
+          "nullable": true,
+          "definition": "tot_rows      NUMBER(20)"
+        },
+        {
+          "name": "max_time",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "max_time      NUMBER(10)"
+        },
+        {
+          "name": "max_rows",
+          "type": "NUMBER(20)",
+          "nullable": true,
+          "definition": "max_rows      NUMBER(20)"
+        },
+        {
+          "name": "last_rows",
+          "type": "NUMBER(20)",
+          "nullable": true,
+          "definition": "last_rows     NUMBER(20)"
+        },
+        {
+          "name": "last_duration",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "last_duration NUMBER(10)"
+        },
+        {
+          "name": "last_time",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "last_time     DATE"
+        }
+      ],
+      "column_count": 13
+    },
+    "ad_export_list": {
+      "schema": "bosnds3",
+      "name": "ad_export_list",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "id       NUMBER(10)"
+        },
+        {
+          "name": "datebeg",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "datebeg  NUMBER(10)"
+        },
+        {
+          "name": "dateend",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "dateend  NUMBER(10)"
+        },
+        {
+          "name": "users",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "users    VARCHAR2(10 BYTE)"
+        },
+        {
+          "name": "opertime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "opertime DATE"
+        }
+      ],
+      "column_count": 5
+    },
+    "ad_limitvalue": {
+      "schema": "bosnds3",
+      "name": "ad_limitvalue",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                     NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id           NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive               CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "ad_limitvalue_group_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_limitvalue_group_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "value",
+          "type": "VARCHAR2(40",
+          "nullable": false,
+          "definition": "value                  VARCHAR2(40 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(80",
+          "nullable": false,
+          "definition": "description            VARCHAR2(80 BYTE) NOT NULL"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno                NUMBER(10)"
+        },
+        {
+          "name": "comments",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "comments               VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "valuetype",
+          "type": "VARCHAR2(40",
+          "nullable": true,
+          "definition": "valuetype              VARCHAR2(40 BYTE)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate           DATE DEFAULT sysdate"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate           DATE DEFAULT sysdate"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid                NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid             NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id              NUMBER(10)"
+        },
+        {
+          "name": "cssclass",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "cssclass               VARCHAR2(80 BYTE)"
+        }
+      ],
+      "column_count": 15
+    },
+    "ad_listdataconf": {
+      "schema": "bosnds3",
+      "name": "ad_listdataconf",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id               NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "name             VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description      VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_table_id      NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "mainurl",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "mainurl          VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "maintarget",
+          "type": "VARCHAR2(10",
+          "nullable": false,
+          "definition": "maintarget       VARCHAR2(10 BYTE) NOT NULL"
+        },
+        {
+          "name": "columnmasks",
+          "type": "VARCHAR2(400",
+          "nullable": true,
+          "definition": "columnmasks      VARCHAR2(400 BYTE)"
+        },
+        {
+          "name": "filter",
+          "type": "VARCHAR2(400",
+          "nullable": true,
+          "definition": "filter           VARCHAR2(400 BYTE)"
+        },
+        {
+          "name": "ispublic",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "ispublic         CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "orderbycolumn_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderbycolumn_id NUMBER(10)"
+        },
+        {
+          "name": "orderbyasc",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "orderbyasc       CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid          NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid       NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate     DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate     DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive         CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 16
+    },
+    "ad_listuiconf": {
+      "schema": "bosnds3",
+      "name": "ad_listuiconf",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "name          VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description   VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "liststyle",
+          "type": "VARCHAR2(10",
+          "nullable": false,
+          "definition": "liststyle     VARCHAR2(10 BYTE) NOT NULL"
+        },
+        {
+          "name": "cssclass",
+          "type": "VARCHAR2(40",
+          "nullable": true,
+          "definition": "cssclass      VARCHAR2(40 BYTE)"
+        },
+        {
+          "name": "showtitle",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "showtitle     CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "morestyle",
+          "type": "VARCHAR2(10",
+          "nullable": false,
+          "definition": "morestyle     VARCHAR2(10 BYTE) NOT NULL"
+        },
+        {
+          "name": "moreurl",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "moreurl       VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "columncount",
+          "type": "NUMBER(3)",
+          "nullable": false,
+          "definition": "columncount   NUMBER(3) NOT NULL"
+        },
+        {
+          "name": "columnlengths",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "columnlengths VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "pagesize",
+          "type": "NUMBER(3)",
+          "nullable": false,
+          "definition": "pagesize      NUMBER(3) NOT NULL"
+        },
+        {
+          "name": "sampleurl",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "sampleurl     VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid       NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid    NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate  DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate  DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive      CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "searchbox",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "searchbox     VARCHAR2(10 BYTE) DEFAULT 'NONE'"
+        },
+        {
+          "name": "titlecss",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "titlecss      VARCHAR2(255 BYTE)"
+        }
+      ],
+      "column_count": 19
+    },
+    "ad_monitor": {
+      "schema": "bosnds3",
+      "name": "ad_monitor",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(80",
+          "nullable": false,
+          "definition": "name         VARCHAR2(80 BYTE) NOT NULL"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_table_id  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "record_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "record_id    NUMBER(10)"
+        },
+        {
+          "name": "monitor_type",
+          "type": "VARCHAR2(10",
+          "nullable": false,
+          "definition": "monitor_type VARCHAR2(10 BYTE) NOT NULL"
+        },
+        {
+          "name": "check_type",
+          "type": "VARCHAR2(10",
+          "nullable": false,
+          "definition": "check_type   VARCHAR2(10 BYTE) NOT NULL"
+        },
+        {
+          "name": "scheduletime",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "scheduletime DATE"
+        },
+        {
+          "name": "lastdate",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "lastdate     NUMBER(8)"
+        },
+        {
+          "name": "ad_queue_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_queue_id  NUMBER(10)"
+        },
+        {
+          "name": "worktimes",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "worktimes    NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "props",
+          "type": "CLOB",
+          "nullable": true,
+          "definition": "props        CLOB"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "timeout",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "timeout      DATE"
+        },
+        {
+          "name": "ad_cxtab_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_cxtab_id  NUMBER(10)"
+        }
+      ],
+      "column_count": 20
+    },
+    "ad_monitor_log": {
+      "schema": "bosnds3",
+      "name": "ad_monitor_log",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id  NUMBER(10)"
+        },
+        {
+          "name": "ad_monitor_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_monitor_id NUMBER(10)"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_table_id   NUMBER(10)"
+        },
+        {
+          "name": "record_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "record_id     NUMBER(10)"
+        },
+        {
+          "name": "message",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "message       VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate  DATE"
+        }
+      ],
+      "column_count": 7
+    },
+    "ad_mullang_prompt": {
+      "schema": "bosnds3",
+      "name": "ad_mullang_prompt",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "code",
+          "type": "VARCHAR2(80",
+          "nullable": false,
+          "definition": "code         VARCHAR2(80 BYTE) NOT NULL"
+        },
+        {
+          "name": "language",
+          "type": "VARCHAR2(10",
+          "nullable": false,
+          "definition": "language     VARCHAR2(10 BYTE) NOT NULL"
+        },
+        {
+          "name": "prompt",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "prompt       VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "promptch",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "promptch     VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 12
+    },
+    "ad_objuiconf": {
+      "schema": "bosnds3",
+      "name": "ad_objuiconf",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id             NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "name           VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "tableparamname",
+          "type": "VARCHAR2(40",
+          "nullable": false,
+          "definition": "tableparamname VARCHAR2(40 BYTE) NOT NULL"
+        },
+        {
+          "name": "pkparamname",
+          "type": "VARCHAR2(40",
+          "nullable": false,
+          "definition": "pkparamname    VARCHAR2(40 BYTE) NOT NULL"
+        },
+        {
+          "name": "cssclass",
+          "type": "VARCHAR2(40",
+          "nullable": true,
+          "definition": "cssclass       VARCHAR2(40 BYTE)"
+        },
+        {
+          "name": "cols",
+          "type": "NUMBER(3)",
+          "nullable": false,
+          "definition": "cols           NUMBER(3) NOT NULL"
+        },
+        {
+          "name": "defaultaction",
+          "type": "VARCHAR2(10",
+          "nullable": false,
+          "definition": "defaultaction  VARCHAR2(10 BYTE) NOT NULL"
+        },
+        {
+          "name": "ispublic",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "ispublic       CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid        NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid     NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate   DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate   DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive       CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 14
+    },
+    "ad_option": {
+      "schema": "bosnds3",
+      "name": "ad_option",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                     NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "orderno                NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(60",
+          "nullable": false,
+          "definition": "name                   VARCHAR2(60 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "description            VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "valuetype",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "valuetype              CHAR(1 BYTE) DEFAULT 'S' NOT NULL"
+        },
+        {
+          "name": "valuelength",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "valuelength            NUMBER(10) DEFAULT 20 NOT NULL"
+        },
+        {
+          "name": "valuedefault",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "valuedefault           VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ad_limitvalue_group_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_limitvalue_group_id NUMBER(10)"
+        },
+        {
+          "name": "nullable",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "nullable               CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "comments",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "comments               VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid                NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid             NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate           DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate           DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive               CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "ad_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_column_id           NUMBER(10)"
+        }
+      ],
+      "column_count": 16
+    },
+    "ad_org": {
+      "schema": "bosnds3",
+      "name": "ad_org",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive      CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid       NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid    NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate  DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate  DATE"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id  NUMBER(10)"
+        },
+        {
+          "name": "issummary",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "issummary     CHAR(1 BYTE)"
+        },
+        {
+          "name": "parent_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "parent_org_id NUMBER(10)"
+        },
+        {
+          "name": "supervisor_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "supervisor_id NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(180",
+          "nullable": true,
+          "definition": "name          VARCHAR2(180 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(765",
+          "nullable": true,
+          "definition": "description   VARCHAR2(765 BYTE)"
+        }
+      ],
+      "column_count": 12
+    },
+    "ad_param": {
+      "schema": "bosnds3",
+      "name": "ad_param",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "name         VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "defaultvalue",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "defaultvalue VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "value",
+          "type": "VARCHAR2(4000",
+          "nullable": false,
+          "definition": "value        VARCHAR2(4000 BYTE) NOT NULL"
+        },
+        {
+          "name": "valuetype",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "valuetype    CHAR(1 BYTE)"
+        },
+        {
+          "name": "parmtype",
+          "type": "VARCHAR2(20",
+          "nullable": true,
+          "definition": "parmtype     VARCHAR2(20 BYTE)"
+        },
+        {
+          "name": "valuelist",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "valuelist    VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description  VARCHAR2(255 BYTE)"
+        }
+      ],
+      "column_count": 15
+    },
+    "ad_pinstance": {
+      "schema": "bosnds3",
+      "name": "ad_pinstance",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                 NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id       NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id          NUMBER(10)"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "orderno            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_processqueue_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_processqueue_id NUMBER(10)"
+        },
+        {
+          "name": "ad_process_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_process_id      NUMBER(10)"
+        },
+        {
+          "name": "ad_user_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_user_id         NUMBER(10)"
+        },
+        {
+          "name": "state",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "state              CHAR(1 BYTE)"
+        },
+        {
+          "name": "result",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "result             NUMBER(10)"
+        },
+        {
+          "name": "errormsg",
+          "type": "VARCHAR2(2000",
+          "nullable": true,
+          "definition": "errormsg           VARCHAR2(2000 BYTE)"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_table_id        NUMBER(10)"
+        },
+        {
+          "name": "record_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "record_id          NUMBER(10)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid            NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid         NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate       DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate       DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive           CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "record_no",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "record_no          VARCHAR2(80 BYTE)"
+        }
+      ],
+      "column_count": 18
+    },
+    "ad_pinstance_log": {
+      "schema": "bosnds3",
+      "name": "ad_pinstance_log",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id              NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id    NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id       NUMBER(10)"
+        },
+        {
+          "name": "ad_pinstance_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_pinstance_id NUMBER(10)"
+        },
+        {
+          "name": "p_date",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "p_date          DATE DEFAULT NULL"
+        },
+        {
+          "name": "p_msg",
+          "type": "VARCHAR2(2000",
+          "nullable": true,
+          "definition": "p_msg           VARCHAR2(2000 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid         NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid      NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate    DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate    DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive        CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 11
+    },
+    "ad_pinstance_para": {
+      "schema": "bosnds3",
+      "name": "ad_pinstance_para",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id              NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id    NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id       NUMBER(10)"
+        },
+        {
+          "name": "ad_pinstance_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_pinstance_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno         NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(60",
+          "nullable": true,
+          "definition": "name            VARCHAR2(60 BYTE)"
+        },
+        {
+          "name": "p_string",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "p_string        VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "p_string_to",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "p_string_to     VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "p_number",
+          "type": "NUMBER(20",
+          "nullable": true,
+          "definition": "p_number        NUMBER(20"
+        },
+        {
+          "name": "p_number_to",
+          "type": "NUMBER(20",
+          "nullable": true,
+          "definition": "p_number_to     NUMBER(20"
+        },
+        {
+          "name": "p_date",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "p_date          NUMBER(8) DEFAULT NULL"
+        },
+        {
+          "name": "p_date_to",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "p_date_to       NUMBER(8) DEFAULT NULL"
+        },
+        {
+          "name": "info_to",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "info_to         VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid         NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid      NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate    DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate    DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive        CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "oldpstr",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "oldpstr         VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "p_clob",
+          "type": "CLOB",
+          "nullable": true,
+          "definition": "p_clob          CLOB"
+        },
+        {
+          "name": "oldinfo",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "oldinfo         VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "info",
+          "type": "CLOB",
+          "nullable": true,
+          "definition": "info            CLOB"
+        }
+      ],
+      "column_count": 22
+    },
+    "ad_process": {
+      "schema": "bosnds3",
+      "name": "ad_process",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id  NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id     NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(80",
+          "nullable": false,
+          "definition": "name          VARCHAR2(80 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description   VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "classname",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "classname     VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "procedurename",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "procedurename VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "tot_count",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_count     NUMBER(10)"
+        },
+        {
+          "name": "tot_seconds",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_seconds   NUMBER(10)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid       NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid    NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate  DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate  DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive      CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 14
+    },
+    "ad_process_para": {
+      "schema": "bosnds3",
+      "name": "ad_process_para",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                     NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id           NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id              NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(60",
+          "nullable": true,
+          "definition": "name                   VARCHAR2(60 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description            VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ad_process_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_process_id          NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno                NUMBER(10)"
+        },
+        {
+          "name": "ad_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_column_id           NUMBER(10)"
+        },
+        {
+          "name": "valuetype",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "valuetype              CHAR(1 BYTE)"
+        },
+        {
+          "name": "valuelength",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "valuelength            NUMBER(10)"
+        },
+        {
+          "name": "valuedefault",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "valuedefault           VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "nullable",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "nullable               CHAR(1 BYTE)"
+        },
+        {
+          "name": "comments",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "comments               VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid                NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid             NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate           DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate           DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive               CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "ad_limitvalue_group_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_limitvalue_group_id NUMBER(10)"
+        }
+      ],
+      "column_count": 19
+    },
+    "ad_processqueue": {
+      "schema": "bosnds3",
+      "name": "ad_processqueue",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id  NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id     NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(80",
+          "nullable": false,
+          "definition": "name          VARCHAR2(80 BYTE) NOT NULL"
+        },
+        {
+          "name": "proctype",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "proctype      CHAR(1 BYTE) NOT NULL"
+        },
+        {
+          "name": "ad_trigger_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_trigger_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "issystem",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "issystem      CHAR(1 BYTE)"
+        },
+        {
+          "name": "max_procs",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "max_procs     NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "tot_procs",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_procs     NUMBER(10)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description   VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid       NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid    NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate  DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate  DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive      CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "duration",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "duration      NUMBER(10)"
+        },
+        {
+          "name": "lastmsg",
+          "type": "VARCHAR2(2000",
+          "nullable": true,
+          "definition": "lastmsg       VARCHAR2(2000 BYTE)"
+        },
+        {
+          "name": "svrs",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "svrs          VARCHAR2(255 BYTE)"
+        }
+      ],
+      "column_count": 18
+    },
+    "ad_query": {
+      "schema": "bosnds3",
+      "name": "ad_query",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(80",
+          "nullable": false,
+          "definition": "name         VARCHAR2(80 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description  VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "is_share",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_share     CHAR(1 BYTE)"
+        },
+        {
+          "name": "ad_cube_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_cube_id   NUMBER(10)"
+        },
+        {
+          "name": "query",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "query        VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "queryparam",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "queryparam   VARCHAR2(4000 BYTE)"
+        }
+      ],
+      "column_count": 14
+    },
+    "ad_querylist": {
+      "schema": "bosnds3",
+      "name": "ad_querylist",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id          NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "name        VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_table_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "props",
+          "type": "CLOB",
+          "nullable": false,
+          "definition": "props       CLOB NOT NULL"
+        },
+        {
+          "name": "isdefault",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isdefault   CHAR(1 BYTE) DEFAULT 'N'"
+        }
+      ],
+      "column_count": 5
+    },
+    "ad_refbytable": {
+      "schema": "bosnds3",
+      "name": "ad_refbytable",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                 NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id       NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id          NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive           CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_table_id        NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno            NUMBER(10)"
+        },
+        {
+          "name": "ad_refby_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_refby_table_id  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_refby_column_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_refby_column_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "filter",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "filter             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "assoctype",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "assoctype          CHAR(1 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid            NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid         NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate       DATE DEFAULT sysdate"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate       DATE DEFAULT sysdate"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(40",
+          "nullable": true,
+          "definition": "description        VARCHAR2(40 BYTE)"
+        },
+        {
+          "name": "inlinemode",
+          "type": "VARCHAR2(2",
+          "nullable": true,
+          "definition": "inlinemode         VARCHAR2(2 BYTE) DEFAULT 'N'"
+        }
+      ],
+      "column_count": 16
+    },
+    "ad_report": {
+      "schema": "bosnds3",
+      "name": "ad_report",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                 NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id       NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id          NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "name               VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(1000",
+          "nullable": true,
+          "definition": "description        VARCHAR2(1000 BYTE)"
+        },
+        {
+          "name": "previewurl",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "previewurl         VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "fileurl",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "fileurl            VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_table_id        NUMBER(10)"
+        },
+        {
+          "name": "auto_update",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "auto_update        CHAR(1 BYTE)"
+        },
+        {
+          "name": "reporttype",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "reporttype         CHAR(1 BYTE) NOT NULL"
+        },
+        {
+          "name": "allow_fg",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "allow_fg           CHAR(1 BYTE) NOT NULL"
+        },
+        {
+          "name": "ismaster",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "ismaster           CHAR(1 BYTE) NOT NULL"
+        },
+        {
+          "name": "master_template_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "master_template_id NUMBER(10)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid            NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid         NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate       DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate       DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive           CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 18
+    },
+    "ad_script": {
+      "schema": "bosnds3",
+      "name": "ad_script",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "name         VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "content",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "content      VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 10
+    },
+    "ad_sequence": {
+      "schema": "bosnds3",
+      "name": "ad_sequence",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(60",
+          "nullable": true,
+          "definition": "name         VARCHAR2(60 BYTE)"
+        },
+        {
+          "name": "incrementno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "incrementno  NUMBER(10)"
+        },
+        {
+          "name": "startno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "startno      NUMBER(10)"
+        },
+        {
+          "name": "currentnext",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "currentnext  NUMBER(10)"
+        },
+        {
+          "name": "lastdate",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "lastdate     NUMBER(8) DEFAULT NULL"
+        },
+        {
+          "name": "cycletype",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "cycletype    CHAR(1 BYTE) DEFAULT 'D'"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(1530",
+          "nullable": true,
+          "definition": "description  VARCHAR2(1530 BYTE)"
+        },
+        {
+          "name": "vformat",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "vformat      VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "prefix",
+          "type": "VARCHAR2(60",
+          "nullable": true,
+          "definition": "prefix       VARCHAR2(60 BYTE)"
+        },
+        {
+          "name": "suffix",
+          "type": "VARCHAR2(60",
+          "nullable": true,
+          "definition": "suffix       VARCHAR2(60 BYTE)"
+        }
+      ],
+      "column_count": 18
+    },
+    "ad_sequence_bak": {
+      "schema": "bosnds3",
+      "name": "ad_sequence_bak",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive     CHAR(1 BYTE)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(60",
+          "nullable": true,
+          "definition": "name         VARCHAR2(60 BYTE)"
+        },
+        {
+          "name": "incrementno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "incrementno  NUMBER(10)"
+        },
+        {
+          "name": "startno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "startno      NUMBER(10)"
+        },
+        {
+          "name": "currentnext",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "currentnext  NUMBER(10)"
+        },
+        {
+          "name": "lastdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "lastdate     DATE"
+        },
+        {
+          "name": "is_day_cycle",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "is_day_cycle CHAR(1 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(1530",
+          "nullable": true,
+          "definition": "description  VARCHAR2(1530 BYTE)"
+        },
+        {
+          "name": "vformat",
+          "type": "VARCHAR2(240",
+          "nullable": true,
+          "definition": "vformat      VARCHAR2(240 BYTE)"
+        },
+        {
+          "name": "prefix",
+          "type": "VARCHAR2(60",
+          "nullable": true,
+          "definition": "prefix       VARCHAR2(60 BYTE)"
+        },
+        {
+          "name": "suffix",
+          "type": "VARCHAR2(60",
+          "nullable": true,
+          "definition": "suffix       VARCHAR2(60 BYTE)"
+        }
+      ],
+      "column_count": 18
+    },
+    "ad_sql": {
+      "schema": "bosnds3",
+      "name": "ad_sql",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(80",
+          "nullable": false,
+          "definition": "name         VARCHAR2(80 BYTE) NOT NULL"
+        },
+        {
+          "name": "value",
+          "type": "VARCHAR2(4000",
+          "nullable": false,
+          "definition": "value        VARCHAR2(4000 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description  VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "type1",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "type1        VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "type2",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "type2        VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "type3",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "type3        VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y'"
+        }
+      ],
+      "column_count": 14
+    },
+    "ad_subsystem": {
+      "schema": "bosnds3",
+      "name": "ad_subsystem",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id             NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(40",
+          "nullable": false,
+          "definition": "name           VARCHAR2(40 BYTE) NOT NULL"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno        NUMBER(10)"
+        },
+        {
+          "name": "url",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "url            VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "comments",
+          "type": "VARCHAR2(1024",
+          "nullable": true,
+          "definition": "comments       VARCHAR2(1024 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid        NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid     NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate   DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate   DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive       CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id   NUMBER(10)"
+        },
+        {
+          "name": "iconurl",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "iconurl        VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "customizeno",
+          "type": "VARCHAR2(30",
+          "nullable": true,
+          "definition": "customizeno    VARCHAR2(30 BYTE) DEFAULT 'BURGEON'"
+        },
+        {
+          "name": "ad_sysmodel_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_sysmodel_id NUMBER(10)"
+        }
+      ],
+      "column_count": 14
+    },
+    "ad_sysmodel": {
+      "schema": "bosnds3",
+      "name": "ad_sysmodel",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(25",
+          "nullable": false,
+          "definition": "name         VARCHAR2(25 BYTE) NOT NULL"
+        },
+        {
+          "name": "pico",
+          "type": "VARCHAR2(200",
+          "nullable": true,
+          "definition": "pico         VARCHAR2(200 BYTE)"
+        },
+        {
+          "name": "mlink",
+          "type": "VARCHAR2(200",
+          "nullable": true,
+          "definition": "mlink        VARCHAR2(200 BYTE)"
+        },
+        {
+          "name": "mdisp",
+          "type": "VARCHAR2(25",
+          "nullable": true,
+          "definition": "mdisp        VARCHAR2(25 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno      NUMBER(10)"
+        }
+      ],
+      "column_count": 13
+    },
+    "ad_table": {
+      "schema": "bosnds3",
+      "name": "ad_table",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id        NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive            CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(40",
+          "nullable": false,
+          "definition": "name                VARCHAR2(40 BYTE) NOT NULL"
+        },
+        {
+          "name": "realtable_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "realtable_id        NUMBER(10)"
+        },
+        {
+          "name": "filter",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "filter              VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "description         VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "mask",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "mask                VARCHAR2(10 BYTE)"
+        },
+        {
+          "name": "ad_tablecategory_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_tablecategory_id NUMBER(10)"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno             NUMBER(10)"
+        },
+        {
+          "name": "url",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "url                 VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "pk_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "pk_column_id        NUMBER(10)"
+        },
+        {
+          "name": "ak_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ak_column_id        NUMBER(10)"
+        },
+        {
+          "name": "isdispatchable",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isdispatchable      CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "disp_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "disp_column_id      NUMBER(10)"
+        },
+        {
+          "name": "u_clob_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "u_clob_id           NUMBER(10)"
+        },
+        {
+          "name": "directory_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "directory_id        NUMBER(10)"
+        },
+        {
+          "name": "issystem",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "issystem            CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "has_trig_am",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "has_trig_am         CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "trig_am",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "trig_am             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "has_trig_bm",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "has_trig_bm         CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "trig_bm",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "trig_bm             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "has_trig_bd",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "has_trig_bd         CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "trig_bd",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "trig_bd             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate        DATE DEFAULT sysdate"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate        DATE DEFAULT sysdate"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid             NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid          NUMBER(10)"
+        },
+        {
+          "name": "comments",
+          "type": "VARCHAR2(1000",
+          "nullable": true,
+          "definition": "comments            VARCHAR2(1000 BYTE)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id           NUMBER(10)"
+        },
+        {
+          "name": "has_trig_ac",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "has_trig_ac         CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "trig_ac",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "trig_ac             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "proc_submit",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "proc_submit         VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "parent_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "parent_column_id    NUMBER(10)"
+        },
+        {
+          "name": "istree",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "istree              CHAR(1 BYTE)"
+        },
+        {
+          "name": "dk_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "dk_column_id        NUMBER(10)"
+        },
+        {
+          "name": "summary_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "summary_column_id   NUMBER(10)"
+        },
+        {
+          "name": "classname",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "classname           VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ismenuobj",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "ismenuobj           CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "issms",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "issms               CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "rowcnt",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "rowcnt              NUMBER(10)"
+        },
+        {
+          "name": "isdropdown",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isdropdown          CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "isbig",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isbig               CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "parent_table_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "parent_table_id     NUMBER(10)"
+        },
+        {
+          "name": "ad_objuiconf_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_objuiconf_id     NUMBER(10)"
+        },
+        {
+          "name": "props",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "props               VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "aliasname",
+          "type": "VARCHAR2(100",
+          "nullable": true,
+          "definition": "aliasname           VARCHAR2(100 BYTE)"
+        },
+        {
+          "name": "customizeno",
+          "type": "VARCHAR2(30",
+          "nullable": true,
+          "definition": "customizeno         VARCHAR2(30 BYTE) DEFAULT 'BURGEON'"
+        },
+        {
+          "name": "table_img",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "table_img           VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ad_accordion_img",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "ad_accordion_img    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ad_accordion_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_accordion_id     NUMBER(10)"
+        }
+      ],
+      "column_count": 51
+    },
+    "ad_tablecategory": {
+      "schema": "bosnds3",
+      "name": "ad_tablecategory",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id              NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id    NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive        CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(40",
+          "nullable": false,
+          "definition": "name            VARCHAR2(40 BYTE) NOT NULL"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno         NUMBER(10)"
+        },
+        {
+          "name": "url",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "url             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "comments",
+          "type": "VARCHAR2(1000",
+          "nullable": true,
+          "definition": "comments        VARCHAR2(1000 BYTE)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate    DATE DEFAULT sysdate"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate    DATE DEFAULT sysdate"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid         NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid      NUMBER(10)"
+        },
+        {
+          "name": "ad_subsystem_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_subsystem_id NUMBER(10)"
+        },
+        {
+          "name": "customizeno",
+          "type": "VARCHAR2(30",
+          "nullable": true,
+          "definition": "customizeno     VARCHAR2(30 BYTE) DEFAULT 'BURGEON'"
+        }
+      ],
+      "column_count": 13
+    },
+    "ad_tablesql": {
+      "schema": "bosnds3",
+      "name": "ad_tablesql",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_table_id  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "sqlaction",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "sqlaction    CHAR(1 BYTE)"
+        },
+        {
+          "name": "sql_create",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "sql_create   VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "sql_drop",
+          "type": "VARCHAR2(400",
+          "nullable": true,
+          "definition": "sql_drop     VARCHAR2(400 BYTE)"
+        },
+        {
+          "name": "sql_log",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "sql_log      VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "u_clob_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "u_clob_id    NUMBER(10)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "sql_create2",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "sql_create2  VARCHAR2(4000 BYTE)"
+        }
+      ],
+      "column_count": 15
+    },
+    "ad_tree": {
+      "schema": "bosnds3",
+      "name": "ad_tree",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE DEFAULT sysdate"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE DEFAULT sysdate"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "treetype",
+          "type": "VARCHAR2(2",
+          "nullable": true,
+          "definition": "treetype     VARCHAR2(2 BYTE)"
+        },
+        {
+          "name": "isallnodes",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isallnodes   CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "processing",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "processing   CHAR(1 BYTE)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(120",
+          "nullable": true,
+          "definition": "name         VARCHAR2(120 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(510",
+          "nullable": true,
+          "definition": "description  VARCHAR2(510 BYTE)"
+        }
+      ],
+      "column_count": 13
+    },
+    "ad_treenode": {
+      "schema": "bosnds3",
+      "name": "ad_treenode",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_tree_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_tree_id   NUMBER(10)"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE DEFAULT sysdate"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE DEFAULT sysdate"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "parent_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "parent_id    NUMBER(10)"
+        },
+        {
+          "name": "seqno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "seqno        NUMBER(10)"
+        }
+      ],
+      "column_count": 11
+    },
+    "ad_trigger": {
+      "schema": "bosnds3",
+      "name": "ad_trigger",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(80",
+          "nullable": false,
+          "definition": "name         VARCHAR2(80 BYTE) NOT NULL"
+        },
+        {
+          "name": "cron",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "cron         VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description  VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 11
+    },
+    "ad_trl": {
+      "schema": "bosnds3",
+      "name": "ad_trl",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "prefix",
+          "type": "VARCHAR2(40",
+          "nullable": true,
+          "definition": "prefix       VARCHAR2(40 BYTE)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "name         VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "loc_en_us",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "loc_en_us    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "loc_zh_cn",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "loc_zh_cn    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "loc_ja_jp",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "loc_ja_jp    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y'"
+        }
+      ],
+      "column_count": 11
+    },
+    "ad_trl_bak": {
+      "schema": "bosnds3",
+      "name": "ad_trl_bak",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "prefix",
+          "type": "VARCHAR2(40",
+          "nullable": true,
+          "definition": "prefix       VARCHAR2(40 BYTE)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "name         VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "loc_en_us",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "loc_en_us    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "loc_zh_cn",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "loc_zh_cn    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "loc_ja_jp",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "loc_ja_jp    VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) NOT NULL"
+        }
+      ],
+      "column_count": 11
+    },
+    "bak_ad_column": {
+      "schema": "bosnds3",
+      "name": "bak_ad_column",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                     NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id           NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive               CHAR(1 BYTE)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "name                   VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "description            VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "comments",
+          "type": "VARCHAR2(1000",
+          "nullable": true,
+          "definition": "comments               VARCHAR2(1000 BYTE)"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno                NUMBER(10)"
+        },
+        {
+          "name": "summethod",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "summethod              VARCHAR2(10 BYTE)"
+        },
+        {
+          "name": "coltype",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "coltype                VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "collength",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "collength              NUMBER(10)"
+        },
+        {
+          "name": "colprecision",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "colprecision           NUMBER(10)"
+        },
+        {
+          "name": "nullable",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "nullable               CHAR(1 BYTE)"
+        },
+        {
+          "name": "mask",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "mask                   VARCHAR2(10 BYTE)"
+        },
+        {
+          "name": "ref_table_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ref_table_id           NUMBER(10)"
+        },
+        {
+          "name": "ref_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ref_column_id          NUMBER(10)"
+        },
+        {
+          "name": "obtainmanner",
+          "type": "VARCHAR2(20",
+          "nullable": true,
+          "definition": "obtainmanner           VARCHAR2(20 BYTE)"
+        },
+        {
+          "name": "ad_limitvalue_group_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_limitvalue_group_id NUMBER(10)"
+        },
+        {
+          "name": "defaultvalue",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "defaultvalue           VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "modifiable",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "modifiable             CHAR(1 BYTE)"
+        },
+        {
+          "name": "regexpression",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "regexpression          VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "errmsg",
+          "type": "VARCHAR2(1000",
+          "nullable": true,
+          "definition": "errmsg                 VARCHAR2(1000 BYTE)"
+        },
+        {
+          "name": "interpreter",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "interpreter            VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "filter",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "filter                 VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "displaytype",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "displaytype            VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "displayrows",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "displayrows            NUMBER(10)"
+        },
+        {
+          "name": "displaycols",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "displaycols            NUMBER(10)"
+        },
+        {
+          "name": "displaywidth",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "displaywidth           NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate           DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate           DATE"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid                NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid             NUMBER(10)"
+        },
+        {
+          "name": "issystem",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "issystem               CHAR(1 BYTE)"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_table_id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id              NUMBER(10)"
+        },
+        {
+          "name": "u_clob_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "u_clob_id              NUMBER(10)"
+        },
+        {
+          "name": "dbname",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "dbname                 VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "isak",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isak                   CHAR(1 BYTE)"
+        },
+        {
+          "name": "ad_sequence_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_sequence_id         NUMBER(10)"
+        },
+        {
+          "name": "isdk",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isdk                   CHAR(1 BYTE)"
+        }
+      ],
+      "column_count": 39
+    },
+    "bak_ad_refbytable": {
+      "schema": "bosnds3",
+      "name": "bak_ad_refbytable",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                 NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id       NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id          NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive           CHAR(1 BYTE)"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_table_id        NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno            NUMBER(10)"
+        },
+        {
+          "name": "ad_refby_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_refby_table_id  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_refby_column_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_refby_column_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "filter",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "filter             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "assoctype",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "assoctype          CHAR(1 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid            NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid         NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate       DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate       DATE"
+        }
+      ],
+      "column_count": 14
+    },
+    "bak_ad_table": {
+      "schema": "bosnds3",
+      "name": "bak_ad_table",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id        NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive            CHAR(1 BYTE)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(40",
+          "nullable": false,
+          "definition": "name                VARCHAR2(40 BYTE) NOT NULL"
+        },
+        {
+          "name": "realtable_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "realtable_id        NUMBER(10)"
+        },
+        {
+          "name": "filter",
+          "type": "VARCHAR2(400",
+          "nullable": true,
+          "definition": "filter              VARCHAR2(400 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "description         VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "mask",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "mask                VARCHAR2(10 BYTE)"
+        },
+        {
+          "name": "ad_tablecategory_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_tablecategory_id NUMBER(10)"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno             NUMBER(10)"
+        },
+        {
+          "name": "url",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "url                 VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "pk_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "pk_column_id        NUMBER(10)"
+        },
+        {
+          "name": "ak_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ak_column_id        NUMBER(10)"
+        },
+        {
+          "name": "isdispatchable",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isdispatchable      CHAR(1 BYTE)"
+        },
+        {
+          "name": "disp_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "disp_column_id      NUMBER(10)"
+        },
+        {
+          "name": "u_clob_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "u_clob_id           NUMBER(10)"
+        },
+        {
+          "name": "directory_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "directory_id        NUMBER(10)"
+        },
+        {
+          "name": "issystem",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "issystem            CHAR(1 BYTE)"
+        },
+        {
+          "name": "has_trig_am",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "has_trig_am         CHAR(1 BYTE)"
+        },
+        {
+          "name": "trig_am",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "trig_am             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "has_trig_bm",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "has_trig_bm         CHAR(1 BYTE)"
+        },
+        {
+          "name": "trig_bm",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "trig_bm             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "has_trig_bd",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "has_trig_bd         CHAR(1 BYTE)"
+        },
+        {
+          "name": "trig_bd",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "trig_bd             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate        DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate        DATE"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid             NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid          NUMBER(10)"
+        },
+        {
+          "name": "comments",
+          "type": "VARCHAR2(1000",
+          "nullable": true,
+          "definition": "comments            VARCHAR2(1000 BYTE)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id           NUMBER(10)"
+        },
+        {
+          "name": "has_trig_ac",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "has_trig_ac         CHAR(1 BYTE)"
+        },
+        {
+          "name": "trig_ac",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "trig_ac             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "proc_submit",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "proc_submit         VARCHAR2(255 BYTE)"
+        }
+      ],
+      "column_count": 33
+    },
+    "bbi_config": {
+      "schema": "bosnds3",
+      "name": "bbi_config",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id          NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "sinfo",
+          "type": "NVARCHAR2(2000)",
+          "nullable": true,
+          "definition": "sinfo       NVARCHAR2(2000)"
+        },
+        {
+          "name": "user_config",
+          "type": "NVARCHAR2(2000)",
+          "nullable": true,
+          "definition": "user_config NVARCHAR2(2000)"
+        },
+        {
+          "name": "user_sql",
+          "type": "NVARCHAR2(2000)",
+          "nullable": true,
+          "definition": "user_sql    NVARCHAR2(2000)"
+        }
+      ],
+      "column_count": 4
+    },
+    "bg_ad_action": {
+      "schema": "bosnds3",
+      "name": "bg_ad_action",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                  NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": false,
+          "definition": "name                VARCHAR2(255 BYTE) NOT NULL"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "description         VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "displaytype",
+          "type": "VARCHAR2(20",
+          "nullable": false,
+          "definition": "displaytype         VARCHAR2(20 BYTE) NOT NULL"
+        },
+        {
+          "name": "iconurl",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "iconurl             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_table_id         NUMBER(10)"
+        },
+        {
+          "name": "ad_tablecategory_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_tablecategory_id NUMBER(10)"
+        },
+        {
+          "name": "priority",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "priority            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "filter",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "filter              VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "actiontype",
+          "type": "VARCHAR2(20",
+          "nullable": false,
+          "definition": "actiontype          VARCHAR2(20 BYTE) NOT NULL"
+        },
+        {
+          "name": "content",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "content             VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "urltarget",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "urltarget           VARCHAR2(10 BYTE)"
+        },
+        {
+          "name": "saveobj",
+          "type": "VARCHAR2(20",
+          "nullable": true,
+          "definition": "saveobj             VARCHAR2(20 BYTE)"
+        },
+        {
+          "name": "comments",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "comments            VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid             NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid          NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate        DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate        DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive            CHAR(1 BYTE) NOT NULL"
+        },
+        {
+          "name": "ad_subsystem_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_subsystem_id     NUMBER(10)"
+        },
+        {
+          "name": "scripts",
+          "type": "CLOB",
+          "nullable": true,
+          "definition": "scripts             CLOB"
+        },
+        {
+          "name": "customizeno",
+          "type": "VARCHAR2(30",
+          "nullable": true,
+          "definition": "customizeno         VARCHAR2(30 BYTE)"
+        }
+      ],
+      "column_count": 22
+    },
+    "bg_ad_column": {
+      "schema": "bosnds3",
+      "name": "bg_ad_column",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id                     NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id           NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive               CHAR(1 BYTE)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "name                   VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "description            VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "comments",
+          "type": "VARCHAR2(1000",
+          "nullable": true,
+          "definition": "comments               VARCHAR2(1000 BYTE)"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno                NUMBER(10)"
+        },
+        {
+          "name": "summethod",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "summethod              VARCHAR2(10 BYTE)"
+        },
+        {
+          "name": "coltype",
+          "type": "VARCHAR2(80",
+          "nullable": true,
+          "definition": "coltype                VARCHAR2(80 BYTE)"
+        },
+        {
+          "name": "collength",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "collength              NUMBER(10)"
+        },
+        {
+          "name": "colprecision",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "colprecision           NUMBER(10)"
+        },
+        {
+          "name": "nullable",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "nullable               CHAR(1 BYTE)"
+        },
+        {
+          "name": "mask",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "mask                   VARCHAR2(10 BYTE)"
+        },
+        {
+          "name": "ref_table_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ref_table_id           NUMBER(10)"
+        },
+        {
+          "name": "ref_column_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ref_column_id          NUMBER(10)"
+        },
+        {
+          "name": "obtainmanner",
+          "type": "VARCHAR2(20",
+          "nullable": true,
+          "definition": "obtainmanner           VARCHAR2(20 BYTE)"
+        },
+        {
+          "name": "ad_limitvalue_group_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_limitvalue_group_id NUMBER(10)"
+        },
+        {
+          "name": "defaultvalue",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "defaultvalue           VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "modifiable",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "modifiable             CHAR(1 BYTE)"
+        },
+        {
+          "name": "regexpression",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "regexpression          VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "errmsg",
+          "type": "VARCHAR2(1000",
+          "nullable": true,
+          "definition": "errmsg                 VARCHAR2(1000 BYTE)"
+        },
+        {
+          "name": "interpreter",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "interpreter            VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "filter",
+          "type": "VARCHAR2(750",
+          "nullable": true,
+          "definition": "filter                 VARCHAR2(750 BYTE)"
+        },
+        {
+          "name": "displaytype",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "displaytype            VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "displayrows",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "displayrows            NUMBER(10)"
+        },
+        {
+          "name": "displaycols",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "displaycols            NUMBER(10)"
+        },
+        {
+          "name": "displaywidth",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "displaywidth           NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate           DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate           DATE"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid                NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid             NUMBER(10)"
+        },
+        {
+          "name": "issystem",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "issystem               CHAR(1 BYTE)"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_table_id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id              NUMBER(10)"
+        },
+        {
+          "name": "u_clob_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "u_clob_id              NUMBER(10)"
+        },
+        {
+          "name": "dbname",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "dbname                 VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "isak",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isak                   CHAR(1 BYTE)"
+        },
+        {
+          "name": "ad_sequence_id_bad",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_sequence_id_bad     NUMBER(10)"
+        },
+        {
+          "name": "isdk",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isdk                   CHAR(1 BYTE)"
+        },
+        {
+          "name": "statsize",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "statsize               NUMBER(10)"
+        },
+        {
+          "name": "sequencename",
+          "type": "VARCHAR2(60",
+          "nullable": true,
+          "definition": "sequencename           VARCHAR2(60 BYTE)"
+        },
+        {
+          "name": "isuppercase",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isuppercase            CHAR(1 BYTE)"
+        },
+        {
+          "name": "isindexed",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isindexed              CHAR(1 BYTE)"
+        },
+        {
+          "name": "ondelete",
+          "type": "VARCHAR2(10",
+          "nullable": true,
+          "definition": "ondelete               VARCHAR2(10 BYTE)"
+        },
+        {
+          "name": "props",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "props                  VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "customizeno",
+          "type": "VARCHAR2(30",
+          "nullable": true,
+          "definition": "customizeno            VARCHAR2(30 BYTE)"
+        }
+      ],
+      "column_count": 46
+    },
+    "c_store_counter": {
+      "schema": "bosnds3",
+      "name": "c_store_counter",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "c_store_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "c_store_id   NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "m_dim1_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "m_dim1_id    NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 10
+    },
+    "c_vouchers_config": {
+      "schema": "bosnds3",
+      "name": "c_vouchers_config",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id  NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id     NUMBER(10)"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isactive      CHAR(1 BYTE) DEFAULT 'Y'"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid    NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate  DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate  DATE"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid       NUMBER(10)"
+        },
+        {
+          "name": "vou_name",
+          "type": "VARCHAR2(100",
+          "nullable": true,
+          "definition": "vou_name      VARCHAR2(100 BYTE)"
+        },
+        {
+          "name": "c_vouchers_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "c_vouchers_id NUMBER(10)"
+        }
+      ],
+      "column_count": 10
+    },
+    "cms_config": {
+      "schema": "bosnds3",
+      "name": "cms_config",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id          NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "create_date",
+          "type": "DATE",
+          "nullable": false,
+          "definition": "create_date DATE NOT NULL"
+        },
+        {
+          "name": "modify_date",
+          "type": "DATE",
+          "nullable": false,
+          "definition": "modify_date DATE NOT NULL"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "name        VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "code",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "code        VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "value",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "value       VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "type",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "type        NUMBER(8) DEFAULT 0"
+        },
+        {
+          "name": "extra",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "extra       VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "remark",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "remark      VARCHAR2(4000 BYTE)"
+        }
+      ],
+      "column_count": 9
+    },
+    "cms_plugin_config": {
+      "schema": "bosnds3",
+      "name": "cms_plugin_config",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id          NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "create_date",
+          "type": "DATE",
+          "nullable": false,
+          "definition": "create_date DATE NOT NULL"
+        },
+        {
+          "name": "modify_date",
+          "type": "DATE",
+          "nullable": false,
+          "definition": "modify_date DATE NOT NULL"
+        },
+        {
+          "name": "sort",
+          "type": "NUMBER(8)",
+          "nullable": true,
+          "definition": "sort        NUMBER(8)"
+        },
+        {
+          "name": "is_enabled",
+          "type": "NUMBER(1)",
+          "nullable": false,
+          "definition": "is_enabled  NUMBER(1) NOT NULL"
+        },
+        {
+          "name": "plugin_id",
+          "type": "VARCHAR2(100",
+          "nullable": false,
+          "definition": "plugin_id   VARCHAR2(100 BYTE) NOT NULL"
+        }
+      ],
+      "column_count": 6
+    },
+    "cms_plugin_config_attribute": {
+      "schema": "bosnds3",
+      "name": "cms_plugin_config_attribute",
+      "columns": [
+        {
+          "name": "plugin_config_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "plugin_config_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "attributes",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "attributes       VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR2(100",
+          "nullable": false,
+          "definition": "name             VARCHAR2(100 BYTE) NOT NULL"
+        }
+      ],
+      "column_count": 3
+    },
+    "m_pkgconfig": {
+      "schema": "bosnds3",
+      "name": "m_pkgconfig",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id             NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id   NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id      NUMBER(10)"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR2(500",
+          "nullable": true,
+          "definition": "description    VARCHAR2(500 BYTE)"
+        },
+        {
+          "name": "m_product_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "m_product_id   NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "c_store_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "c_store_id     NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "m_package_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "m_package_id   NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "m_sizegroup_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_sizegroup_id NUMBER(10)"
+        },
+        {
+          "name": "tot_pkgqty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_pkgqty     NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "tot_qty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_qty        NUMBER(10) DEFAULT 0"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid        NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid     NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate   DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate   DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive       CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "latelyday",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "latelyday      NUMBER(10) DEFAULT 14"
+        },
+        {
+          "name": "tot_latelyqty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "tot_latelyqty  NUMBER(10) DEFAULT 0"
+        }
+      ],
+      "column_count": 17
+    },
+    "m_pkgconfigitem": {
+      "schema": "bosnds3",
+      "name": "m_pkgconfigitem",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id             NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id   NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id      NUMBER(10)"
+        },
+        {
+          "name": "m_pkgconfig_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "m_pkgconfig_id NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "m_product_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "m_product_id   NUMBER(10)"
+        },
+        {
+          "name": "c_store_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "c_store_id     NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "m_size_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "m_size_id      NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "pkgqty",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "pkgqty         NUMBER(10) DEFAULT 0 NOT NULL"
+        },
+        {
+          "name": "qty",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "qty            NUMBER(10) DEFAULT 0 NOT NULL"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid        NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid     NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate   DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate   DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive       CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "latelyqty",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "latelyqty      NUMBER(10) DEFAULT 0"
+        }
+      ],
+      "column_count": 15
+    },
+    "webpos_upload_log": {
+      "schema": "bosnds3",
+      "name": "webpos_upload_log",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id    NUMBER(10)"
+        },
+        {
+          "name": "error_reason",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "error_reason VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "isdeal",
+          "type": "CHAR(1",
+          "nullable": true,
+          "definition": "isdeal       CHAR(1 BYTE) DEFAULT 'N'"
+        },
+        {
+          "name": "error_data",
+          "type": "VARCHAR2(4000",
+          "nullable": true,
+          "definition": "error_data   VARCHAR2(4000 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid      NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid   NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive     CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        },
+        {
+          "name": "refno",
+          "type": "VARCHAR2(40",
+          "nullable": true,
+          "definition": "refno        VARCHAR2(40 BYTE)"
+        },
+        {
+          "name": "c_store_id",
+          "type": "NUMBER(30)",
+          "nullable": true,
+          "definition": "c_store_id   NUMBER(30)"
+        },
+        {
+          "name": "json_data",
+          "type": "CLOB",
+          "nullable": true,
+          "definition": "json_data    CLOB"
+        },
+        {
+          "name": "err_count",
+          "type": "NUMBER(6)",
+          "nullable": true,
+          "definition": "err_count    NUMBER(6)"
+        }
+      ],
+      "column_count": 15
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "module": "reports",
+  "table_count": 1,
+  "tables": {
+    "ratingsstats": {
+      "schema": "boslportal4",
+      "name": "ratingsstats",
+      "columns": [
+        {
+          "name": "statsid",
+          "type": "NUMBER(30)",
+          "nullable": false,
+          "definition": "statsid      NUMBER(30) NOT NULL"
+        },
+        {
+          "name": "classname",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "classname    VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "classpk",
+          "type": "VARCHAR2(75",
+          "nullable": true,
+          "definition": "classpk      VARCHAR2(75 BYTE)"
+        },
+        {
+          "name": "totalentries",
+          "type": "NUMBER(30)",
+          "nullable": true,
+          "definition": "totalentries NUMBER(30)"
+        },
+        {
+          "name": "totalscore",
+          "type": "NUMBER(30",
+          "nullable": true,
+          "definition": "totalscore   NUMBER(30"
+        },
+        {
+          "name": "averagescore",
+          "type": "NUMBER(30",
+          "nullable": true,
+          "definition": "averagescore NUMBER(30"
+        }
+      ],
+      "column_count": 6
+    }
+  }
+}

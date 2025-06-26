@@ -1,0 +1,153 @@
+{
+  "module": "content_management",
+  "table_count": 3,
+  "tables": {
+    "ad_ddl": {
+      "schema": "bosnds3",
+      "name": "ad_ddl",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id           NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "sqltext",
+          "type": "VARCHAR2(2000",
+          "nullable": true,
+          "definition": "sqltext      VARCHAR2(2000 BYTE)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate DATE DEFAULT sysdate"
+        }
+      ],
+      "column_count": 3
+    },
+    "tmp_ddl_change_varchar": {
+      "schema": "bosnds3",
+      "name": "tmp_ddl_change_varchar",
+      "columns": [
+        {
+          "name": "sql",
+          "type": "VARCHAR2(2000",
+          "nullable": true,
+          "definition": "sql VARCHAR2(2000 BYTE)"
+        }
+      ],
+      "column_count": 1
+    },
+    "u_image": {
+      "schema": "bosnds3",
+      "name": "u_image",
+      "columns": [
+        {
+          "name": "id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "id            NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "ad_client_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_client_id  NUMBER(10)"
+        },
+        {
+          "name": "ad_org_id",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ad_org_id     NUMBER(10)"
+        },
+        {
+          "name": "ad_table_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "ad_table_id   NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "record_id",
+          "type": "NUMBER(10)",
+          "nullable": false,
+          "definition": "record_id     NUMBER(10) NOT NULL"
+        },
+        {
+          "name": "orderno",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "orderno       NUMBER(10)"
+        },
+        {
+          "name": "src_width",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "src_width     NUMBER(10)"
+        },
+        {
+          "name": "src_height",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "src_height    NUMBER(10)"
+        },
+        {
+          "name": "orig_url",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "orig_url      VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "big_url",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "big_url       VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "small_url",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "small_url     VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "thumbnail_url",
+          "type": "VARCHAR2(255",
+          "nullable": true,
+          "definition": "thumbnail_url VARCHAR2(255 BYTE)"
+        },
+        {
+          "name": "ownerid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "ownerid       NUMBER(10)"
+        },
+        {
+          "name": "modifierid",
+          "type": "NUMBER(10)",
+          "nullable": true,
+          "definition": "modifierid    NUMBER(10)"
+        },
+        {
+          "name": "creationdate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "creationdate  DATE"
+        },
+        {
+          "name": "modifieddate",
+          "type": "DATE",
+          "nullable": true,
+          "definition": "modifieddate  DATE"
+        },
+        {
+          "name": "isactive",
+          "type": "CHAR(1",
+          "nullable": false,
+          "definition": "isactive      CHAR(1 BYTE) DEFAULT 'Y' NOT NULL"
+        }
+      ],
+      "column_count": 17
+    }
+  }
+}
