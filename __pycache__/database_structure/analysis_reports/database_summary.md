@@ -17,7 +17,7 @@
 - **sales** (129个表): app_cus_totretail, app_dayretail, app_monthretail, app_weekretail, b_bwsaleinvoice ... 等129个表
 - **purchase** (29个表): c_purchasetype, c_supplier, c_supplierapply, c_supplierscore, c_suppliertype ... 等29个表
 - **reports** (11个表): hr_batchreport, hr_report, hr_reportitem, m_sk_pushreport, report_db_time ... 等11个表
-- **logs** (46个表): autotask_log, bbi_log, c_authorize_log, c_client_vip_log, c_customer_log ... 等46个表
+- **logs** (46个表):q autotask_log, bbi_log, c_authorize_log, c_client_vip_log, c_customer_log ... 等46个表
 - **others** (494个表): analysis_store, appsetting, au_phase, au_phaseinstance, au_process ... 等494个表
 
 ## boslportal4 数据库

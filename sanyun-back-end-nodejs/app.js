@@ -14,7 +14,7 @@ app.use(express.json());
 // 配置Oracle客户端为Thick模式以支持Oracle 11g
 try {
     // 尝试初始化Thick模式
-    const oracleClientPath = process.env.ORACLE_CLIENT_LIB_DIR || 'E:\\oracle\\instantclient_11_2';
+    const oracleClientPath = process.env.ORACLE_CLIENT_LIB_DIR || 'D:\\4\\instantclient_11_2';
     console.log('尝试初始化Oracle Thick模式，客户端路径:', oracleClientPath);
     
     // 初始化Oracle客户端库

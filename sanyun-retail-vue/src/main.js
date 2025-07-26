@@ -1,47 +1,19 @@
 import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import '@/assets/styles/base.less'  // 新增引入
 import App from './App.vue'
-import Home from './views/Home.vue'
-import Login from './views/Login.vue'
-import Navigation from './views/Navigation.vue'
-import SalesAnalysis from './views/SalesAnalysis.vue'
-import Profile from './views/Profile.vue'
+import router from './router/index.js'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import {createPinia} from  'pinia' 
 
-// Vant 样式
-import 'vant/lib/index.css'
 
-// 路由配置
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/login',
-      name: 'Login',
-      component: Login
-    },
-    {
-      path: '/navigation',
-      name: 'Navigation',
-      component: Navigation
-    },
-    {
-      path: '/sales-analysis',
-      name: 'SalesAnalysis',
-      component: SalesAnalysis
-    },
-    {
-      path: '/profile',
-      name: 'Profile',
-      component: Profile
-    }
-  ]
-})
-
+const pinia = createPinia()
 const app = createApp(App)
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    app.component(key, component)
+  }
 app.use(router)
-app.mount('#app') 
+app.use(ElementPlus)
+app.use(pinia)
+app.mount('#app')

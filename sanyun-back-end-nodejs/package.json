@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "三云零售系统后端API - Node.js版本",
   "main": "app.js",
-  "scripts": {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "e'wqwtryu]iop[ y]o      ts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,16 +1,14 @@
-<template>
-  <div id="app">
-    <router-view />
-  </div>
-</template>
-
 <script setup>
-// 根组件
 </script>
 
-<style>
+<template>
+  <router-view></router-view> 
+</template>
+
+<style scoped>
 #app {
-  min-height: 100vh;
-  background-color: #f5f5f5;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
-</style> 
+</style>
