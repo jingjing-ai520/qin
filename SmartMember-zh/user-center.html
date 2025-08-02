@@ -1,0 +1,926 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户中心 - ECRM系统</title>
+    <!-- 引入 JWT 解码库 -->
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <style>
+        .customer-details {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 15px;
+        margin-bottom: 15px;
+        background-color: #fff;
+        }
+        .customer-field {
+            margin-bottom: 10px;
+        }
+        .customer-field-label {
+            font-weight: bold;
+            display: inline-block;
+            width: 120px;
+        }
+        .customer-field-value {
+            color: #333;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .tab.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .user-info {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .info-item {
+            margin-bottom: 15px;
+        }
+        .info-item label {
+            display: inline-block;
+            width: 100px;
+            font-weight: bold;
+            color: #555;
+        }
+        .info-item span {
+            color: #333;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .btn-logout {
+            background-color: #f44336;
+        }
+        .btn-logout:hover {
+            background-color: #d32f2f;
+        }
+        .password-form {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .response {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #4CAF50;
+            border-radius: 4px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .error {
+            border-left: 4px solid #f44336;
+        }
+        .text-danger {
+            color: #f44336;
+        }
+        .mt-3 {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ECRM 服装总代理销售报表系统</h1>
+        <h2>用户中心</h2>
+
+        <!-- 添加标签页导航 -->
+        <div class="tabs">
+            <button class="tab active" onclick="openTab(event, 'user-info-tab')">用户信息</button>
+            <button class="tab" onclick="openTab(event, 'customer-add-tab')">客户录入</button>
+            <button class="tab" onclick="openTab(event, 'customer-query-tab')">客户查询</button>
+            <button class="tab" onclick="openTab(event, 'customer-classify-tab')">客户分类</button>
+            <button class="tab" onclick="openTab(event, 'customer-followup-tab')">客户跟进</button>
+            <button class="tab" onclick="openTab(event, 'customer-profile-tab')">客户画像</button>
+        </div>
+
+        <!-- 用户信息标签页 -->
+        <div id="user-info-tab" class="tab-content active">
+            <div class="user-info">
+                <div class="info-item">
+                    <label>用户名:</label>
+                    <span id="username"></span>
+                </div>
+                <div class="info-item">
+                    <label>手机号:</label>
+                    <span id="phone"></span>
+                </div>
+                <div class="info-item">
+                    <label>邮箱:</label>
+                    <span id="email"></span>
+                </div>
+            </div>
+
+            <button id="changePasswordBtn" class="btn">修改密码</button>
+            <button id="logoutBtn" class="btn btn-logout">退出登录</button>
+
+            <div id="passwordForm" class="password-form" style="display: none;">
+                <h3>修改密码</h3>
+                <form id="changePasswordForm">
+                    <div class="form-group">
+                        <label for="oldPassword">原密码:</label>
+                        <input type="password" id="oldPassword" name="oldPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">新密码:</label>
+                        <input type="password" id="newPassword" name="newPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">确认新密码:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn">提交修改</button>
+                </form>
+                <div id="passwordResponse" class="response"></div>
+            </div>
+        </div>
+
+        <!-- 客户录入标签页 -->
+        <div id="customer-add-tab" class="tab-content">
+            <h3>客户录入</h3>
+            <form id="customer-add-form">
+                <div class="form-group">
+                    <label for="customer-id">ID <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" id="customer-id" name="ID" placeholder="输入ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-name">名称</label>
+                    <input type="text" class="form-control" id="customer-name" name="NAME" placeholder="输入客户名称">
+                </div>
+                <div class="form-group">
+                    <label for="customer-description">描述</label>
+                    <textarea class="form-control" id="customer-description" name="DESCRIPTION" placeholder="输入客户描述"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="customer-isactive">是否有效 <span class="text-danger">*</span></label>
+                    <select class="form-control" id="customer-isactive" name="ISACTIVE" required>
+                        <option value="Y">有效</option>
+                        <option value="N">无效</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="customer-amt-odr-remain">订单剩余金额</label>
+                    <input type="number" step="0.01" class="form-control" id="customer-amt-odr-remain" name="AMT_ODR_REMAIN" placeholder="输入订单剩余金额">
+                </div>
+                <div class="form-group">
+                    <label for="customer-fee-checked">已审核费用</label>
+                    <input type="number" step="0.01" class="form-control" id="customer-fee-checked" name="FEECHECKED" placeholder="输入已审核费用">
+                </div>
+                <!-- 可以根据需要添加更多字段 -->
+                <button type="submit" class="btn">提交</button>
+            </form>
+            <div id="customer-add-response" class="response mt-3"></div>
+        </div>
+
+        <!-- 客户查询标签页 -->
+        <div id="customer-query-tab" class="tab-content">
+            <h3>客户查询</h3>
+            <form id="customer-query-form">
+                <div class="form-group">
+                    <label for="query-keyword">查询关键词</label>
+                    <input type="text" class="form-control" id="query-keyword" name="keyword" placeholder="输入客户名称或描述关键词">
+                </div>
+                <button type="submit" class="btn">查询</button>
+                <button type="button" class="btn" id="clear-query-btn">清空</button>
+            </form>
+            <div id="customer-query-response" class="response mt-3"></div>
+        </div>
+
+        <!-- 客户分类标签页 -->
+        <div id="customer-classify-tab" class="tab-content">
+            <h3>客户分类</h3>
+            <form id="customer-classify-form">
+                <div class="form-group">
+                    <label for="classify-id">ID</label>
+                    <input type="number" class="form-control" id="classify-id" name="ID" placeholder="分组ID，新增时不传，修改时必传">
+                </div>
+                <div class="form-group">
+                    <label for="classify-schema-id">所属Schema ID <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" id="classify-schema-id" name="SCHEMA_ID_FK" placeholder="输入所属Schema ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="classify-group-name">分组名称 <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="classify-group-name" name="GROUP_NAME" placeholder="输入分组名称" required>
+                </div>
+                <div class="form-group">
+                    <label for="classify-group-flag">分组类型标记 <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="classify-group-flag" name="GROUP_FLAG" placeholder="输入分组类型标记" required>
+                </div>
+                <div class="form-group">
+                    <label for="classify-comments">分组描述</label>
+                    <textarea class="form-control" id="classify-comments" name="COMMENTS" placeholder="输入分组描述"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="classify-security-group-id">安全组ID</label>
+                    <input type="number" class="form-control" id="classify-security-group-id" name="SECURITY_GROUP_ID" placeholder="输入安全组ID">
+                </div>
+                <div class="form-group">
+                    <label for="classify-created-by">创建人</label>
+                    <input type="text" class="form-control" id="classify-created-by" name="CREATED_BY" placeholder="输入创建人">
+                </div>
+                <button type="submit" class="btn">提交</button>
+            </form>
+            <div id="customer-classify-response" class="response mt-3"></div>
+        </div>
+
+        <!-- 客户跟进标签页 -->
+        <div id="customer-followup-tab" class="tab-content">
+            <h3>客户跟进</h3>
+            <form id="customer-followup-form">
+                <div class="form-group">
+                    <label for="followup-customer-id">客户ID <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" id="followup-customer-id" name="customerId" placeholder="输入客户ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="followup-content">跟进内容 <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="followup-content" name="followupContent" placeholder="输入跟进内容" required></textarea>
+                </div>
+                <button type="submit" class="btn">提交</button>
+                <button type="button" class="btn" id="query-followups-btn">查询跟进记录</button>
+            </form>
+            <div id="customer-followup-response" class="response mt-3"></div>
+            <div id="customer-followups-list" class="response mt-3"></div>
+        </div>
+        <!-- 客户画像标签页 -->
+        <div id="customer-profile-tab" class="tab-content">
+            <h3>客户画像</h3>
+            <form id="customer-profile-form" novalidate> <!-- 添加novalidate属性 -->
+                <div class="form-group">
+                    <label for="profile-customer-id">客户ID <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" id="profile-customer-id" name="customerId" placeholder="输入客户ID" required>
+                </div>
+                <button type="submit" class="btn">查询客户画像</button>
+            </form>
+            <div id="customer-profile-response" class="response mt-3"></div>
+        </div>
+    </div>
+
+    <script>
+        // 标签页切换函数
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // 页面加载时检查用户是否已登录
+        document.addEventListener('DOMContentLoaded', function() {
+            const token = localStorage.getItem('token');
+            const userInfo = JSON.parse(localStorage.getItem('userInfo')) || {};
+
+            if (!token) {
+                // 如果没有token，跳转到登录页面
+                window.location.href = 'test-frontend.html';
+                return;
+            }
+
+            // 显示用户信息
+            document.getElementById('username').textContent = userInfo.username || '未设置';
+            document.getElementById('phone').textContent = userInfo.phone || '未设置';
+            document.getElementById('email').textContent = userInfo.email || '未设置';
+
+            // 修改密码按钮点击事件
+            document.getElementById('changePasswordBtn').addEventListener('click', function() {
+                const passwordForm = document.getElementById('passwordForm');
+                passwordForm.style.display = passwordForm.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // 退出登录按钮点击事件
+            document.getElementById('logoutBtn').addEventListener('click', function() {
+                // 清除localStorage
+                localStorage.removeItem('token');
+                localStorage.removeItem('userInfo');
+                // 跳转到登录页面
+                window.location.href = 'test-frontend.html';
+            });
+
+            // 处理修改密码表单提交
+            document.getElementById('changePasswordForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const oldPassword = document.getElementById('oldPassword').value;
+                const newPassword = document.getElementById('newPassword').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                const responseDiv = document.getElementById('passwordResponse');
+                const token = localStorage.getItem('token');
+                const userInfo = JSON.parse(localStorage.getItem('userInfo')) || {};
+
+                if (!userInfo.id) {
+                    responseDiv.innerHTML = '<pre>错误: 无法获取用户ID</pre>';
+                    responseDiv.classList.add('error');
+                    return;
+                }
+
+                if (newPassword !== confirmPassword) {
+                    responseDiv.innerHTML = '<pre>错误: 两次输入的新密码不一致</pre>';
+                    responseDiv.classList.add('error');
+                    return;
+                }
+
+                try {
+                    const response = await fetch('http://localhost:3000/api/user/changePassword', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer ' + token
+                        },
+                        body: JSON.stringify({
+                            userId: userInfo.id.toString(), // 转换为字符串类型
+                            oldPassword: oldPassword,
+                            newPassword: newPassword
+                        })
+                    });
+                    const data = await response.json();
+                    responseDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                    if (data.code === 200) {
+                        responseDiv.classList.remove('error');
+                        // 密码修改成功后，清除localStorage并跳转到登录页面
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('userInfo');
+                        // 显示成功消息后延迟跳转
+                        setTimeout(() => {
+                            window.location.href = 'test-frontend.html';
+                        }, 1500);
+                    } else {
+                        responseDiv.classList.add('error');
+                    }
+                } catch (error) {
+                    responseDiv.innerHTML = '<pre>错误: ' + error.message + '</pre>';
+                    responseDiv.classList.add('error');
+                }
+            });
+
+            // 客户录入表单提交
+            document.getElementById('customer-add-form').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+                const token = localStorage.getItem('token');
+                const responseDiv = document.getElementById('customer-add-response');
+
+                if (!token) {
+                    responseDiv.innerHTML = '<pre>错误: 请先登录</pre>';
+                    responseDiv.classList.add('error');
+                    // 跳转到登录页面
+                    setTimeout(() => {
+                        window.location.href = 'test-frontend.html';
+                    }, 1500);
+                    return;
+                }
+
+                try {
+                    // 添加token验证前的检查
+                    const decoded = jwt_decode(token);
+                    if (!decoded || decoded.exp * 1000 < Date.now()) {
+                        responseDiv.innerHTML = '<pre>错误: 登录已过期，请重新登录</pre>';
+                        responseDiv.classList.add('error');
+                        // 清除过期token
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('userInfo');
+                        // 跳转到登录页面
+                        setTimeout(() => {
+                            window.location.href = 'test-frontend.html';
+                        }, 1500);
+                        return;
+                    }
+
+                    const response = await fetch('http://localhost:3000/api/customer/add', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    const result = await response.json();
+                    responseDiv.innerHTML = '<pre>' + JSON.stringify(result, null, 2) + '</pre>';
+                    if (result.code === 200) {
+                        responseDiv.classList.remove('error');
+                        // 提交成功后清空表单
+                        this.reset();
+                    } else if (result.code === 401) {
+                        responseDiv.innerHTML = '<pre>错误: ' + result.message + '，请重新登录</pre>';
+                        responseDiv.classList.add('error');
+                        // 清除无效token
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('userInfo');
+                        // 跳转到登录页面
+                        setTimeout(() => {
+                            window.location.href = 'test-frontend.html';
+                        }, 1500);
+                    } else {
+                        responseDiv.classList.add('error');
+                    }
+                } catch (error) {
+                    responseDiv.innerHTML = '<pre>请求失败: ' + error.message + '</pre>';
+                    responseDiv.classList.add('error');
+                }
+            });
+
+            // 客户查询表单提交
+            document.getElementById('customer-query-form').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const keyword = document.getElementById('query-keyword').value;
+                const responseDiv = document.getElementById('customer-query-response');
+                const token = localStorage.getItem('token');
+
+                if (!token) {
+                    responseDiv.innerHTML = '<pre>错误: 请先登录</pre>';
+                    responseDiv.classList.add('error');
+                    // 跳转到登录页面
+                    setTimeout(() => {
+                        window.location.href = 'test-frontend.html';
+                    }, 1500);
+                    return;
+                }
+
+                try {
+                    // 添加token验证前的检查
+                    const decoded = jwt_decode(token);
+                    if (!decoded || decoded.exp * 1000 < Date.now()) {
+                        responseDiv.innerHTML = '<pre>错误: 登录已过期，请重新登录</pre>';
+                        responseDiv.classList.add('error');
+                        // 清除过期token
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('userInfo');
+                        // 跳转到登录页面
+                        setTimeout(() => {
+                            window.location.href = 'test-frontend.html';
+                        }, 1500);
+                        return;
+                    }
+
+                    // 构建查询URL
+                    let url = 'http://localhost:3000/api/customer/query';
+                    if (keyword) {
+                        url += `?keyword=${encodeURIComponent(keyword)}`;
+                    }
+
+                    const response = await fetch(url, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+
+                    const result = await response.json();
+                    if (result.code === 200) {
+                        responseDiv.classList.remove('error');
+                        if (result.data && result.data.length > 0) {
+                            let html = '<h4>查询结果 (' + result.data.length + ' 条记录)</h4>';
+                            result.data.forEach(customer => {
+                                html += '<div class="customer-details">';
+                                html += '<div class="customer-field"><span class="customer-field-label">ID:</span> <span class="customer-field-value">' + (customer.ID || 'N/A') + '</span></div>';
+                                html += '<div class="customer-field"><span class="customer-field-label">名称:</span> <span class="customer-field-value">' + (customer.NAME || 'N/A') + '</span></div>';
+                                html += '<div class="customer-field"><span class="customer-field-label">描述:</span> <span class="customer-field-value">' + (customer.DESCRIPTION || 'N/A') + '</span></div>';
+                                html += '<div class="customer-field"><span class="customer-field-label">是否有效:</span> <span class="customer-field-value">' + (customer.ISACTIVE === 'Y' ? '是' : '否') + '</span></div>';
+                                html += '<div class="customer-field"><span class="customer-field-label">订单剩余金额:</span> <span class="customer-field-value">' + (customer.AMT_ODR_REMAIN !== undefined ? customer.AMT_ODR_REMAIN.toFixed(2) : 'N/A') + '</span></div>';
+                                html += '<div class="customer-field"><span class="customer-field-label">已审核费用:</span> <span class="customer-field-value">' + (customer.FEECHECKED !== undefined ? customer.FEECHECKED.toFixed(2) : 'N/A') + '</span></div>';
+                                // 可以根据需要添加更多字段
+                                html += '</div>';
+                            });
+                            responseDiv.innerHTML = html;
+                        } else {
+                            responseDiv.innerHTML = '<pre>没有找到匹配的客户信息</pre>';
+                        }
+                    } else if (result.code === 401) {
+                        responseDiv.innerHTML = '<pre>错误: ' + result.message + '，请重新登录</pre>';
+                        responseDiv.classList.add('error');
+                        // 清除无效token
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('userInfo');
+                        // 跳转到登录页面
+                        setTimeout(() => {
+                            window.location.href = 'test-frontend.html';
+                        }, 1500);
+                    } else {
+                        responseDiv.innerHTML = '<pre>错误: ' + (result.message || '查询失败') + '</pre>';
+                        responseDiv.classList.add('error');
+                    }
+                } catch (error) {
+                    responseDiv.innerHTML = '<pre>请求失败: ' + error.message + '</pre>';
+                    responseDiv.classList.add('error');
+                }
+            });
+            
+            // 客户分类表单提交
+            document.getElementById('customer-classify-form').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+                const token = localStorage.getItem('token');
+                const responseDiv = document.getElementById('customer-classify-response');
+
+                if (!token) {
+                    responseDiv.innerHTML = '<pre>错误: 请先登录</pre>';
+                    responseDiv.classList.add('error');
+                    // 跳转到登录页面
+                    setTimeout(() => {
+                        window.location.href = 'test-frontend.html';
+                    }, 1500);
+                    return;
+                }
+
+                try {
+                    // 添加token验证前的检查
+                    const decoded = jwt_decode(token);
+                    if (!decoded || decoded.exp * 1000 < Date.now()) {
+                        responseDiv.innerHTML = '<pre>错误: 登录已过期，请重新登录</pre>';
+                        responseDiv.classList.add('error');
+                        // 清除过期token
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('userInfo');
+                        // 跳转到登录页面
+                        setTimeout(() => {
+                            window.location.href = 'test-frontend.html';
+                        }, 1500);
+                        return;
+                    }
+
+                    const response = await fetch('http://localhost:3000/api/customer/classify', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    const result = await response.json();
+                    responseDiv.innerHTML = '<pre>' + JSON.stringify(result, null, 2) + '</pre>';
+                    if (result.code === 200) {
+                        responseDiv.classList.remove('error');
+                        // 提交成功后清空表单
+                        this.reset();
+                    } else if (result.code === 401) {
+                        responseDiv.innerHTML = '<pre>错误: ' + result.message + '，请重新登录</pre>';
+                        responseDiv.classList.add('error');
+                        // 清除无效token
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('userInfo');
+                        // 跳转到登录页面
+                        setTimeout(() => {
+                            window.location.href = 'test-frontend.html';
+                        }, 1500);
+                    } else {
+                        responseDiv.classList.add('error');
+                    }
+                } catch (error) {
+                    responseDiv.innerHTML = '<pre>请求失败: ' + error.message + '</pre>';
+                    responseDiv.classList.add('error');
+                }
+            });
+            // 添加清空查询按钮点击事件
+            document.getElementById('clear-query-btn').addEventListener('click', function() {
+                document.getElementById('customer-query-form').reset();
+                document.getElementById('customer-query-response').innerHTML = '';
+            });
+
+            // 客户跟进表单提交
+            document.getElementById('customer-followup-form').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+                const token = localStorage.getItem('token');
+                const responseDiv = document.getElementById('customer-followup-response');
+
+                if (!token) {
+                    responseDiv.innerHTML = '<pre>错误: 请先登录</pre>';
+                    responseDiv.classList.add('error');
+                    // 跳转到登录页面
+                    setTimeout(() => {
+                        window.location.href = 'test-frontend.html';
+                    }, 1500);
+                    return;
+                }
+
+                try {
+                    // 添加token验证前的检查
+                    const decoded = jwt_decode(token);
+                    if (!decoded || decoded.exp * 1000 < Date.now()) {
+                        responseDiv.innerHTML = '<pre>错误: 登录已过期，请重新登录</pre>';
+                        responseDiv.classList.add('error');
+                        // 清除过期token
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('userInfo');
+                        // 跳转到登录页面
+                        setTimeout(() => {
+                            window.location.href = 'test-frontend.html';
+                        }, 1500);
+                        return;
+                    }
+
+                    const response = await fetch('http://localhost:3000/api/customer/followup', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    const result = await response.json();
+                    responseDiv.innerHTML = '<pre>' + JSON.stringify(result, null, 2) + '</pre>';
+                    if (result.code === 200) {
+                        responseDiv.classList.remove('error');
+                        // 提交成功后清空表单
+                        this.reset();
+                    } else if (result.code === 401) {
+                        responseDiv.innerHTML = '<pre>错误: ' + result.message + '，请重新登录</pre>';
+                        responseDiv.classList.add('error');
+                        // 清除无效token
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('userInfo');
+                        // 跳转到登录页面
+                        setTimeout(() => {
+                            window.location.href = 'test-frontend.html';
+                        }, 1500);
+                    } else {
+                        responseDiv.classList.add('error');
+                    }
+                } catch (error) {
+                    responseDiv.innerHTML = '<pre>请求失败: ' + error.message + '</pre>';
+                    responseDiv.classList.add('error');
+                }
+            });
+            // 客户画像表单提交
+            document.getElementById('customer-profile-form').addEventListener('submit', async function(e) {
+                e.preventDefault(); // 阻止默认提交行为
+                const customerIdInput = document.getElementById('profile-customer-id');
+                const customerId = customerIdInput.value.trim(); // 确保去除空格
+                const responseDiv = document.getElementById('customer-profile-response');
+                const token = localStorage.getItem('token');
+
+                console.log('客户ID值:', customerId); // 添加调试日志
+
+                if (!token) {
+                    responseDiv.innerHTML = '<pre>错误: 请先登录</pre>';
+                    responseDiv.classList.add('error');
+                    // 跳转到登录页面
+                    setTimeout(() => {
+                        window.location.href = 'test-frontend.html';
+                    }, 1500);
+                    return;
+                }
+
+                if (!customerId) { // 简化检查
+                    responseDiv.innerHTML = '<pre>错误: 客户ID是必填项</pre>';
+                    responseDiv.classList.add('error');
+                    customerIdInput.focus(); // 聚焦到输入框
+                    return;
+                }
+
+                try {
+                    // 添加token验证前的检查
+                    const decoded = jwt_decode(token);
+                    if (!decoded || decoded.exp * 1000 < Date.now()) {
+                        responseDiv.innerHTML = '<pre>错误: 登录已过期，请重新登录</pre>';
+                        responseDiv.classList.add('error');
+                        // 清除过期token
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('userInfo');
+                        // 跳转到登录页面
+                        setTimeout(() => {
+                            window.location.href = 'test-frontend.html';
+                        }, 1500);
+                        return;
+                    }
+
+                    // 构建查询URL - 使用模板字符串确保正确拼接
+                    const url = `http://localhost:3000/api/customer/profile?customerId=${encodeURIComponent(customerId)}`;
+                    console.log('请求URL:', url); // 添加调试日志
+
+                    const response = await fetch(url, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+
+                    const result = await response.json();
+                    console.log('API响应:', result); // 添加调试日志
+                    if (result.code === 200) {
+                        responseDiv.classList.remove('error');
+                        if (result.data) {
+                            let html = '<h4>客户画像信息</h4>';
+                            html += '<div class="customer-details">';
+                            // 基本信息
+                            html += '<h5>基本信息</h5>';
+                            html += '<div class="customer-field"><span class="customer-field-label">客户ID:</span> <span class="customer-field-value">' + (result.data.customerId || 'N/A') + '</span></div>';
+                            html += '<div class="customer-field"><span class="customer-field-label">客户名称:</span> <span class="customer-field-value">' + (result.data.customerName || 'N/A') + '</span></div>';
+                            html += '<div class="customer-field"><span class="customer-field-label">联系方式:</span> <span class="customer-field-value">' + (result.data.contactInfo || 'N/A') + '</span></div>';
+                            html += '<div class="customer-field"><span class="customer-field-label">地址:</span> <span class="customer-field-value">' + (result.data.address || 'N/A') + '</span></div>';
+                            html += '<div class="customer-field"><span class="customer-field-label">注册时间:</span> <span class="customer-field-value">' + (result.data.registrationDate ? new Date(result.data.registrationDate).toLocaleString() : 'N/A') + '</span></div>';
+
+                            // 分组信息
+                            if (result.data.groupInfo) {
+                                html += '<h5>分组信息</h5>';
+                                html += '<div class="customer-field"><span class="customer-field-label">分组ID:</span> <span class="customer-field-value">' + (result.data.groupInfo.groupId || 'N/A') + '</span></div>';
+                                html += '<div class="customer-field"><span class="customer-field-label">分组名称:</span> <span class="customer-field-value">' + (result.data.groupInfo.groupName || 'N/A') + '</span></div>';
+                                html += '<div class="customer-field"><span class="customer-field-label">分组描述:</span> <span class="customer-field-value">' + (result.data.groupInfo.description || 'N/A') + '</span></div>';
+                            }
+
+                            // 最近跟进记录
+                            if (result.data.recentFollowups && result.data.recentFollowups.length > 0) {
+                                html += '<h5>最近跟进记录</h5>';
+                                result.data.recentFollowups.forEach((followup, index) => {
+                                    html += '<div class="customer-field"><span class="customer-field-label">跟进 ' + (index + 1) + ':</span> <span class="customer-field-value">' + (followup.content || 'N/A') + '</span></div>';
+                                    html += '<div class="customer-field"><span class="customer-field-label">时间:</span> <span class="customer-field-value">' + (followup.timestamp ? new Date(followup.timestamp * 1000).toLocaleString() : 'N/A') + '</span></div>';
+                                });
+                            }
+
+                            // 交易统计
+                            html += '<h5>交易统计</h5>';
+                            html += '<div class="customer-field"><span class="customer-field-label">总交易次数:</span> <span class="customer-field-value">' + (result.data.totalTransactions || 0) + '</span></div>';
+                            html += '<div class="customer-field"><span class="customer-field-label">总交易金额:</span> <span class="customer-field-value">' + (result.data.totalAmount !== undefined ? result.data.totalAmount.toFixed(2) : '0.00') + '</span></div>';
+                            html += '<div class="customer-field"><span class="customer-field-label">最近交易金额:</span> <span class="customer-field-value">' + (result.data.lastTransactionAmount !== undefined ? result.data.lastTransactionAmount.toFixed(2) : '0.00') + '</span></div>';
+                            html += '</div>';
+                            responseDiv.innerHTML = html;
+                        } else {
+                            responseDiv.innerHTML = '<pre>未找到该客户的画像信息</pre>';
+                        }
+                    } else if (result.code === 401) {
+                        responseDiv.innerHTML = '<pre>错误: ' + result.message + '，请重新登录</pre>';
+                        responseDiv.classList.add('error');
+                        // 清除无效token
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('userInfo');
+                        // 跳转到登录页面
+                        setTimeout(() => {
+                            window.location.href = 'test-frontend.html';
+                        }, 1500);
+                    } else {
+                        responseDiv.innerHTML = '<pre>错误: ' + (result.message || '查询失败') + '</pre>';
+                        responseDiv.classList.add('error');
+                    }
+                } catch (error) {
+                    responseDiv.innerHTML = '<pre>请求失败: ' + error.message + '</pre>';
+                    responseDiv.classList.add('error');
+                }
+            });
+            // 查询客户跟进记录按钮点击事件
+            document.getElementById('query-followups-btn').addEventListener('click', async function() {
+              const customerId = document.getElementById('followup-customer-id').value;
+              const responseDiv = document.getElementById('customer-followups-list');
+              const token = localStorage.getItem('token');
+
+              if (!token) {
+                responseDiv.innerHTML = '<pre>错误: 请先登录</pre>';
+                responseDiv.classList.add('error');
+                // 跳转到登录页面
+                setTimeout(() => {
+                  window.location.href = 'test-frontend.html';
+                }, 1500);
+                return;
+              }
+
+              if (!customerId) {
+                responseDiv.innerHTML = '<pre>错误: 请输入客户ID</pre>';
+                responseDiv.classList.add('error');
+                return;
+              }
+
+              try {
+                // 添加token验证前的检查
+                const decoded = jwt_decode(token);
+                if (!decoded || decoded.exp * 1000 < Date.now()) {
+                  responseDiv.innerHTML = '<pre>错误: 登录已过期，请重新登录</pre>';
+                  responseDiv.classList.add('error');
+                  // 清除过期token
+                  localStorage.removeItem('token');
+                  localStorage.removeItem('userInfo');
+                  // 跳转到登录页面
+                  setTimeout(() => {
+                    window.location.href = 'test-frontend.html';
+                  }, 1500);
+                  return;
+                }
+
+                // 构建查询URL
+                const url = `http://localhost:3000/api/customer/followups?customerId=${encodeURIComponent(customerId)}`;
+
+                const response = await fetch(url, {
+                  method: 'GET',
+                  headers: {
+                    'Authorization': `Bearer ${token}`
+                  }
+                });
+
+                const result = await response.json();
+                if (result.code === 200) {
+                  responseDiv.classList.remove('error');
+                  if (result.data && result.data.length > 0) {
+                    let html = '<h4>跟进记录 (' + result.data.length + ' 条)</h4>';
+                    result.data.forEach(followup => {
+                      html += '<div class="customer-details">';
+                      html += '<div class="customer-field"><span class="customer-field-label">ID:</span> <span class="customer-field-value">' + (followup.id || 'N/A') + '</span></div>';
+                      html += '<div class="customer-field"><span class="customer-field-label">跟进内容:</span> <span class="customer-field-value">' + (followup.followupContent || 'N/A') + '</span></div>';
+                      html += '<div class="customer-field"><span class="customer-field-label">时间戳:</span> <span class="customer-field-value">' + (new Date(followup.timestamp * 1000).toLocaleString() || 'N/A') + '</span></div>';
+                      html += '<div class="customer-field"><span class="customer-field-label">创建日期:</span> <span class="customer-field-value">' + (followup.creationDate ? followup.creationDate.toLocaleString() : 'N/A') + '</span></div>';
+                      html += '</div>';
+                    });
+                    responseDiv.innerHTML = html;
+                  } else {
+                    responseDiv.innerHTML = '<pre>没有找到该客户的跟进记录</pre>';
+                  }
+                } else if (result.code === 401) {
+                  responseDiv.innerHTML = '<pre>错误: ' + result.message + '，请重新登录</pre>';
+                  responseDiv.classList.add('error');
+                  // 清除无效token
+                  localStorage.removeItem('token');
+                  localStorage.removeItem('userInfo');
+                  // 跳转到登录页面
+                  setTimeout(() => {
+                    window.location.href = 'test-frontend.html';
+                  }, 1500);
+                } else {
+                  responseDiv.innerHTML = '<pre>错误: ' + (result.message || '查询失败') + '</pre>';
+                  responseDiv.classList.add('error');
+                }
+              } catch (error) {
+                responseDiv.innerHTML = '<pre>请求失败: ' + error.message + '</pre>';
+                responseDiv.classList.add('error');
+              }
+            });
+        });
+    </script>
+</body>
+</html>
