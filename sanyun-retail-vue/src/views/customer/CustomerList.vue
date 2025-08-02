@@ -1,4 +1,4 @@
-<template>
+npm install -D less<template>
   <div class="customer-list-container">
     <el-card>
       <template #header>
